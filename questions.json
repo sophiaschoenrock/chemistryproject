@@ -1,0 +1,350 @@
+[
+  {
+    "subsection": "1.1 Moles and Molar Mass",
+    "stimulus": "",
+    "stem": "How many moles of CO2 are present in 44.0 g of CO2? (Molar mass of CO2 ≈ 44.0 g/mol.)",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "0.500 mol", "rationale": "Incorrect. 0.500 mol would correspond to about half the molar mass in grams (≈22 g of CO2), not 44.0 g."},
+      {"label": "B", "text": "1.00 mol", "rationale": "Correct. Moles = mass / molar mass = 44.0 g ÷ 44.0 g/mol = 1.00 mol."},
+      {"label": "C", "text": "2.00 mol", "rationale": "Incorrect. 2.00 mol of CO2 would have a mass about twice the molar mass (≈88 g), not 44.0 g."},
+      {"label": "D", "text": "44.0 mol", "rationale": "Incorrect. This would mean each mole has a mass of 1 g, which is inconsistent with the molar mass of CO2."}
+    ]
+  },
+  {
+    "subsection": "1.1 Moles and Molar Mass",
+    "stimulus": "",
+    "stem": "How many atoms are in 0.25 mol of elemental sulfur, S, assuming sulfur is atomic in this sample?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "0.25 atoms", "rationale": "Incorrect. This confuses moles with atoms; 1 mol contains Avogadro’s number of atoms."},
+      {"label": "B", "text": "6.02 × 10²³ atoms", "rationale": "Incorrect. That is the number of atoms in 1 mol of S, not 0.25 mol."},
+      {"label": "C", "text": "1.51 × 10²³ atoms", "rationale": "Correct. Atoms = moles × Avogadro’s constant = 0.25 × 6.02 × 10²³ atoms."},
+      {"label": "D", "text": "2.41 × 10²⁴ atoms", "rationale": "Incorrect. This is roughly 4× larger than expected for 0.25 mol (a common error if you multiplied by 4 instead of 0.25)."}
+    ]
+  },
+  {
+    "subsection": "1.1 Moles and Molar Mass",
+    "stimulus": "",
+    "stem": "What is the molar mass of magnesium nitrate, Mg(NO3)2, rounded to the nearest g/mol? (Use Mg = 24.3, N = 14.0, O = 16.0.)",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "148 g/mol", "rationale": "Correct. Mg = 24.3; two NO3 groups: 2 × (14.0 + 3×16.0) = 124.0; total ≈ 148.3 g/mol."},
+      {"label": "B", "text": "86.3 g/mol", "rationale": "Incorrect. This would ignore one nitrate group or mis-count oxygen atoms."},
+      {"label": "C", "text": "164 g/mol", "rationale": "Incorrect. This is too high, often from adding an extra NO3 or mis-subscripting the formula."},
+      {"label": "D", "text": "112 g/mol", "rationale": "Incorrect. This is too low, often from using only one NO3 or missing an oxygen atom."}
+    ]
+  },
+  {
+    "subsection": "1.1 Moles and Molar Mass",
+    "stimulus": "",
+    "stem": "Which of the following numerical expressions gives the number of moles in 5.0 g of CaO? (Use M_Ca = 40.0 g/mol and M_O = 16.0 g/mol.)",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "5.0 × (40.0 + 16.0)", "rationale": "Incorrect. This multiplies mass by molar mass instead of dividing mass by molar mass."},
+      {"label": "B", "text": "5.0 / (40.0 + 16.0)", "rationale": "Correct. Moles = mass / molar mass, and M(CaO) = 40.0 + 16.0 g/mol."},
+      {"label": "C", "text": "(40.0 + 16.0) / 5.0", "rationale": "Incorrect. This inverts the relationship; it is not moles of sample."},
+      {"label": "D", "text": "5.0 / (40.0 × 16.0)", "rationale": "Incorrect. Molar mass of CaO is the sum of atomic masses, not the product of Ca and O masses."}
+    ]
+  },
+  {
+    "subsection": "1.2 Mass Spectra of Elements",
+    "stimulus": "The mass spectrum of a sample of element X shows peaks at m/z = 64 and m/z = 66 with relative abundances of approximately 50% and 50%.",
+    "stem": "Based on the spectrum, which statement is most consistent with the data?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "X must be a compound with two molecular ions.", "rationale": "Incorrect. Mass spectra of elements show atomic (or isotopic) peaks, not molecular ions from a compound in this context."},
+      {"label": "B", "text": "The weighted average atomic mass must be exactly 64.5 amu.", "rationale": "Incorrect. With isotope masses 64 and 66 and about equal abundance, the average is near 65 amu, not 64.5 amu."},
+      {"label": "C", "text": "The element has at least two isotopes with different mass numbers.", "rationale": "Correct. Two distinct m/z peaks with substantial abundance indicate two isotopes (different neutron counts)."},
+      {"label": "D", "text": "The peak at m/z = 66 must be the base peak.", "rationale": "Incorrect. The base peak is the tallest peak; here the abundances are roughly equal, so neither is necessarily the base peak by height alone."}
+    ]
+  },
+  {
+    "subsection": "1.2 Mass Spectra of Elements",
+    "stimulus": "",
+    "stem": "A mass spectrum of chlorine-containing molecules often shows peaks at whole-number m/z values differing by 2 with a characteristic ratio. For a monatomic Cl sample, which pair is expected for the two major isotopes?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "35 and 36", "rationale": "Incorrect. 36 is not a major isotope of chlorine in natural abundance."},
+      {"label": "B", "text": "35 and 37", "rationale": "Correct. Natural chlorine is mostly 35Cl and 37Cl; their masses differ by 2 amu."},
+      {"label": "C", "text": "34 and 35", "rationale": "Incorrect. 34 is not a major isotope of chlorine in natural abundance."},
+      {"label": "D", "text": "37 and 39", "rationale": "Incorrect. 39 is not a major isotope of chlorine in natural abundance."}
+    ]
+  },
+  {
+    "subsection": "1.2 Mass Spectra of Elements",
+    "stimulus": "",
+    "stem": "A sample of boron has two isotopes with masses 10.0 amu and 11.0 amu. If the relative atomic mass of boron is 10.8 amu, which abundance is closest?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "About 80% 11B and 20% 10B", "rationale": "Correct. Solving 10x + 11(1−x) = 10.8 gives x = 0.2 for 10B and 0.8 for 11B."},
+      {"label": "B", "text": "50% 10B and 50% 11B", "rationale": "Incorrect. That would give an average mass of 10.5 amu, not 10.8 amu."},
+      {"label": "C", "text": "90% 10B and 10% 11B", "rationale": "Incorrect. That would give an average mass near 10.1 amu, far below 10.8 amu."},
+      {"label": "D", "text": "100% 11B", "rationale": "Incorrect. That would give an average mass of 11.0 amu, not 10.8 amu."}
+    ]
+  },
+  {
+    "subsection": "1.3 Elemental Composition of Pure Substances",
+    "stimulus": "",
+    "stem": "A compound contains only carbon and hydrogen. Combustion of a 1.00 g sample produces 3.00 g of CO2 (assume complete combustion and capture of all carbon as CO2). Which expression gives the mass of carbon in the sample?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "3.00 g × (32.0/(12.0+32.0))", "rationale": "Incorrect. 32.0/(12.0+32.0) is the mass fraction of oxygen in CO2, not carbon."},
+      {"label": "B", "text": "3.00 g × (12.0/(12.0+2×16.0))", "rationale": "Correct. The mass fraction of carbon in CO2 is 12.0/(44.0 g/mol worth of CO2), so multiply by sample CO2 mass."},
+      {"label": "C", "text": "3.00 g × (2×16.0/44.0)", "rationale": "Incorrect. That uses the oxygen fraction in CO2, not carbon."},
+      {"label": "D", "text": "1.00 g − 3.00 g", "rationale": "Incorrect. This subtracts masses incorrectly; the CO2 mass is not the sample mass."}
+    ]
+  },
+  {
+    "subsection": "1.3 Elemental Composition of Pure Substances",
+    "stimulus": "",
+    "stem": "Which is the empirical formula of a compound with a mole ratio C : H : O equal to 1 : 2 : 1?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "C2H4O2", "rationale": "Incorrect. That ratio is a multiple of 1:2:1 (it would be CH2O scaled by 2)."},
+      {"label": "B", "text": "C6H12O6", "rationale": "Incorrect. That is also a multiple of CH2O, not the simplest whole-number ratio."},
+      {"label": "C", "text": "CH2O", "rationale": "Correct. The simplest integer ratio matching 1:2:1 is CH2O."},
+      {"label": "D", "text": "CHO2", "rationale": "Incorrect. That ratio is 1:1:2, not 1:2:1."}
+    ]
+  },
+  {
+    "subsection": "1.3 Elemental Composition of Pure Substances",
+    "stimulus": "",
+    "stem": "Which statement best describes a pure substance?",
+    "correct": "D",
+    "options": [
+      {"label": "A", "text": "It must be an element.", "rationale": "Incorrect. Pure substances include compounds as well as elements."},
+      {"label": "B", "text": "It must be a mixture of isotopes only.", "rationale": "Incorrect. Isotope mixtures can still be elements; pure substances are defined by chemical composition, not isotope mixing alone."},
+      {"label": "C", "text": "It must be a solution.", "rationale": "Incorrect. A solution is typically a homogeneous mixture, not a pure substance."},
+      {"label": "D", "text": "It has fixed composition and distinct properties for a given compound.", "rationale": "Correct. A pure substance has a definite composition (element or compound)."}
+    ]
+  },
+  {
+    "subsection": "1.4 Composition of Mixtures",
+    "stimulus": "",
+    "stem": "A student has a homogeneous mixture of water and ethanol. Which statement is most accurate?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "The mixture has a single fixed composition by mass.", "rationale": "Incorrect. Mixture composition can vary depending on how it was prepared."},
+      {"label": "B", "text": "The mixture can be separated by physical processes such as distillation.", "rationale": "Correct. Mixtures are separable by physical means; distillation exploits different boiling points."},
+      {"label": "C", "text": "The mixture must be a compound because it is homogeneous.", "rationale": "Incorrect. Homogeneity does not imply a compound; solutions can be homogeneous mixtures."},
+      {"label": "D", "text": "The mixture has a single boiling point like a pure substance.", "rationale": "Incorrect. Many liquid mixtures show a boiling range or depend on composition; not like a single pure substance in general."}
+    ]
+  },
+  {
+    "subsection": "1.4 Composition of Mixtures",
+    "stimulus": "",
+    "stem": "A solid mixture of iron filings and sand is separated using a magnet. The separation relies primarily on differences in which property?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "Magnetic behavior (physical property)", "rationale": "Correct. Magnetic separation exploits differences in magnetic response."},
+      {"label": "B", "text": "Chemical reactivity with oxygen", "rationale": "Incorrect. The described method does not require combustion or oxidation."},
+      {"label": "C", "text": "Molar mass", "rationale": "Incorrect. Molar mass is not what separates the solids in magnetism."},
+      {"label": "D", "text": "Solubility in water", "rationale": "Incorrect. No dissolution step is described; the magnet acts on iron directly."}
+    ]
+  },
+  {
+    "subsection": "1.4 Composition of Mixtures",
+    "stimulus": "",
+    "stem": "Which is a characteristic of a heterogeneous mixture?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "It must contain only one phase.", "rationale": "Incorrect. Heterogeneous mixtures often show distinct regions/phases."},
+      {"label": "B", "text": "It must be a pure element.", "rationale": "Incorrect. Elements are not mixtures."},
+      {"label": "C", "text": "Its composition can differ from one region to another.", "rationale": "Correct. Heterogeneity means non-uniform distribution at the macroscopic scale."},
+      {"label": "D", "text": "It has a fixed chemical formula.", "rationale": "Incorrect. Fixed formulas describe compounds, not mixtures."}
+    ]
+  },
+  {
+    "subsection": "1.5 Atomic Structure and Electron Configuration",
+    "stimulus": "",
+    "stem": "Which electron configuration corresponds to a neutral sulfur atom in the ground state (Z = 16)?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "1s²2s²2p⁶3s⁶", "rationale": "Incorrect. The 3s subshell holds at most 2 electrons."},
+      {"label": "B", "text": "1s²2s²2p⁶3s²3p²", "rationale": "Incorrect. This configuration has 14 electrons, not 16."},
+      {"label": "C", "text": "1s²2s²2p⁶3s²3p⁴", "rationale": "Correct. Sulfur has 16 electrons; filling through 3p⁴ matches the periodic position."},
+      {"label": "D", "text": "1s²2s²2p⁶3s²3d⁴", "rationale": "Incorrect. For Z = 16, the 3p subshell fills before 3d for the ground state."}
+    ]
+  },
+  {
+    "subsection": "1.5 Atomic Structure and Electron Configuration",
+    "stimulus": "",
+    "stem": "Which set of quantum numbers (n, l, ml, ms) is allowed for an electron in a many-electron atom?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "n = 2, l = 2, ml = 0, ms = +½", "rationale": "Incorrect. For n = 2, l can be 0 or 1 only (l must be less than n)."},
+      {"label": "B", "text": "n = 3, l = 2, ml = −1, ms = −½", "rationale": "Correct. l = 2 is allowed for n ≥ 3, ml ranges from −l to +l, and ms is ±½."},
+      {"label": "C", "text": "n = 4, l = 0, ml = 1, ms = +½", "rationale": "Incorrect. If l = 0, ml must be 0."},
+      {"label": "D", "text": "n = 2, l = 1, ml = −2, ms = +½", "rationale": "Incorrect. For l = 1, ml can only be −1, 0, or +1."}
+    ]
+  },
+  {
+    "subsection": "1.5 Atomic Structure and Electron Configuration",
+    "stimulus": "",
+    "stem": "Which orbital diagram rule explains why one fills 2p orbitals singly before pairing (for degenerate p orbitals)?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "Hund’s rule", "rationale": "Correct. Electrons occupy degenerate orbitals singly with parallel spins before pairing."},
+      {"label": "B", "text": "The Pauli exclusion principle", "rationale": "Incorrect. Pauli forbids two electrons with the same four quantum numbers in one orbital; it does not specify the order of filling separate degenerate orbitals."},
+      {"label": "C", "text": "The Aufbau principle", "rationale": "Incorrect. Aufbau describes subshell energy order (e.g., 4s before 3d), not pairing within a subshell."},
+      {"label": "D", "text": "Heisenberg uncertainty principle", "rationale": "Incorrect. This relates position and momentum uncertainty, not orbital filling patterns."}
+    ]
+  },
+  {
+    "subsection": "1.5 Atomic Structure and Electron Configuration",
+    "stimulus": "",
+    "stem": "How many unpaired electrons are in the ground-state configuration of a neutral chromium atom (Z = 24)?",
+    "correct": "D",
+    "options": [
+      {"label": "A", "text": "0", "rationale": "Incorrect. Chromium’s anomalous configuration leads to unpaired electrons."},
+      {"label": "B", "text": "1", "rationale": "Incorrect. There is more than one unpaired electron in the ground state."},
+      {"label": "C", "text": "4", "rationale": "Incorrect. This count does not match the common ground-state configuration for Cr."},
+      {"label": "D", "text": "6", "rationale": "Correct. Cr is commonly written as [Ar] 4s¹ 3d⁵, giving 6 unpaired electrons (one in 4s and five in 3d)."}
+    ]
+  },
+  {
+    "subsection": "1.6 Photoelectron Spectroscopy",
+    "stimulus": "The photoelectron spectrum of a neutral atom shows the lowest binding-energy peak corresponding to valence electrons and higher binding-energy peaks for core electrons.",
+    "stem": "Compared with core electrons, valence electrons typically appear at which position in the PES plot?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "Lower binding energy (closer to zero)", "rationale": "Correct. Valence electrons are less tightly held, so they require less energy to remove."},
+      {"label": "B", "text": "Higher binding energy", "rationale": "Incorrect. Higher binding energy corresponds to more tightly held electrons, usually core electrons."},
+      {"label": "C", "text": "The same binding energy as core electrons", "rationale": "Incorrect. Core and valence electrons differ greatly in binding energy."},
+      {"label": "D", "text": "Binding energy cannot be read from PES", "rationale": "Incorrect. PES directly reports electron binding energies."}
+    ]
+  },
+  {
+    "subsection": "1.6 Photoelectron Spectroscopy",
+    "stimulus": "",
+    "stem": "For a neutral atom in its ground state, which subshell typically has the greatest electron binding energy among the following?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "1s", "rationale": "Correct. Core 1s electrons are closest to the nucleus and are the hardest to remove, giving the highest binding energy."},
+      {"label": "B", "text": "2s", "rationale": "Incorrect. 2s is less tightly bound than 1s for the same element."},
+      {"label": "C", "text": "2p", "rationale": "Incorrect. 2p is generally less tightly bound than inner-shell 1s electrons."},
+      {"label": "D", "text": "3s", "rationale": "Incorrect. Valence 3s electrons are removed more easily than core 1s electrons."}
+    ]
+  },
+  {
+    "subsection": "1.6 Photoelectron Spectroscopy",
+    "stimulus": "",
+    "stem": "In many introductory PES plots, the relative size (integrated intensity) of a peak associated with a subshell is related most directly to which quantity?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "The speed of the ejected photoelectrons only", "rationale": "Incorrect. Speed relates to kinetic energy, not the number of electrons contributing to the signal."},
+      {"label": "B", "text": "The number of electrons occupying that subshell (under the same experimental conditions)", "rationale": "Correct. More electrons in a subshell generally produce a larger signal for that subshell."},
+      {"label": "C", "text": "The nuclear mass of the atom", "rationale": "Incorrect. Nuclear mass does not directly scale PES peak area in this way."},
+      {"label": "D", "text": "The number of neutrons in the nucleus", "rationale": "Incorrect. Neutron count does not determine peak area for electron spectroscopy in this context."}
+    ]
+  },
+  {
+    "subsection": "1.6 Photoelectron Spectroscopy",
+    "stimulus": "The photoelectron spectrum of boron shows peaks associated with binding energies for electron removal from the 1s, 2s, and 2p subshells.",
+    "stem": "Which of the following best explains how the spectrum is consistent with the electron shell model of the atom?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "The peaks show that only valence electrons are ejected, so inner-shell peaks should not appear.", "rationale": "Incorrect. PES can show peaks for core and valence subshells; inner-shell electrons appear at higher binding energies."},
+      {"label": "B", "text": "Distinct peaks at different binding energies reflect electrons organized in different shells and subshells, as described by the shell model.", "rationale": "Correct. Each subshell peak corresponds to a group of electrons with similar binding energy in that subshell."},
+      {"label": "C", "text": "All ejected photoelectrons must have the same kinetic energy, so multiple peaks contradict the experiment.", "rationale": "Incorrect. Different binding energies produce different kinetic energies for ejected electrons."},
+      {"label": "D", "text": "Equal peak areas for 1s, 2s, and 2p prove that each subshell holds the same number of electrons.", "rationale": "Incorrect. Peak areas relate to electron counts but are not generally equal across these subshells for boron."}
+    ]
+  },
+  {
+    "subsection": "1.7 Periodic Trends",
+    "stimulus": "",
+    "stem": "For the elements Na, Mg, and Al in Period 3, which ordering matches typical first ionization energies?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "Na < Mg < Al", "rationale": "Incorrect. Although IE generally increases across a period, Al’s first IE is lower than Mg’s because removing a 3p electron is easier than removing a 3s electron in Mg."},
+      {"label": "B", "text": "Na < Al < Mg", "rationale": "Correct. Na is lowest; Mg is highest among these three; Al falls between Na and Mg."},
+      {"label": "C", "text": "Na > Mg > Al", "rationale": "Incorrect. Sodium has the lowest first ionization energy in this set."},
+      {"label": "D", "text": "Na = Mg = Al", "rationale": "Incorrect. These are distinct elements with different effective nuclear charges and valence arrangements."}
+    ]
+  },
+  {
+    "subsection": "1.7 Periodic Trends",
+    "stimulus": "",
+    "stem": "Which atom has the larger atomic radius: K or Br?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "K", "rationale": "Correct. Potassium is farther left in Period 4 and has a larger radius than bromine on the right."},
+      {"label": "B", "text": "Br", "rationale": "Incorrect. Atomic radius decreases across a period due to increasing effective nuclear charge."},
+      {"label": "C", "text": "They are equal", "rationale": "Incorrect. Different positions in the period yield different radii."},
+      {"label": "D", "text": "Cannot be determined without molar mass", "rationale": "Incorrect. Periodic position determines the trend here."}
+    ]
+  },
+  {
+    "subsection": "1.7 Periodic Trends",
+    "stimulus": "",
+    "stem": "Which statement best explains why atomic radius increases down a group (e.g., Li to Cs)?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "Effective nuclear charge increases dramatically down the group.", "rationale": "Incorrect. Zeff trends are not the primary reason radius increases down a group; additional electron shells dominate."},
+      {"label": "B", "text": "Electronegativity increases down the group.", "rationale": "Incorrect. Electronegativity generally decreases down a group."},
+      {"label": "C", "text": "Additional occupied principal energy levels increase electron shielding and distance from the nucleus.", "rationale": "Correct. Each step down adds a shell, increasing atomic size."},
+      {"label": "D", "text": "The number of protons decreases down the group.", "rationale": "Incorrect. Proton number increases down the group."}
+    ]
+  },
+  {
+    "subsection": "1.7 Periodic Trends",
+    "stimulus": "",
+    "stem": "Which pair shows the correct trend in electronegativity?",
+    "correct": "D",
+    "options": [
+      {"label": "A", "text": "F < O < N", "rationale": "Incorrect. Fluorine is the most electronegative element; F should be greatest."},
+      {"label": "B", "text": "Cl > F", "rationale": "Incorrect. F is more electronegative than Cl."},
+      {"label": "C", "text": "Na > S", "rationale": "Incorrect. Sodium is a metal with low electronegativity compared with sulfur."},
+      {"label": "D", "text": "O > Se", "rationale": "Correct. Electronegativity decreases down a group; oxygen is above selenium."}
+    ]
+  },
+  {
+    "subsection": "1.8 Valence Electrons and Ionic Compounds",
+    "stimulus": "",
+    "stem": "How many valence electrons does a neutral phosphorus atom (P) have in its ground state?",
+    "correct": "B",
+    "options": [
+      {"label": "A", "text": "3", "rationale": "Incorrect. Phosphorus is in group 15; valence electrons include all s and p electrons in the highest n."},
+      {"label": "B", "text": "5", "rationale": "Correct. P has the configuration [Ne] 3s²3p³, giving five valence electrons."},
+      {"label": "C", "text": "15", "rationale": "Incorrect. 15 is the atomic number (total electrons), not valence count."},
+      {"label": "D", "text": "2", "rationale": "Incorrect. That would ignore the p electrons in the valence shell."}
+    ]
+  },
+  {
+    "subsection": "1.8 Valence Electrons and Ionic Compounds",
+    "stimulus": "",
+    "stem": "What is the most likely formula for the ionic compound formed between calcium and chlorine?",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "CaCl", "rationale": "Incorrect. Charges Ca²⁺ and Cl⁻ require two chloride ions for charge balance."},
+      {"label": "B", "text": "CaCl₃", "rationale": "Incorrect. This implies Ca³⁺ or inconsistent charges for a typical ionic compound of Ca and Cl."},
+      {"label": "C", "text": "CaCl₂", "rationale": "Correct. Ca²⁺ combines with two Cl⁻ ions to give a neutral compound."},
+      {"label": "D", "text": "Ca₂Cl", "rationale": "Incorrect. This does not reflect the 2+ and 1− charge ratio correctly."}
+    ]
+  },
+  {
+    "subsection": "1.8 Valence Electrons and Ionic Compounds",
+    "stimulus": "",
+    "stem": "Which Lewis structure best represents the formation of Na⁺ and Cl⁻ from Na and Cl atoms?",
+    "correct": "A",
+    "options": [
+      {"label": "A", "text": "Na donates one valence electron to Cl, producing Na⁺ and Cl⁻.", "rationale": "Correct. Sodium loses one electron to achieve a noble-gas-like configuration; chloride gains one electron."},
+      {"label": "B", "text": "Na shares two electrons with Cl to form a double bond.", "rationale": "Incorrect. Ionic bonding involves electron transfer, not covalent sharing in this classic NaCl case."},
+      {"label": "C", "text": "Cl donates an electron to Na, producing Na⁻ and Cl⁺.", "rationale": "Incorrect. Chlorine has higher electron affinity than sodium; electron transfer goes from Na to Cl."},
+      {"label": "D", "text": "Na and Cl remain neutral atoms in the solid lattice.", "rationale": "Incorrect. The ionic compound contains ions, not neutral atoms."}
+    ]
+  },
+  {
+    "subsection": "1.8 Valence Electrons and Ionic Compounds",
+    "stimulus": "",
+    "stem": "How many electrons does a sulfide ion, S²⁻, have in the ground state? (Sulfur has atomic number 16.)",
+    "correct": "C",
+    "options": [
+      {"label": "A", "text": "16", "rationale": "Incorrect. 16 is the electron count for a neutral sulfur atom."},
+      {"label": "B", "text": "17", "rationale": "Incorrect. Gaining one electron would give 17; sulfide has gained two electrons."},
+      {"label": "C", "text": "18", "rationale": "Correct. A neutral sulfur atom has 16 electrons; adding two electrons gives 18 electrons in S²⁻."},
+      {"label": "D", "text": "32", "rationale": "Incorrect. This confuses mass number with electron count."}
+    ]
+  }
+]

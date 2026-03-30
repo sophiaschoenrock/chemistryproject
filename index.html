@@ -3,90 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chemistry Study Site</title>
+  <meta name="description" content="AP Chemistry Unit 1 practice — Atomic Structure and Properties. Multiple choice with explanations." />
+  <title>AP Chemistry Unit 1 | Atomic Structure &amp; Properties</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
-      <h1 class="logo">Chemistry Study Site</h1>
-      <nav aria-label="Main navigation">
+      <a class="logo" href="index.html">AP Chem · Unit 1</a>
+      <nav aria-label="Main">
         <ul class="nav-list">
-          <li><a href="#topics">Topics</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#start">Start Studying</a></li>
+          <li><a href="index.html#outline">Curriculum</a></li>
+          <li><a href="quiz.html">Practice Quiz</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
-      <div class="container hero-content">
-        <h2>Master Chemistry One Concept at a Time</h2>
-        <p>
-          Learn core chemistry concepts with clear notes, visual summaries,
-          and practice prompts designed for fast revision.
+      <div class="container hero-inner">
+        <p class="eyebrow">Course and Exam Description · Unit 1</p>
+        <h1>Atomic Structure and Properties</h1>
+        <p class="lede">
+          Work through AP-style four-option multiple choice with a stimulus when given, then review
+          a full rationale for every answer choice—similar to the feedback loop you use in AP Classroom.
         </p>
-        <a id="start" class="btn-primary" href="#topics">Explore Topics</a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="quiz.html">Start practice quiz</a>
+          <a class="btn btn-ghost" href="index.html#outline">Browse topics</a>
+        </div>
+        <p class="fine-print">
+          Items are original practice written for this site; they are not copied from secure College Board exams.
+          Also available: <code>mvn exec:java</code> in this repo for the Java version.
+        </p>
       </div>
     </section>
 
-    <section id="topics" class="section">
+    <section id="outline" class="section">
       <div class="container">
-        <h3>Core Topics</h3>
-        <div class="card-grid">
-          <article class="card">
-            <h4>Atomic Structure</h4>
-            <p>Understand protons, neutrons, electrons, and isotopes.</p>
-          </article>
-          <article class="card">
-            <h4>Periodic Trends</h4>
-            <p>Review electronegativity, atomic radius, and ionization energy.</p>
-          </article>
-          <article class="card">
-            <h4>Chemical Bonding</h4>
-            <p>Compare ionic, covalent, and metallic bonding with examples.</p>
-          </article>
-          <article class="card">
-            <h4>Stoichiometry</h4>
-            <p>Practice mole conversions and balanced equation calculations.</p>
-          </article>
-          <article class="card">
-            <h4>Acids and Bases</h4>
-            <p>Learn pH, pOH, and strong versus weak acid-base behavior.</p>
-          </article>
-          <article class="card">
-            <h4>Thermochemistry</h4>
-            <p>Study energy changes, enthalpy, and calorimetry basics.</p>
-          </article>
+        <h2>Unit 1 outline</h2>
+        <p class="section-intro">
+          Each topic below links to the quiz filtered to that subsection. The full bank is also available as a shuffled set.
+        </p>
+        <div class="topic-grid">
+          <a class="topic-card" href="quiz.html?section=1.1">
+            <span class="topic-id">1.1</span>
+            <span class="topic-title">Moles and Molar Mass</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.2">
+            <span class="topic-id">1.2</span>
+            <span class="topic-title">Mass Spectra of Elements</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.3">
+            <span class="topic-id">1.3</span>
+            <span class="topic-title">Elemental Composition of Pure Substances</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.4">
+            <span class="topic-id">1.4</span>
+            <span class="topic-title">Composition of Mixtures</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.5">
+            <span class="topic-id">1.5</span>
+            <span class="topic-title">Atomic Structure and Electron Configuration</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.6">
+            <span class="topic-id">1.6</span>
+            <span class="topic-title">Photoelectron Spectroscopy</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.7">
+            <span class="topic-id">1.7</span>
+            <span class="topic-title">Periodic Trends</span>
+          </a>
+          <a class="topic-card" href="quiz.html?section=1.8">
+            <span class="topic-id">1.8</span>
+            <span class="topic-title">Valence Electrons and Ionic Compounds</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="resources" class="section section-alt">
+    <section class="section section-muted">
       <div class="container split">
         <div>
-          <h3>Study Resources</h3>
-          <ul class="resource-list">
-            <li>Quick formula reference sheets</li>
-            <li>Short concept summaries</li>
-            <li>Practice question sets</li>
-            <li>Revision checklists for exams</li>
-          </ul>
+          <h2>How the quiz works</h2>
+          <ol class="steps">
+            <li>Choose a topic filter or practice the full unit (shuffled).</li>
+            <li>Select A–D, then check your answer.</li>
+            <li>Read rationales for all four choices to reinforce the reasoning AP rewards.</li>
+          </ol>
         </div>
-        <aside class="quiz-box">
-          <h4>Quick Self-Check</h4>
-          <p>Challenge yourself with 5-minute mixed-topic quizzes.</p>
-          <button class="btn-secondary" type="button">Start Quiz</button>
+        <aside class="callout">
+          <h3>Local preview</h3>
+          <p>
+            To view this site from disk with JSON loading, run a tiny server in the project folder, for example:
+          </p>
+          <code class="code-block">python3 -m http.server 8080</code>
+          <p class="fine-print">Then open <code>http://localhost:8080</code>. GitHub Pages serves the same files without extra setup.</p>
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>Built for focused chemistry revision.</p>
+    <div class="container footer-inner">
+      <p>AP Chemistry Unit 1 practice site</p>
+      <p><a href="quiz.html">Practice quiz</a></p>
     </div>
   </footer>
 </body>

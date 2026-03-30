@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Quiz | AP Chemistry Unit 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-quiz">
+  <a class="skip-link" href="#quiz-app">Skip to quiz</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AP Chem · Unit 1</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quiz.html" aria-current="page">Practice Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container quiz-layout" id="main">
+    <div class="quiz-toolbar">
+      <div>
+        <h1 class="quiz-title">Multiple choice practice</h1>
+        <p id="quiz-scope" class="quiz-scope">Loading…</p>
+      </div>
+      <div class="toolbar-actions">
+        <label class="sr-only" for="section-select">Topic</label>
+        <select id="section-select" class="select-input" aria-label="Filter by topic">
+          <option value="all">All topics (shuffled)</option>
+          <option value="1.1">1.1 Moles and Molar Mass</option>
+          <option value="1.2">1.2 Mass Spectra of Elements</option>
+          <option value="1.3">1.3 Elemental Composition</option>
+          <option value="1.4">1.4 Composition of Mixtures</option>
+          <option value="1.5">1.5 Electron Configuration</option>
+          <option value="1.6">1.6 Photoelectron Spectroscopy</option>
+          <option value="1.7">1.7 Periodic Trends</option>
+          <option value="1.8">1.8 Valence &amp; Ionic Compounds</option>
+        </select>
+        <button type="button" class="btn btn-secondary" id="btn-restart">New session</button>
+      </div>
+    </div>
+
+    <div id="quiz-error" class="panel panel-error hidden" role="alert"></div>
+
+    <div id="quiz-app" class="quiz-app" hidden>
+      <div class="progress-row">
+        <span id="quiz-progress">Question 1 of 1</span>
+        <span id="quiz-score" class="score-pill" aria-live="polite">0 correct</span>
+      </div>
+
+      <article class="question-card" aria-live="polite">
+        <div id="stimulus-wrap" class="stimulus hidden">
+          <p class="stimulus-label">Information</p>
+          <div id="stimulus-text" class="stimulus-text"></div>
+        </div>
+        <p id="stem-text" class="stem"></p>
+        <fieldset class="options-fieldset">
+          <legend class="sr-only">Answer choices</legend>
+          <div id="options-wrap" class="options"></div>
+        </fieldset>
+        <div class="question-actions">
+          <button type="button" class="btn btn-primary" id="btn-check">Check answer</button>
+          <button type="button" class="btn btn-ghost" id="btn-next" disabled>Next question</button>
+        </div>
+      </article>
+
+      <section id="feedback-panel" class="feedback-panel hidden" aria-hidden="true">
+        <h2 class="feedback-heading">Answer review</h2>
+        <p id="feedback-result" class="feedback-result"></p>
+        <p id="correct-line-wrap" class="correct-line">Correct answer: <strong id="correct-label"></strong></p>
+        <div id="rationales" class="rationales"></div>
+      </section>
+
+      <section id="complete-panel" class="complete-panel hidden">
+        <h2>Session complete</h2>
+        <p id="complete-summary"></p>
+        <button type="button" class="btn btn-primary" id="btn-again">Practice again</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><a href="index.html">Home</a></p>
+    </div>
+  </footer>
+  <script src="quiz.js" defer></script>
+</body>
+</html>
