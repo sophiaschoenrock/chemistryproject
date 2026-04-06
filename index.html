@@ -1,45 +1,75 @@
 <!DOCTYPE html>
+<!-- Line 1: HTML5 doctype tells the browser to use the modern HTML standard. -->
 <!--
-  index.html — Landing page: hero, topic grid (links to quiz.html?section=1.x), footer.
-  index.js loads questions.json and fills .topic-meta with per-topic question counts.
+  Lines 2–5: Developer-facing comment explaining this file at a high level.
+  - index.html is the public landing page for AP Chemistry Unit 1.
+  - The hero introduces the unit and links to the quiz.
+  - The topic grid links to filtered quizzes (quiz.html?section=1.x).
+  - index.js enhances the grid by loading questions.json and filling the
+    small \"N questions\" subtitles under each topic.
 -->
 <html lang="en">
+  <!-- Line 6: Root element; lang=\"en\" communicates that the document is English for accessibility and search. -->
 <head>
+  <!-- Line 8: charset=utf-8 so special characters (×, ·, em-dash) render correctly. -->
   <meta charset="UTF-8" />
+  <!-- Line 9: viewport meta for responsive layout on phones and tablets. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Line 10: Short description used by search engines and when linking the page. -->
   <meta name="description" content="AP Chemistry Unit 1 practice — Atomic Structure and Properties. Multiple choice with explanations." />
+  <!-- Line 11: Browser tab title. Shows in history, bookmarks, and search results. -->
   <title>AP Chemistry Unit 1 | Atomic Structure &amp; Properties</title>
+  <!-- Line 12: Link in the compiled CSS that controls layout and typography for the whole site. -->
   <link rel="stylesheet" href="styles.css" />
+  <!-- Line 13: Favicon for browser tab and bookmarks; SVG icon that matches the site's visual identity. -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 </head>
 <body>
+  <!-- Line 16: \"Skip to content\" link lets keyboard/screen-reader users jump over repeated nav to the main content. -->
   <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Lines 17–28: Site-wide header, reused on notes.html and quiz.html. Contains the logo and global navigation. -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Line 19: Logo that doubles as a home link; clicking returns to this page. -->
       <a class="logo" href="index.html">AP Chem · Unit 1</a>
+      <!-- Line 20: nav landmark with aria-label so assistive tech knows this is the main navigation. -->
       <nav aria-label="Main">
+        <!-- Line 21: Unordered list of navigation items laid out horizontally by styles.css. -->
         <ul class="nav-list">
+          <!-- Line 22: Link to the outline section on this same page (#outline anchor). -->
           <li><a href="index.html#outline">Curriculum</a></li>
+          <!-- Line 23: Link to the static notes page that explains each Unit 1 concept in prose. -->
           <li><a href="notes.html">Notes</a></li>
+          <!-- Line 24: Link to the interactive quiz page (quiz.html). -->
           <li><a href="quiz.html">Practice Quiz</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- Lines 30–120: Main content of the landing page. id=\"main\" matches the skip-link target. -->
   <main id="main">
+    <!-- Lines 31–48: Hero section introducing the unit and primary calls to action. -->
     <section class="hero">
+      <!-- hero-inner constrains width and applies hero-specific spacing from styles.css. -->
       <div class="container hero-inner">
+        <!-- Line 33: Small uppercase label showing this is Unit 1 of the CED. -->
         <p class="eyebrow">Course and Exam Description · Unit 1</p>
+        <!-- Line 34: Main page heading; describes the topical focus of this practice site. -->
         <h1>Atomic Structure and Properties</h1>
+        <!-- Lines 35–38: Lead paragraph that explains how the quiz experience works. -->
         <p class="lede">
           Work through AP-style four-option multiple choice with a stimulus when given, then review
           a full rationale for every answer choice—similar to the feedback loop you use in AP Classroom.
         </p>
+        <!-- Lines 39–42: Primary and secondary actions for the hero. -->
         <div class="hero-actions">
+          <!-- Line 40: Primary button to jump directly into the quiz covering all topics. -->
           <a class="btn btn-primary" href="quiz.html">Start practice quiz</a>
+          <!-- Line 41: Secondary button to scroll to the outline section below. -->
           <a class="btn btn-ghost" href="index.html#outline">Browse topics</a>
         </div>
+        <!-- Lines 43–46: Fine-print paragraph clarifying question origin and mentioning the Java version. -->
         <p class="fine-print">
           Items are original practice written for this site; they are not copied from secure College Board exams.
           Also available: <code>mvn exec:java</code> in this repo for the Java version.
@@ -47,16 +77,27 @@
       </div>
     </section>
 
+    <!-- Lines 50–99: Outline section listing each Unit 1 topic as a card that links to filtered practice. -->
     <section id="outline" class="section">
       <div class="container">
+        <!-- Line 52: Section heading for the Unit 1 outline. -->
         <h2>Unit 1 outline</h2>
+        <!-- Lines 53–55: Intro text explaining what the topic cards do. -->
         <p class="section-intro">
           Each topic below links to the quiz filtered to that subsection. The full bank is also available as a shuffled set.
         </p>
+        <!-- Lines 56–97: Card grid containing one card per AP Chemistry Unit 1 subsection (1.1–1.8). -->
         <div class="topic-grid">
+          <!--
+            Each topic-card anchor has:
+            - href=\"quiz.html?section=1.x\" so quiz.html can read the ?section= param and filter questions.
+            - data-section=\"1.x\" so index.js can count questions per subsection and write \"N questions\".
+            - Inside: topic-id (numerical code), topic-title (text label), topic-meta (count placeholder).
+          -->
           <a class="topic-card" href="quiz.html?section=1.1" data-section="1.1">
             <span class="topic-id">1.1</span>
             <span class="topic-title">Moles and Molar Mass</span>
+            <!-- topic-meta starts empty; index.js fills it with \"N questions\" from questions.json. -->
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
           <a class="topic-card" href="quiz.html?section=1.2" data-section="1.2">
@@ -98,8 +139,10 @@
       </div>
     </section>
 
+    <!-- Lines 101–120: Explanation section describing how the quiz behaves and how to preview locally. -->
     <section class="section section-muted">
       <div class="container split">
+        <!-- Lines 103–109: Text column giving a high-level overview of quiz flow. -->
         <div>
           <h2>How the quiz works</h2>
           <ol class="steps">
@@ -108,26 +151,32 @@
             <li>Read rationales for all four choices to reinforce the reasoning AP rewards.</li>
           </ol>
         </div>
+        <!-- Lines 111–118: Aside describing how to run a simple local web server. -->
         <aside class="callout">
           <h3>Local preview</h3>
           <p>
             To view this site from disk with JSON loading, run a tiny server in the project folder, for example:
           </p>
+          <!-- Line 116: Command students can type to serve the current folder over HTTP on port 8080. -->
           <code class="code-block">python3 -m http.server 8080</code>
+          <!-- Line 117: Explains that GitHub Pages serves the same files so behavior is consistent. -->
           <p class="fine-print">Then open <code>http://localhost:8080</code>. GitHub Pages serves the same files without extra setup.</p>
         </aside>
       </div>
     </section>
   </main>
 
+  <!-- Lines 123–128: Footer repeated at the bottom of each page. -->
   <footer class="site-footer">
     <div class="container footer-inner">
+      <!-- Line 125: Simple text identifying the site. -->
       <p>AP Chemistry Unit 1 practice site</p>
+      <!-- Line 126: Convenience links back to Notes and the quiz page. -->
       <p><a href="notes.html">Notes</a> · <a href="quiz.html">Practice quiz</a></p>
     </div>
   </footer>
 
-  <!-- defer: runs after HTML is parsed; see index.js for question-count logic. -->
+  <!-- Line 130: Explanation that index.js is deferred until after HTML parsing, and that it handles question counts. -->
   <script src="index.js" defer></script>
 </body>
 </html>
