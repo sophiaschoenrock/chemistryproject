@@ -1,168 +1,211 @@
+// =============================================================================
+// quiz.js — Interactive AP Unit 1 multiple-choice page (quiz.html)
+// Runs in the browser only. No bundler; modern ES (const/let, fetch) is fine for target browsers.
+//
+// Execution flow (high level):
+//   init() runs on load → syncSelectFromUrl() applies ?section= from links → loadQuestions()
+//   fetches questions.json → startSession() builds session array + calls renderQuestion().
+//   User: Check → checkAnswer() (show rationales) → Next → nextQuestion() or finish().
+//   Dropdown / Restart / Again → startSession() again. Missing DOM ids → init() exits early.
+// Data: each question matches questions.json — subsection, stimulus, stem, correct, options[].
+// =============================================================================
+
 (function () {
+  // Wrap all code in an IIFE (Immediately Invoked Function Expression) so no
+  // `const`/`let`/`function` names leak into the global `window` object.
+
   "use strict";
+  // Enable strict mode: catches silent errors (e.g. assigning to undeclared vars)
+  // and disables some legacy sloppy behaviors.
+
+  // This file intentionally uses plain (framework-free) JavaScript so it can run on
+  // GitHub Pages with zero build steps.
 
   /**
+   * JSDoc types for editors (VS Code / Cursor) — not enforced at runtime.
+   * Option: one answer choice (A–D) with text and explanation string.
+   * Question: one MCQ item as stored in questions.json.
    * @typedef {{ label: string, text: string, rationale: string }} Option
-   * @typedef {{ subsection: string, stimulus: string, stem: string, correct: string, options: Option[] }} Question
+   * @typedef {{ subsection: string, stimulus: string, stem: string, correct: string, options: Array<Option> }} Question
    */
 
+  // Cache references to DOM nodes once at load time (faster than repeated getElementById).
+  // If quiz.html is missing an id, the value is `null` — init() checks before use.
   const els = {
-    error: document.getElementById("quiz-error"),
-    app: document.getElementById("quiz-app"),
-    scope: document.getElementById("quiz-scope"),
-    sectionSelect: document.getElementById("section-select"),
-    progress: document.getElementById("quiz-progress"),
-    score: document.getElementById("quiz-score"),
-    stimulusWrap: document.getElementById("stimulus-wrap"),
-    stimulusText: document.getElementById("stimulus-text"),
-    stemText: document.getElementById("stem-text"),
-    optionsWrap: document.getElementById("options-wrap"),
-    btnCheck: document.getElementById("btn-check"),
-    btnNext: document.getElementById("btn-next"),
-    btnRestart: document.getElementById("btn-restart"),
-    feedbackPanel: document.getElementById("feedback-panel"),
-    feedbackResult: document.getElementById("feedback-result"),
-    correctLabel: document.getElementById("correct-label"),
-    rationales: document.getElementById("rationales"),
-    completePanel: document.getElementById("complete-panel"),
-    completeSummary: document.getElementById("complete-summary"),
-    btnAgain: document.getElementById("btn-again"),
+    error: document.getElementById("quiz-error"), // Red error banner when JSON fails to load
+    app: document.getElementById("quiz-app"), // Main quiz UI wrapper (hidden until data loads)
+    scope: document.getElementById("quiz-scope"), // Subtitle: current filter / topic description
+    sectionSelect: document.getElementById("section-select"), // Dropdown: all topics or 1.1–1.8
+    progress: document.getElementById("quiz-progress"), // "Question i of n" text
+    score: document.getElementById("quiz-score"), // Running count of correct answers
+    stimulusWrap: document.getElementById("stimulus-wrap"), // Container for optional passage (hidden if empty)
+    stimulusText: document.getElementById("stimulus-text"), // Passage / figure description text
+    stemText: document.getElementById("stem-text"), // The actual question sentence
+    optionsWrap: document.getElementById("options-wrap"), // Parent for four radio + label rows
+    btnCheck: document.getElementById("btn-check"), // Submits the selected answer for grading
+    btnNext: document.getElementById("btn-next"), // Advances after feedback is shown
+    btnRestart: document.getElementById("btn-restart"), // Starts a new session with current filter
+    feedbackPanel: document.getElementById("feedback-panel"), // Correct/incorrect + rationales block
+    feedbackResult: document.getElementById("feedback-result"), // "Correct." or "Incorrect." line
+    correctLabel: document.getElementById("correct-label"), // Letter of the keyed correct answer
+    rationales: document.getElementById("rationales"), // Container for four rationale paragraphs
+    completePanel: document.getElementById("complete-panel"), // End-of-session summary (hidden until done)
+    completeSummary: document.getElementById("complete-summary"), // Score sentence at end
+    btnAgain: document.getElementById("btn-again"), // "Practice again" after session complete
   };
 
   /** @type {Question[]} */
-  let allQuestions = [];
+  let allQuestions = []; // Full array parsed from questions.json (never mutated in place for filters)
   /** @type {Question[]} */
-  let session = [];
-  let index = 0;
-  let correctCount = 0;
-  let selected = null;
-  let answered = false;
+  let session = []; // Current quiz run: either shuffled copy of all, or filtered list in file order
+  let index = 0; // Zero-based index into `session` for the question currently shown
+  let correctCount = 0; // Number of questions answered correctly this session (incremented on check)
+  let selected = null; // String "A"|"B"|"C"|"D" from the chosen radio, or null if none chosen
+  let answered = false; // True after "Check answer" for current question; locks radios until Next
 
   function shuffle(array) {
-    const a = array.slice();
+    // Fisher–Yates shuffle to randomize practice order without bias.
+    const a = array.slice(); // Copy so we never mutate the caller's array
     for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+      // i walks from last index down to 1
+      const j = Math.floor(Math.random() * (i + 1)); // Random index from 0..i inclusive
+      [a[i], a[j]] = [a[j], a[i]]; // Swap elements at i and j using destructuring assignment
     }
-    return a;
+    return a; // New order; original `array` argument unchanged
   }
 
   function getParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
+    const params = new URLSearchParams(window.location.search); // Parse ?section=1.1&foo=bar
+    return params.get(name); // Returns string or null if key missing
   }
 
   function filterBySection(qs, section) {
-    if (!section || section === "all") return qs.slice();
-    return qs.filter((q) => q.subsection.startsWith(section));
+    // We keep the filter string-based so URLs like `?section=1.6` work without
+    // maintaining a separate ID system. It relies on `q.subsection` starting with "1.x".
+    if (!section || section === "all") return qs.slice(); // Clone full list (no filter)
+    return qs.filter(
+      (q) => typeof q.subsection === "string" && q.subsection.startsWith(section)
+    ); // e.g. "1.6 ..." matches prefix "1.6"
   }
 
   function setScopeLabel(section) {
-    if (!els.scope) return;
+    if (!els.scope) return; // No DOM node — nothing to update
     if (!section || section === "all") {
-      els.scope.textContent = "All Unit 1 topics · order shuffled";
+      els.scope.textContent = "All Unit 1 topics · order shuffled"; // User-facing description
       return;
     }
-    const first = session[0];
-    els.scope.textContent = first ? first.subsection : "Topic filter";
+    const first = session[0]; // First question in filtered list (subsection string is full title)
+    els.scope.textContent = first ? first.subsection : "Topic filter"; // Fallback if empty
   }
 
   function showError(msg) {
-    if (els.error) els.error.textContent = msg;
-    if (els.error) els.error.classList.remove("hidden");
-    if (els.app) els.app.hidden = true;
+    // If the site is opened via `file://`, browsers block fetch() of questions.json.
+    // We fail gracefully and show a message with the fix (run a local server).
+    if (els.error) els.error.textContent = msg; // Visible error text for the user
+    if (els.error) els.error.classList.remove("hidden"); // Unhide the error panel (CSS .hidden)
+    if (els.app) els.app.hidden = true; // Hide main quiz so user doesn't see broken UI
   }
 
   function loadQuestions() {
-    const url = "questions.json";
-    return fetch(url)
+    const url = "questions.json"; // Must live next to quiz.html on the server
+    return fetch(url) // Returns a Promise<Response>
       .then((r) => {
-        if (!r.ok) throw new Error("Could not load questions.json");
-        return r.json();
+        if (!r.ok) throw new Error("Could not load questions.json"); // 404 / network error
+        return r.json(); // Parse body as JSON → Promise<any>
       })
       .then((data) => {
-        allQuestions = data;
+        // Expected shape: an array of Question objects. We validate lightly at runtime
+        // because this is static JS (no build-time typechecking).
+        if (!Array.isArray(data)) throw new Error("questions.json must be a JSON array");
+        allQuestions = data; // Assign global (within IIFE) question bank
       });
   }
 
   function startSession() {
-    const section = els.sectionSelect.value;
-    const qs = filterBySection(allQuestions, section);
+    // A "session" is the working set of questions the student will see this run:
+    // either all topics shuffled, or a single subsection in listed order.
+    const section = els.sectionSelect.value; // Current dropdown value: "all" or "1.1" … "1.8"
+    const qs = filterBySection(allQuestions, section); // Subset or full list
     if (qs.length === 0) {
-      showError("No questions for this filter.");
+      showError("No questions for this filter."); // Should not happen if JSON matches UI
       return;
     }
-    session = section === "all" ? shuffle(qs) : qs.slice();
-    index = 0;
-    correctCount = 0;
-    answered = false;
-    selected = null;
-    if (els.error) els.error.classList.add("hidden");
-    if (els.app) els.app.hidden = false;
-    if (els.completePanel) els.completePanel.classList.add("hidden");
+    session = section === "all" ? shuffle(qs) : qs.slice(); // Shuffled vs stable order from JSON
+    index = 0; // Start at first question
+    correctCount = 0; // Reset score for new session
+    answered = false; // User has not checked an answer yet on Q1
+    selected = null; // No radio selected yet
+    if (els.error) els.error.classList.add("hidden"); // Clear any previous load error state
+    if (els.app) els.app.hidden = false; // Show quiz UI
+    if (els.completePanel) els.completePanel.classList.add("hidden"); // Hide end screen if restarting
     if (els.feedbackPanel) {
-      els.feedbackPanel.classList.add("hidden");
-      els.feedbackPanel.setAttribute("aria-hidden", "true");
+      els.feedbackPanel.classList.add("hidden"); // Hide previous question's feedback
+      els.feedbackPanel.setAttribute("aria-hidden", "true"); // Assistive tech: panel not visible
     }
-    setScopeLabel(section);
-    renderQuestion();
-    updateScore();
+    setScopeLabel(section); // Update subtitle under the page title
+    renderQuestion(); // Paint first question
+    updateScore(); // Show "0 correct"
   }
 
   function renderQuestion() {
-    const q = session[index];
-    if (!q) return;
-    if (!els.progress || !els.stemText || !els.optionsWrap || !els.btnCheck || !els.btnNext) return;
+    const q = session[index]; // Current question object
+    if (!q) return; // Safety: no question at this index
+    if (!els.progress || !els.stemText || !els.optionsWrap || !els.btnCheck || !els.btnNext) return; // Missing DOM
 
-    els.progress.textContent = `Question ${index + 1} of ${session.length}`;
+    // Render stimulus (if present), stem, then four A–D choices.
+    els.progress.textContent = `Question ${index + 1} of ${session.length}`; // 1-based display for humans
     if (q.stimulus && q.stimulus.trim()) {
-      if (els.stimulusWrap) els.stimulusWrap.classList.remove("hidden");
-      if (els.stimulusText) els.stimulusText.textContent = q.stimulus.trim();
+      if (els.stimulusWrap) els.stimulusWrap.classList.remove("hidden"); // Show stimulus box
+      if (els.stimulusText) els.stimulusText.textContent = q.stimulus.trim(); // Passage text
     } else {
-      if (els.stimulusWrap) els.stimulusWrap.classList.add("hidden");
-      if (els.stimulusText) els.stimulusText.textContent = "";
+      if (els.stimulusWrap) els.stimulusWrap.classList.add("hidden"); // Collapse stimulus area
+      if (els.stimulusText) els.stimulusText.textContent = ""; // Clear old text
     }
-    els.stemText.textContent = q.stem;
+    els.stemText.textContent = q.stem; // Question stem (plain text, no HTML)
 
-    els.optionsWrap.innerHTML = "";
+    els.optionsWrap.innerHTML = ""; // Remove previous question's radios (avoids duplicate listeners)
     q.options.forEach((opt) => {
-      const id = `opt-${opt.label}` + "-" + index;
-      const row = document.createElement("label");
-      row.className = "option-row";
-      row.setAttribute("for", id);
+      const id = `opt-${opt.label}` + "-" + index; // Unique id per question index (avoid duplicate ids)
+      const row = document.createElement("label"); // Clicking label toggles associated radio
+      row.className = "option-row"; // CSS flex row for radio + text
+      row.setAttribute("for", id); // Associates label with input#id
       const radio = document.createElement("input");
-      radio.type = "radio";
-      radio.name = "answer";
-      radio.value = opt.label;
-      radio.id = id;
-      radio.disabled = answered;
+      radio.type = "radio"; // Mutually exclusive within name="answer"
+      radio.name = "answer"; // Same name → only one selected at a time
+      radio.value = opt.label; // "A" | "B" | "C" | "D"
+      radio.id = id; // Matches label[for]
+      radio.disabled = answered; // After check, radios stay disabled until Next clears state
       const span = document.createElement("span");
-      span.className = "option-text";
-      span.innerHTML = `<span class="opt-letter">${opt.label}</span> ${escapeHtml(opt.text)}`;
+      span.className = "option-text"; // Styles choice text next to radio
+      span.innerHTML = `<span class="opt-letter">${opt.label}</span> ${escapeHtml(opt.text)}`; // Letter bold + escaped text
       row.appendChild(radio);
       row.appendChild(span);
       els.optionsWrap.appendChild(row);
     });
 
-    els.btnCheck.disabled = answered;
-    els.btnNext.disabled = !answered;
+    els.btnCheck.disabled = answered; // Can't re-check until new question (answered false here)
+    els.btnNext.disabled = !answered; // Can't advance until after Check sets answered=true
     if (els.feedbackPanel) {
-      els.feedbackPanel.classList.add("hidden");
+      els.feedbackPanel.classList.add("hidden"); // Hide feedback while viewing new question
       els.feedbackPanel.setAttribute("aria-hidden", "true");
     }
 
     if (!answered) {
+      // Keep state in `selected` rather than reading the DOM later. This makes the
+      // check/next logic simpler and avoids querySelector pitfalls.
       els.optionsWrap.querySelectorAll('input[type="radio"]').forEach((r) => {
         r.addEventListener("change", () => {
-          selected = r.value;
+          selected = r.value; // Store "A" etc. when user picks an option
         });
       });
     }
   }
 
   function escapeHtml(s) {
+    // Prevent HTML injection since option text is inserted via innerHTML to preserve
+    // simple formatting like subscripts (if you choose to add them later).
     return s
-      .replace(/&/g, "&amp;")
+      .replace(/&/g, "&amp;") // Must be first so we don't double-escape entities
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
@@ -171,37 +214,48 @@
   function checkAnswer() {
     const q = session[index];
     if (!q) return;
+    if (
+      !els.feedbackPanel ||
+      !els.feedbackResult ||
+      !els.correctLabel ||
+      !els.rationales ||
+      !els.optionsWrap
+    ) {
+      return;
+    }
     if (!selected) {
+      // User clicked Check without choosing — show prompt only, no grading
       els.feedbackResult.textContent = "Select an answer before checking.";
       els.correctLabel.textContent = "";
       els.rationales.innerHTML = "";
       const wrap = document.getElementById("correct-line-wrap");
-      if (wrap) wrap.classList.add("hidden");
+      if (wrap) wrap.classList.add("hidden"); // Hide "Correct answer: X" row for this edge case
       els.feedbackPanel.classList.remove("hidden");
       els.feedbackPanel.setAttribute("aria-hidden", "false");
       return;
     }
-    answered = true;
-    const ok = selected === q.correct;
-    if (ok) correctCount += 1;
-    updateScore();
+    answered = true; // Locks UI: radios disabled, Next enabled
+    const ok = selected === q.correct; // Compare user letter to JSON correct field
+    if (ok) correctCount += 1; // Bump session score
+    updateScore(); // Refresh pill text
 
     const wrap = document.getElementById("correct-line-wrap");
-    if (wrap) wrap.classList.remove("hidden");
+    if (wrap) wrap.classList.remove("hidden"); // Show which letter was keyed
 
     els.feedbackResult.textContent = ok
       ? "Correct."
       : "Incorrect.";
-    els.correctLabel.textContent = q.correct;
-    els.rationales.innerHTML = "";
+    els.correctLabel.textContent = q.correct; // Display official correct letter
+    els.rationales.innerHTML = ""; // Clear prior rationales
     q.options.forEach((opt) => {
+      // Show explanations for every choice (AP-style rationales), not only the correct one.
       const div = document.createElement("div");
-      div.className = "rationale-block";
+      div.className = "rationale-block"; // One block per option
       const title = document.createElement("p");
-      title.className = "rationale-title";
+      title.className = "rationale-title"; // Option letter + text
       title.innerHTML = `<span class="opt-letter">${opt.label}</span> ${escapeHtml(opt.text)}`;
       const body = document.createElement("p");
-      body.className = "rationale-body";
+      body.className = "rationale-body"; // Why right/wrong (plain text, no HTML in JSON)
       body.textContent = opt.rationale;
       div.appendChild(title);
       div.appendChild(body);
@@ -210,30 +264,32 @@
 
     els.feedbackPanel.classList.remove("hidden");
     els.feedbackPanel.setAttribute("aria-hidden", "false");
-    els.btnCheck.disabled = true;
-    els.btnNext.disabled = false;
+    els.btnCheck.disabled = true; // Cannot re-submit same question
+    els.btnNext.disabled = false; // Allow advance
 
     els.optionsWrap.querySelectorAll('input[type="radio"]').forEach((r) => {
-      r.disabled = true;
+      r.disabled = true; // Prevent changing answer after reveal
     });
   }
 
   function nextQuestion() {
+    // Students should always see feedback before moving on, so Next is disabled
+    // until after "Check answer" is pressed.
     if (index + 1 >= session.length) {
-      finish();
+      finish(); // No more questions — show summary
       return;
     }
-    index += 1;
-    answered = false;
-    selected = null;
-    renderQuestion();
+    index += 1; // Move to next index
+    answered = false; // Fresh question: radios active again
+    selected = null; // Clear selection state (new change listeners in renderQuestion)
+    renderQuestion(); // Paint next item
   }
 
   function finish() {
-    const card = els.app && els.app.querySelector(".question-card");
-    if (card) card.hidden = true;
-    if (els.feedbackPanel) els.feedbackPanel.classList.add("hidden");
-    if (els.completePanel) els.completePanel.classList.remove("hidden");
+    const card = els.app && els.app.querySelector(".question-card"); // The article wrapping stem + options
+    if (card) card.hidden = true; // Hide question UI on completion screen
+    if (els.feedbackPanel) els.feedbackPanel.classList.add("hidden"); // Hide last feedback too
+    if (els.completePanel) els.completePanel.classList.remove("hidden"); // Show "Session complete"
     if (els.completeSummary) {
       els.completeSummary.textContent = `You answered ${correctCount} of ${session.length} correctly in this session.`;
     }
@@ -241,22 +297,24 @@
 
   function resetQuizCard() {
     const card = els.app && els.app.querySelector(".question-card");
-    if (card) card.hidden = false;
-    if (els.completePanel) els.completePanel.classList.add("hidden");
+    if (card) card.hidden = false; // Show question card again after restart
+    if (els.completePanel) els.completePanel.classList.add("hidden"); // Hide completion overlay
   }
 
   function updateScore() {
-    if (els.score) els.score.textContent = `${correctCount} correct`;
+    if (els.score) els.score.textContent = `${correctCount} correct`; // Live score pill
   }
 
   function syncSelectFromUrl() {
-    const s = getParam("section");
+    const s = getParam("section"); // e.g. "1.3" from index.html topic links
     if (s && [...els.sectionSelect.options].some((o) => o.value === s)) {
+      // Only set if the value exists on an <option> (prevents invalid state)
       els.sectionSelect.value = s;
     }
   }
 
   function init() {
+    // Guard against running on pages that don't have the quiz UI.
     if (
       !els.app ||
       !els.sectionSelect ||
@@ -265,14 +323,14 @@
       !els.btnRestart ||
       !els.btnAgain
     ) {
-      return;
+      return; // quiz.js may be absent on other pages — do nothing
     }
 
-    syncSelectFromUrl();
+    syncSelectFromUrl(); // Honor ?section= when landing from homepage cards
 
-    loadQuestions()
+    loadQuestions() // Async fetch
       .then(() => {
-        startSession();
+        startSession(); // After JSON is in memory, build first session
       })
       .catch(() => {
         showError(
@@ -281,15 +339,15 @@
       });
 
     els.sectionSelect.addEventListener("change", () => {
-      const u = new URL(window.location.href);
+      const u = new URL(window.location.href); // Clone current URL for history API
       if (els.sectionSelect.value === "all") {
-        u.searchParams.delete("section");
+        u.searchParams.delete("section"); // Clean URL when viewing all topics
       } else {
-        u.searchParams.set("section", els.sectionSelect.value);
+        u.searchParams.set("section", els.sectionSelect.value); // Persist filter in address bar
       }
-      window.history.replaceState({}, "", u);
-      resetQuizCard();
-      startSession();
+      window.history.replaceState({}, "", u); // Update URL without full page reload
+      resetQuizCard(); // Ensure question card visible if coming from finish()
+      startSession(); // New session with new filter
     });
 
     els.btnCheck.addEventListener("click", checkAnswer);
@@ -304,5 +362,5 @@
     });
   }
 
-  init();
-})();
+  init(); // Run setup when script loads (quiz.html body end, defer)
+})(); // End IIFE — semicolon optional before EOF

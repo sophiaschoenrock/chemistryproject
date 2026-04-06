@@ -1,13 +1,5 @@
 package com.apchem.unit1;
 
-import com.apchem.unit1.bank.Questions11;
-import com.apchem.unit1.bank.Questions12;
-import com.apchem.unit1.bank.Questions13;
-import com.apchem.unit1.bank.Questions14;
-import com.apchem.unit1.bank.Questions15;
-import com.apchem.unit1.bank.Questions16;
-import com.apchem.unit1.bank.Questions17;
-import com.apchem.unit1.bank.Questions18;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -15,24 +7,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * All Unit 1 items are original practice written to mirror AP Chemistry multiple-choice
- * structure (four-option stems, data-based prompts where appropriate). They are not
- * verbatim reproduced items from secure College Board exams.
+ * Question bank backed by {@code src/main/resources/questions.json} (same content as the website’s
+ * {@code questions.json}). Items are original practice written to mirror AP Chemistry multiple-choice
+ * structure; they are not verbatim reproduced from secure College Board exams.
  */
 public final class Unit1QuestionBank {
+  private static final List<McqQuestion> ALL = QuestionJsonLoader.load();
+
   private Unit1QuestionBank() {}
 
   public static List<McqQuestion> allQuestions() {
-    List<McqQuestion> list = new ArrayList<>();
-    list.addAll(Questions11.all());
-    list.addAll(Questions12.all());
-    list.addAll(Questions13.all());
-    list.addAll(Questions14.all());
-    list.addAll(Questions15.all());
-    list.addAll(Questions16.all());
-    list.addAll(Questions17.all());
-    list.addAll(Questions18.all());
-    return List.copyOf(list);
+    return ALL;
   }
 
   public static Map<Subsection, List<McqQuestion>> bySubsection() {
@@ -40,7 +25,7 @@ public final class Unit1QuestionBank {
     for (Subsection s : Subsection.values()) {
       map.put(s, new ArrayList<>());
     }
-    for (McqQuestion q : allQuestions()) {
+    for (McqQuestion q : ALL) {
       map.get(q.subsection()).add(q);
     }
     for (Subsection s : Subsection.values()) {
@@ -50,7 +35,7 @@ public final class Unit1QuestionBank {
   }
 
   public static List<McqQuestion> shuffledCopy() {
-    List<McqQuestion> copy = new ArrayList<>(allQuestions());
+    List<McqQuestion> copy = new ArrayList<>(ALL);
     Collections.shuffle(copy);
     return copy;
   }

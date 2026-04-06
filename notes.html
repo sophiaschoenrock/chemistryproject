@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+  notes.html — Static study guide for AP Chemistry Unit 1 (no JavaScript on this page).
+  Structure: site chrome (header/footer) + main column with a table of contents and one
+  <section> per CED subsection (1.1–1.8). Styling comes from styles.css (classes like
+  notes-section, notes-lead, note-box, exam-tip, chem-eq). Practice links go to quiz.html?section=1.x.
+-->
+<html lang="en">
+<head>
+  <!-- Charset + viewport: required for UTF-8 symbols and mobile layout. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="In-depth AP Chemistry Unit 1 study notes: moles, spectra, composition, mixtures, electron structure, PES, periodic trends, and ionic compounds (CED 1.1–1.8)." />
+  <title>Unit 1 Notes | AP Chemistry</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="page-notes">
+  <!-- Keyboard/screen-reader: jump past repeated navigation to #main. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Site-wide header: logo + nav; same pattern as index.html and quiz.html. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AP Chem · Unit 1</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="notes.html" aria-current="page">Notes</a></li>
+          <li><a href="quiz.html">Practice Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main landmark: id="main" is the skip-link target and page-specific notes content. -->
+  <main id="main" class="container notes-layout">
+    <!-- Page title + intro paragraphs (notes-subtitle = muted supporting text). -->
+    <header class="notes-header">
+      <h1 class="notes-title">Unit 1 Notes</h1>
+      <p class="notes-subtitle">
+        Atomic Structure and Properties (CED topics 1.1–1.8). These notes are written for AP Chemistry exam preparation: definitions,
+        core ideas, representative calculations, and common pitfalls.
+      </p>
+      <p class="notes-subtitle">
+        They follow the public College Board unit outline for AP Chemistry Unit 1.
+      </p>
+    </header>
+
+    <!-- In-page navigation: anchor links scroll to #t11 … #t18 on this same document. -->
+    <nav class="notes-toc" aria-label="Notes table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#t11">1.1 Moles and Molar Mass</a></li>
+        <li><a href="#t12">1.2 Mass Spectra of Elements</a></li>
+        <li><a href="#t13">1.3 Elemental Composition of Pure Substances</a></li>
+        <li><a href="#t14">1.4 Composition of Mixtures</a></li>
+        <li><a href="#t15">1.5 Atomic Structure and Electron Configuration</a></li>
+        <li><a href="#t16">1.6 Photoelectron Spectroscopy</a></li>
+        <li><a href="#t17">1.7 Periodic Trends</a></li>
+        <li><a href="#t18">1.8 Valence Electrons and Ionic Compounds</a></li>
+      </ul>
+    </nav>
+
+    <!--
+      Each topic block below uses the same pattern:
+      - id="tXY" matches the TOC (e.g. t11 = topic 1.1).
+      - .notes-lead: short overview paragraph.
+      - h3 subsections, p/ul for body; .chem-eq for displayed formulas; .dense on lists.
+      - .note-box: callout; .exam-tip: AP-style reminder (styled with ::before in CSS).
+      - Last line: btn-secondary links to quiz.html?section=1.X for filtered practice.
+    -->
+    <section class="notes-section" id="t11">
+      <h2>1.1 Moles and Molar Mass</h2>
+      <p class="notes-lead">
+        The mole connects the macroscopic scale (grams) to the particle scale (atoms, molecules, ions). AP questions often chain mass → moles → atoms or use stoichiometric ratios from a formula.
+      </p>
+
+      <h3>What is a mole?</h3>
+      <p>
+        One mole is Avogadro's number of specified entities: <em>N</em><sub>A</sub> ≈ 6.022 × 10<sup>23</sup> mol<sup>−1</sup>.
+        You can have a mole of atoms, a mole of molecules, a mole of formula units, or a mole of ions—always specify the entity.
+      </p>
+
+      <h3>Molar mass</h3>
+      <p>
+        Molar mass <em>M</em> (units g/mol) is the mass of one mole of substance. For elements, use the periodic table value (average atomic mass for the natural isotopic mixture).
+        For a compound, add contributions from each element: multiply each element's molar mass by its subscript in the formula, then sum.
+      </p>
+      <p class="chem-eq">moles = mass (g) ÷ molar mass (g/mol)</p>
+      <p class="chem-eq">number of particles = moles × <em>N</em><sub>A</sub></p>
+
+      <h3>Using chemical formulas</h3>
+      <p>
+        Subscripts in a molecular formula give atom ratios. In C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, each mole of glucose contains 6 mol C, 12 mol H, and 6 mol O.
+        Use these ratios to convert moles of compound → moles of a given element, or the reverse.
+      </p>
+
+      <h3>Hydrates</h3>
+      <p>
+        Hydrated ionic salts are written with a dot and integer water molecules, e.g. CuSO<sub>4</sub>·5H<sub>2</sub>O. The molar mass of the hydrate includes the mass of the water of hydration.
+      </p>
+
+      <div class="note-box">
+        <strong>Significant figures:</strong> AP expects answers to reflect the precision of given data. In multi-step conversions, carry extra digits internally and round the final answer to the appropriate precision.
+      </div>
+      <p class="exam-tip">Be fluent with dimensional analysis: cancel units deliberately so you can spot inverted conversion factors.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.1">Practice 1.1</a></p>
+    </section>
+
+    <!-- Sections 1.2–1.8: same HTML structure as 1.1; only headings and content differ. -->
+    <section class="notes-section" id="t12">
+      <h2>1.2 Mass Spectra of Elements</h2>
+      <p class="notes-lead">
+        Mass spectrometry separates ions by mass-to-charge ratio. For elements, the pattern of peaks reveals isotopes and is used to compute a weighted average atomic mass.
+      </p>
+
+      <h3>Isotopes</h3>
+      <p>
+        Isotopes of an element share the same atomic number (protons) but differ in mass number (protons + neutrons). Different isotopes have nearly identical chemistry but different masses.
+      </p>
+
+      <h3>Weighted average atomic mass</h3>
+      <p>
+        The value on the periodic table is the weighted average of natural isotopic masses, where weights are fractional abundances (fractions that sum to 1).
+      </p>
+      <p class="chem-eq">Average atomic mass = Σ (isotopic mass × fractional abundance)</p>
+      <p>
+        If abundances are given as percentages, convert each to a decimal before multiplying.
+      </p>
+
+      <h3>Reading a mass spectrum</h3>
+      <ul class="dense">
+        <li>Each peak corresponds to an ion with a particular mass (often the <strong>molecular ion</strong> M<sup>+</sup> or fragment for molecules; for elements, peaks for each isotope).</li>
+        <li><strong>Relative peak height or area</strong> reflects relative abundance of that species.</li>
+        <li><strong>Most abundant isotope</strong> corresponds to the largest peak (for many elements).</li>
+      </ul>
+
+      <div class="note-box">
+        <strong>Charge:</strong> The <em>x</em>-axis is mass-to-charge (<em>m</em>/<em>z</em>). For most AP plots, <em>z</em> = +1, so the readout is effectively mass.
+      </div>
+      <p class="exam-tip">Practice computing average atomic mass from two or three isotopic masses and percent abundances—both directions (given average, think conceptually).</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.2">Practice 1.2</a></p>
+    </section>
+
+    <section class="notes-section" id="t13">
+      <h2>1.3 Elemental Composition of Pure Substances</h2>
+      <p class="notes-lead">
+        You relate mass percent of elements to empirical and molecular formulas. Combustion analysis is a classic method for obtaining carbon, hydrogen, and sometimes oxygen mass in an organic sample.
+      </p>
+
+      <h3>Empirical vs molecular formula</h3>
+      <ul class="dense">
+        <li><strong>Empirical formula</strong>: smallest whole-number ratios of atoms in a compound.</li>
+        <li><strong>Molecular formula</strong>: actual numbers of atoms per molecule; may be a whole-number multiple of the empirical formula.</li>
+      </ul>
+      <p>
+        Given the molar mass of the compound and the empirical formula mass, molecular formula = (empirical)<sub><em>n</em></sub> where <em>n</em> = (molar mass of compound) ÷ (empirical formula mass).
+      </p>
+
+      <h3>Percent composition by mass</h3>
+      <p class="chem-eq">% element = (mass of element in 1 mol compound ÷ molar mass of compound) × 100%</p>
+      <p>
+        You can invert the logic: from % composition and a molar mass, infer atomic ratios by assuming a 100 g sample (grams of each element → moles → simplest ratio).
+      </p>
+
+      <h3>Combustion analysis</h3>
+      <p>
+        Complete combustion of a hydrocarbon or oxygen-containing organic produces CO<sub>2</sub> and H<sub>2</sub>O. The mass of CO<sub>2</sub> fixes the amount of carbon; the mass of H<sub>2</sub>O fixes hydrogen.
+        If the compound contains only C, H, and O, oxygen mass is found by subtracting C and H masses from the original sample mass.
+      </p>
+
+      <h3>Pure substances vs characterization</h3>
+      <p>
+        A pure substance has a definite composition (element or compound). Mixtures (Unit 1.4) do not; this section assumes a single compound when doing formula work.
+      </p>
+      <p class="exam-tip">Show clear steps: mass → moles → mole ratio → empirical formula → integer multiple for molecular formula when data allow.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.3">Practice 1.3</a></p>
+    </section>
+
+    <section class="notes-section" id="t14">
+      <h2>1.4 Composition of Mixtures</h2>
+      <p class="notes-lead">
+        Mixtures contain two or more substances physically combined; composition can vary. Separation exploits differences in physical properties (volatility, solubility, polarity, magnetism).
+      </p>
+
+      <h3>Homogeneous vs heterogeneous</h3>
+      <ul class="dense">
+        <li><strong>Homogeneous</strong> (solution): uniform composition at the macroscopic scale (single phase).</li>
+        <li><strong>Heterogeneous</strong>: distinct regions or phases visible or separable (e.g., oil and water, sand in water).</li>
+      </ul>
+
+      <h3>Separating mixtures</h3>
+      <ul class="dense">
+        <li><strong>Filtration</strong>: separates a solid from a liquid or gas by particle size.</li>
+        <li><strong>Distillation</strong> / fractional distillation: separates by boiling point differences.</li>
+        <li><strong>Chromatography</strong>: separates by differential affinity for stationary vs mobile phase (paper, thin-layer, column).</li>
+        <li><strong>Magnetism</strong>: separates magnetic iron from nonmagnetic material.</li>
+      </ul>
+
+      <h3>Describing composition (intro)</h3>
+      <p>
+        Mass percent of a component in a mixture is the mass of that component divided by total mixture mass, times 100%. Mole fraction is moles of one component divided by total moles of all components.
+        AP may ask you to interpret or compare these qualitatively or with simple calculations.
+      </p>
+      <p class="exam-tip">Know the difference between a <strong>pure substance</strong> (fixed composition for a compound) and a <strong>mixture</strong> (variable composition).</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.4">Practice 1.4</a></p>
+    </section>
+
+    <section class="notes-section" id="t15">
+      <h2>1.5 Atomic Structure and Electron Configuration</h2>
+      <p class="notes-lead">
+        Electrons occupy orbitals described by quantum numbers. The Aufbau principle, Pauli exclusion principle, and Hund's rule predict ground-state configurations and orbital diagrams for many atoms and ions.
+      </p>
+
+      <h3>Quantum numbers</h3>
+      <ul class="dense">
+        <li><strong><em>n</em></strong> (principal): shell; larger <em>n</em> means higher energy on average and greater distance from the nucleus.</li>
+        <li><strong><em>l</em></strong> (angular momentum): subshell type; 0 = s, 1 = p, 2 = d, 3 = f for a given <em>n</em> (with valid ranges).</li>
+        <li><strong><em>m</em><sub><em>l</em></sub></strong>: orientation of an orbital within a subshell.</li>
+        <li><strong><em>m</em><sub><em>s</em></sub></strong>: electron spin (+½ or −½).</li>
+      </ul>
+      <p>
+        Count orbitals: <em>s</em> = 1, <em>p</em> = 3, <em>d</em> = 5, <em>f</em> = 7. Each orbital holds at most two electrons with opposite spins (Pauli).
+      </p>
+
+      <h3>Electron configuration notation</h3>
+      <p>
+        Write configurations using subshell labels and superscripts (e.g., 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup>). Noble-gas shorthand is standard: [Ne] 3s<sup>2</sup> 3p<sup>3</sup> for phosphorus.
+      </p>
+
+      <h3>Aufbau, Pauli, Hund</h3>
+      <ul class="dense">
+        <li><strong>Aufbau</strong>: fill lowest-energy subshells first (follow the diagonal rule on the reference table when available).</li>
+        <li><strong>Pauli exclusion</strong>: no two electrons in an atom share the same four quantum numbers.</li>
+        <li><strong>Hund's rule</strong>: for degenerate orbitals (e.g., three p orbitals), place electrons singly with parallel spins before pairing.</li>
+      </ul>
+
+      <h3>Ions and exceptions</h3>
+      <p>
+        For main-group cations, electrons are removed from the highest-<em>n</em> subshell first (e.g., Fe: 4s before 3d for transition metals—follow AP examples). Some transition metals (Cr, Cu are common) have exceptional configurations that increase stability (half-filled and filled subshells).
+      </p>
+      <p class="exam-tip">Be able to write configurations for atoms <em>and</em> monatomic ions; use orbital diagrams for p-block elements when asked for "unpaired electrons."</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.5">Practice 1.5</a></p>
+    </section>
+
+    <section class="notes-section" id="t16">
+      <h2>1.6 Photoelectron Spectroscopy (PES)</h2>
+      <p class="notes-lead">
+        PES measures electron binding energies (BE) by irradiating a sample with high-energy photons and detecting kinetic energies of ejected electrons. It connects to electron configuration: subshells appear as distinct peaks.
+      </p>
+
+      <h3>Binding energy and the photoelectric relation</h3>
+      <p>
+        Binding energy is the energy required to remove an electron from a subshell in a given environment. In a simple model, photon energy <em>h</em>ν = BE + KE<sub>electron</sub>.
+        Higher BE means electrons are held more tightly (typically core electrons vs valence electrons).
+      </p>
+
+      <h3>Interpreting a PES spectrum</h3>
+      <ul class="dense">
+        <li>Each peak corresponds to an electron subshell in a specific energy environment.</li>
+        <li><strong>Position on the binding-energy axis</strong>: identifies subshells (e.g., 1s vs 2s vs 2p for a first-row element).</li>
+        <li><strong>Relative peak height or area</strong> (introductory level): proportional to the number of electrons in that subshell.</li>
+      </ul>
+
+      <h3>Link to periodic trends</h3>
+      <p>
+        Across a period, valence electrons experience greater effective nuclear charge; valence peak positions shift (trends tie to Unit 1.7). Comparing elements can help rationalize relative positions.
+      </p>
+
+      <div class="note-box">
+        <strong>Significant figures:</strong> On the exam, read graphs carefully—axis labels and relative intensities are the evidence for your reasoning.
+      </div>
+      <p class="exam-tip">Be ready to match PES peak counts and relative sizes to electron configurations and to predict which element has a higher binding energy for a given subshell.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.6">Practice 1.6</a></p>
+    </section>
+
+    <section class="notes-section" id="t17">
+      <h2>1.7 Periodic Trends</h2>
+      <p class="notes-lead">
+        Properties of atoms and ions change systematically with position in the periodic table. Effective nuclear charge, atomic size, ionization energy, and electronegativity are central to AP explanations.
+      </p>
+
+      <h3>Effective nuclear charge</h3>
+      <p>
+        Valence electrons are shielded from the full nuclear charge by inner (core) electrons. <strong>Effective nuclear charge (<em>Z</em><sub>eff</sub>)</strong> is the net positive charge "felt" by valence electrons.
+        Across a period, <em>Z</em><sub>eff</sub> generally increases (more protons, added core electrons do not fully shield each other).
+      </p>
+
+      <h3>Atomic and ionic radii</h3>
+      <ul class="dense">
+        <li><strong>Across a period</strong>: atomic radius decreases (stronger attraction to valence shell).</li>
+        <li><strong>Down a group</strong>: radius increases (new shells, outer electrons farther from nucleus).</li>
+        <li><strong>Ions</strong>: cations are smaller than parent atoms; anions are larger. Compare isoelectronic species by nuclear charge (more protons → smaller radius).</li>
+      </ul>
+
+      <h3>Ionization energy</h3>
+      <p>
+        First ionization energy is energy to remove one mole of electrons from one mole of gaseous atoms. Trends generally increase across a period and decrease down a group.
+        Exceptions exist (e.g., Group 2 vs Group 13, Group 15 vs Group 16) due to subshell stability and electron pairing.
+      </p>
+
+      <h3>Electronegativity</h3>
+      <p>
+        Relative ability of an atom in a bond to attract shared electrons. Increases toward the upper right (fluorine is highest on common scales). Used to predict bond polarity and sometimes acid strength in later units.
+      </p>
+      <p class="exam-tip">Always justify trends with <em>Z</em><sub>eff</sub>, distance, and shielding—avoid "because it is on the right" without reasoning.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.7">Practice 1.7</a></p>
+    </section>
+
+    <section class="notes-section" id="t18">
+      <h2>1.8 Valence Electrons and Ionic Compounds</h2>
+      <p class="notes-lead">
+        Valence electrons (main-group s and p) determine chemical reactivity. Electron transfer between metals and nonmetals produces ions with noble-gas-like configurations; formulas reflect charge balance.
+      </p>
+
+      <h3>Valence electrons</h3>
+      <p>
+        For main-group elements, valence electrons are the s and p electrons in the outermost shell. Transition metals involve d (and sometimes s) electrons in bonding and oxidation states (more detail in later units).
+      </p>
+
+      <h3>Ionic bonding and charge balance</h3>
+      <p>
+        Metals lose electrons to form cations; nonmetals gain electrons to form anions. Ionic compounds are neutral overall: total positive charge equals total negative charge.
+        Use the criss-cross method (magnitudes of charges become subscripts) to write formulas, but reduce to simplest whole-number ratios.
+      </p>
+
+      <h3>Isoelectronic series</h3>
+      <p>
+        Ions or atoms with the same electron configuration are isoelectronic. Compare radii by nuclear charge: more protons pull the same electron cloud tighter (smaller ion).
+      </p>
+
+      <h3>Lattice energy (conceptual)</h3>
+      <p>
+        Ionic solids are stabilized by strong electrostatic attractions in a crystal lattice. Smaller ions and higher charges generally increase lattice energy (more detail in Unit 3—here, know the qualitative idea).
+      </p>
+      <p class="exam-tip">Be able to count valence electrons from group numbers for main-group elements and write plausible ionic formulas with correct charges.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?section=1.8">Practice 1.8</a></p>
+    </section>
+  </main>
+
+  <!-- Footer: shared across pages; minimal links back to quiz. -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>AP Chemistry Unit 1 practice site</p>
+      <p><a href="quiz.html">Practice quiz</a></p>
+    </div>
+  </footer>
+</body>
+</html>

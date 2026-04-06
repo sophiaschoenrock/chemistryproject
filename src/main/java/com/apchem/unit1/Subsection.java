@@ -23,6 +23,19 @@ public enum Subsection {
     return title;
   }
 
+  /** Maps JSON {@code subsection} strings (e.g. {@code "1.6 Photoelectron..."}) to this enum. */
+  public static Subsection fromCedLabel(String label) {
+    if (label == null || label.isBlank()) {
+      throw new IllegalArgumentException("subsection label required");
+    }
+    for (Subsection s : values()) {
+      if (label.startsWith(s.title.substring(0, 3))) {
+        return s;
+      }
+    }
+    throw new IllegalArgumentException("Unknown subsection label: " + label);
+  }
+
   @Override
   public String toString() {
     return title;
