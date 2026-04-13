@@ -35,13 +35,15 @@
       <!-- Line 20: nav landmark with aria-label so assistive tech knows this is the main navigation. -->
       <nav aria-label="Main">
         <!-- Line 21: Unordered list of navigation items laid out horizontally by styles.css. -->
-        <ul class="nav-list">
-          <!-- Line 22: Link to the outline section on this same page (#outline anchor). -->
+               <ul class="nav-list">
+          <!-- Line 22: Jump to the topic grid on this page (same labels on both unit landings). -->
           <li><a href="index.html#outline">Curriculum</a></li>
-          <!-- Line 23: Link to the static notes page that explains each Unit 1 concept in prose. -->
+          <li><a href="index.html" aria-current="page">Unit 1</a></li>
+          <li><a href="index-unit2.html">Unit 2</a></li>
+          <!-- Line 25: Unit-specific notes (parallel to index-unit2 → notes-unit2.html). -->
           <li><a href="notes.html">Notes</a></li>
-          <!-- Line 24: Link to the interactive quiz page (quiz.html). -->
-          <li><a href="quiz.html">Practice Quiz</a></li>
+          <!-- Line 26: Quiz with unit filter so the topic dropdown matches this unit. -->
+          <li><a href="quiz.html?unit=1">Practice Quiz</a></li>
         </ul>
       </nav>
     </div>
@@ -65,7 +67,7 @@
         <!-- Lines 39–42: Primary and secondary actions for the hero. -->
         <div class="hero-actions">
           <!-- Line 40: Primary button to jump directly into the quiz covering all topics. -->
-          <a class="btn btn-primary" href="quiz.html">Start practice quiz</a>
+          <a class="btn btn-primary" href="quiz.html?unit=1">Start practice quiz</a>
           <!-- Line 41: Secondary button to scroll to the outline section below. -->
           <a class="btn btn-ghost" href="index.html#outline">Browse topics</a>
         </div>
@@ -94,43 +96,43 @@
             - data-section=\"1.x\" so index.js can count questions per subsection and write \"N questions\".
             - Inside: topic-id (numerical code), topic-title (text label), topic-meta (count placeholder).
           -->
-          <a class="topic-card" href="quiz.html?section=1.1" data-section="1.1">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.1" data-section="1.1">
             <span class="topic-id">1.1</span>
             <span class="topic-title">Moles and Molar Mass</span>
             <!-- topic-meta starts empty; index.js fills it with \"N questions\" from questions.json. -->
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.2" data-section="1.2">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.2" data-section="1.2">
             <span class="topic-id">1.2</span>
             <span class="topic-title">Mass Spectra of Elements</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.3" data-section="1.3">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.3" data-section="1.3">
             <span class="topic-id">1.3</span>
             <span class="topic-title">Elemental Composition of Pure Substances</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.4" data-section="1.4">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.4" data-section="1.4">
             <span class="topic-id">1.4</span>
             <span class="topic-title">Composition of Mixtures</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.5" data-section="1.5">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.5" data-section="1.5">
             <span class="topic-id">1.5</span>
             <span class="topic-title">Atomic Structure and Electron Configuration</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.6" data-section="1.6">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.6" data-section="1.6">
             <span class="topic-id">1.6</span>
             <span class="topic-title">Photoelectron Spectroscopy</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.7" data-section="1.7">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.7" data-section="1.7">
             <span class="topic-id">1.7</span>
             <span class="topic-title">Periodic Trends</span>
             <span class="topic-meta" aria-label="Question count"></span>
           </a>
-          <a class="topic-card" href="quiz.html?section=1.8" data-section="1.8">
+          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.8" data-section="1.8">
             <span class="topic-id">1.8</span>
             <span class="topic-title">Valence Electrons and Ionic Compounds</span>
             <span class="topic-meta" aria-label="Question count"></span>
@@ -172,7 +174,7 @@
       <!-- Line 125: Simple text identifying the site. -->
       <p>AP Chemistry Unit 1 practice site</p>
       <!-- Line 126: Convenience links back to Notes and the quiz page. -->
-      <p><a href="notes.html">Notes</a> · <a href="quiz.html">Practice quiz</a></p>
+      <p><a href="notes.html">Notes</a> · <a href="quiz.html?unit=1">Practice quiz</a></p>
     </div>
   </footer>
 

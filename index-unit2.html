@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- HTML5 doctype: standards mode for consistent layout. -->
+<!--
+  index-unit2.html — landing page for AP Chemistry Unit 2 (parallel to index.html).
+  - Hero introduces Compound Structure and Properties and links to the quiz with ?unit=2.
+  - The topic grid uses data-section="2.x" so index.js can count rows in questions.json.
+  - Nav labels match index.html: Curriculum, Unit 1, Unit 2, Notes, Practice Quiz.
+-->
+<html lang="en">
+<head>
+  <!-- UTF-8 for subscripts, arrows, and typographic punctuation in topic titles. -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AP Chemistry Unit 2 practice — Compound structure and properties: bonding, solids, Lewis structures, VSEPR." />
+  <title>AP Chemistry Unit 2 | Compound Structure &amp; Properties</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <!-- Skip link: same accessibility pattern as Unit 1 and notes pages. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Header: logo returns to this unit’s home; nav order mirrors index.html. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-unit2.html">AP Chem · Unit 2</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <!-- #outline is the topic grid below (Curriculum = same label as Unit 1). -->
+          <li><a href="index-unit2.html#outline">Curriculum</a></li>
+          <li><a href="index.html">Unit 1</a></li>
+          <li><a href="index-unit2.html" aria-current="page">Unit 2</a></li>
+          <!-- Notes link targets Unit 2 study guide (notes.html is Unit 1). -->
+          <li><a href="notes-unit2.html">Notes</a></li>
+          <!-- Practice Quiz opens with Unit 2 pre-selected in quiz.js. -->
+          <li><a href="quiz.html?unit=2">Practice Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- id="main" is the skip-link destination and wraps all landing content. -->
+  <main id="main">
+    <!-- Hero: eyebrow + title + lede + primary/secondary CTAs (same structure as Unit 1). -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Course and Exam Description · Unit 2</p>
+        <h1>Compound Structure and Properties</h1>
+        <p class="lede">
+          Work through AP-style four-option multiple choice with a stimulus when given, then review
+          a full rationale for every answer choice—similar to the feedback loop you use in AP Classroom.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="quiz.html?unit=2">Start practice quiz</a>
+          <a class="btn btn-ghost" href="index-unit2.html#outline">Browse topics</a>
+        </div>
+        <p class="fine-print">
+          Items are original practice written for this site; they are not copied from secure College Board exams.
+          Also available: <code>mvn exec:java</code> in this repo for the Java version.
+        </p>
+      </div>
+    </section>
+
+    <!-- Outline: one topic-card per CED subsection 2.1–2.7 (Unit 1 has eight cards). -->
+    <section id="outline" class="section">
+      <div class="container">
+        <h2>Unit 2 outline</h2>
+        <p class="section-intro">
+          Each topic below links to the quiz filtered to that subsection. The full bank is also available as a shuffled set.
+        </p>
+        <div class="topic-grid">
+          <!--
+            Each topic-card anchor has:
+            - href with quiz.html?unit=2&amp;section=2.x so the quiz loads Unit 2 and applies the filter.
+            - data-section="2.x" so index.js can count matching questions in questions.json.
+            - topic-meta filled by index.js with “N questions”.
+          -->
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.1" data-section="2.1">
+            <span class="topic-id">2.1</span>
+            <span class="topic-title">Types of Chemical Bonds</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.2" data-section="2.2">
+            <span class="topic-id">2.2</span>
+            <span class="topic-title">Intramolecular Force and Potential Energy</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.3" data-section="2.3">
+            <span class="topic-id">2.3</span>
+            <span class="topic-title">Structure of Ionic Solids</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.4" data-section="2.4">
+            <span class="topic-id">2.4</span>
+            <span class="topic-title">Structure of Metals and Alloys</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.5" data-section="2.5">
+            <span class="topic-id">2.5</span>
+            <span class="topic-title">Lewis Diagrams</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.6" data-section="2.6">
+            <span class="topic-id">2.6</span>
+            <span class="topic-title">Resonance and Formal Charge</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+          <a class="topic-card" href="quiz.html?unit=2&amp;section=2.7" data-section="2.7">
+            <span class="topic-id">2.7</span>
+            <span class="topic-title">VSEPR and Hybridization</span>
+            <span class="topic-meta" aria-label="Question count"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help section: same two-column layout and copy length as index.html (how-to + local server). -->
+    <section class="section section-muted">
+      <div class="container split">
+        <div>
+          <h2>How the quiz works</h2>
+          <ol class="steps">
+            <li>Choose a topic filter or practice the full unit (shuffled).</li>
+            <li>Select A–D, then check your answer.</li>
+            <li>Read rationales for all four choices to reinforce the reasoning AP rewards.</li>
+          </ol>
+        </div>
+        <aside class="callout">
+          <h3>Local preview</h3>
+          <p>
+            To view this site from disk with JSON loading, run a tiny server in the project folder, for example:
+          </p>
+          <code class="code-block">python3 -m http.server 8080</code>
+          <p class="fine-print">Then open <code>http://localhost:8080</code>. GitHub Pages serves the same files without extra setup.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>AP Chemistry Unit 2 practice site</p>
+      <p><a href="notes-unit2.html">Notes</a> · <a href="quiz.html?unit=2">Practice quiz</a></p>
+    </div>
+  </footer>
+
+  <script src="index.js" defer></script>
+</body>
+</html>

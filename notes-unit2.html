@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+  notes-unit2.html — Static study guide for AP Chemistry Unit 2 (same pattern as notes.html).
+  Practice links use quiz.html?unit=2&section=2.x. Styling: styles.css (.notes-section, .exam-tip, etc.).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AP Chemistry Unit 2 notes: chemical bonds, potential energy, ionic and metallic solids, Lewis diagrams, resonance, formal charge, VSEPR, hybridization (CED 2.1–2.7)." />
+  <title>Unit 2 Notes | AP Chemistry</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body class="page-notes">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-unit2.html">AP Chem · Unit 2</a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Unit 1</a></li>
+          <li><a href="index-unit2.html">Unit 2</a></li>
+          <li><a href="notes.html">Notes U1</a></li>
+          <li><a href="notes-unit2.html" aria-current="page">Notes U2</a></li>
+          <li><a href="quiz.html?unit=2">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container notes-layout">
+    <header class="notes-header">
+      <h1 class="notes-title">Unit 2 Notes</h1>
+      <p class="notes-subtitle">
+        Compound structure and properties (CED topics 2.1–2.7). These notes mirror the Unit 1 notes style: definitions, core relationships, formulas where helpful, and exam-focused reminders.
+      </p>
+      <p class="notes-subtitle">
+        The practice bank uses the same JSON format as Unit 1; each item’s <code>subsection</code> begins with <code>2.1</code> … <code>2.7</code> plus the CED title text.
+      </p>
+    </header>
+
+    <nav class="notes-toc" aria-label="Notes table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#t21">2.1 Types of Chemical Bonds</a></li>
+        <li><a href="#t22">2.2 Intramolecular Force and Potential Energy</a></li>
+        <li><a href="#t23">2.3 Structure of Ionic Solids</a></li>
+        <li><a href="#t24">2.4 Structure of Metals and Alloys</a></li>
+        <li><a href="#t25">2.5 Lewis Diagrams</a></li>
+        <li><a href="#t26">2.6 Resonance and Formal Charge</a></li>
+        <li><a href="#t27">2.7 VSEPR and Hybridization</a></li>
+      </ul>
+    </nav>
+
+    <section class="notes-section" id="t21">
+      <h2>2.1 Types of Chemical Bonds</h2>
+      <p class="notes-lead">
+        Chemical bonds describe how atoms are held together. AP expects you to classify bonding using electronegativity (ΔEN), distinguish <strong>intramolecular</strong> vs <strong>intermolecular</strong> interactions, and connect bond type to physical properties.
+      </p>
+
+      <h3>Ionic, covalent, metallic (overview)</h3>
+      <ul class="dense">
+        <li><strong>Ionic</strong>: electron transfer forms cations and anions; attractions in a lattice dominate.</li>
+        <li><strong>Covalent</strong>: electron sharing; nonpolar (very small or zero ΔEN) vs polar (moderate ΔEN) covalent bonds.</li>
+        <li><strong>Metallic</strong>: delocalized valence electrons among metal cations (developed further in 2.4).</li>
+      </ul>
+
+      <h3>Intramolecular vs intermolecular</h3>
+      <p>
+        <strong>Intramolecular</strong> forces act <em>within</em> a molecule (or within an extended covalent network formula unit): covalent bonds, and the forces that define that species’ connectivity.
+        <strong>Intermolecular</strong> forces (IMFs) act <em>between</em> separate molecules or formula units: London dispersion, dipole–dipole, hydrogen bonding, ion–ion in lattices (context-dependent language).
+      </p>
+
+      <h3>Electronegativity and bond polarity</h3>
+      <p>
+        Larger ΔEN between bonded atoms → more ionic character in the bond model; small ΔEN → covalent. A dipole moment vector points from partial positive (δ+) toward partial negative (δ−).
+      </p>
+
+      <h3>Network covalent vs discrete molecules</h3>
+      <p>
+        In quartz (SiO<sub>2</sub>), strong covalent bonds build a three-dimensional network: there are no separate small “SiO<sub>2</sub> molecules” in the usual particulate picture of the solid.
+        That is different from CO<sub>2</sub>(s), where dispersion forces act between distinct CO<sub>2</sub> molecules. On exams, match the model to the structure type before you label forces.
+      </p>
+
+      <h3>% ionic character (qualitative)</h3>
+      <p>
+        A smooth curve relates ΔEN to percent ionic character. There is no single magic cutoff: treat “mostly ionic” vs “polar covalent” as a continuum when the problem gives electronegativities or dipole data.
+      </p>
+
+      <div class="note-box">
+        <strong>Language:</strong> Say “predominantly ionic” or “polar covalent” when the question gives EN data—avoid treating bonding as only two discrete boxes when ΔEN is intermediate.
+      </div>
+      <p class="exam-tip">If a stem shows two identical atoms bonded, the bond is nonpolar covalent; if it shows H-bonding between molecules, that is intermolecular.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.1">Practice 2.1</a></p>
+    </section>
+
+    <section class="notes-section" id="t22">
+      <h2>2.2 Intramolecular Force and Potential Energy</h2>
+      <p class="notes-lead">
+        Bond formation lowers the system’s potential energy relative to separated atoms. Bond energy, bond length, and potential-energy curves are linked: stronger bonds often have higher bond dissociation energies and shorter lengths (for comparable bond orders).
+      </p>
+
+      <h3>Potential energy vs internuclear distance</h3>
+      <p>
+        A typical curve has a minimum at the equilibrium bond length. Pulling atoms closer than that minimum raises energy (nuclear repulsion); pulling them apart raises energy until the bond breaks.
+      </p>
+
+      <h3>Bond energy and length</h3>
+      <ul class="dense">
+        <li><strong>Bond dissociation energy</strong> (BDE): energy to break one mole of a particular bond in the gas phase (context matters on FRQs).</li>
+        <li>For the same two elements, a <strong>shorter</strong> bond is usually a <strong>stronger</strong> bond (higher BDE) when comparing single bonds to single bonds.</li>
+        <li><strong>Bond order</strong> (single vs double vs triple) strongly affects both length and strength.</li>
+      </ul>
+
+      <h3>Endothermic bond breaking, exothermic bond making</h3>
+      <p>
+        Breaking bonds always costs energy on a bond-energy diagram (moving up the curve from the minimum toward separated atoms). Forming bonds from atoms releases energy as the system slides into the potential well.
+        Hess-style arguments often add BDEs for bonds broken (positive contribution) and subtract BDEs for bonds formed (energy released).
+      </p>
+
+      <h3>Interpreting distance–energy sketches</h3>
+      <p>
+        The equilibrium separation <em>R</em><sub>e</sub> sits at the bottom of the well. If a diagram labels two distances, the deeper minimum belongs to the stronger bond only when you are comparing the same bond order and a fair pair of species—read the axis labels before you rank.
+      </p>
+
+      <p class="chem-eq">Conceptual minimum: separating bonded atoms from equilibrium → higher <em>U</em> until bond breaks.</p>
+      <p class="exam-tip">Use “potential energy minimum at <em>R</em><sub>e</sub>” language when interpreting distance–energy diagrams.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.2">Practice 2.2</a></p>
+    </section>
+
+    <section class="notes-section" id="t23">
+      <h2>2.3 Structure of Ionic Solids</h2>
+      <p class="notes-lead">
+        Ionic compounds form crystalline lattices of alternating cations and anions. Stoichiometry reflects charge neutrality; lattice energy captures how favorable it is to assemble the solid from gas-phase ions (Coulombic reasoning).
+      </p>
+
+      <h3>Lattice features</h3>
+      <ul class="dense">
+        <li>High melting points and brittle fracture (ions shift and repel) compared with many molecular solids.</li>
+        <li>Each ion is surrounded by oppositely charged ions; coordination number depends on structure type (NaCl vs CsCl patterns, etc.).</li>
+      </ul>
+
+      <h3>Lattice energy trends (qualitative)</h3>
+      <p>
+        For similar structures, <strong>smaller ions</strong> and <strong>higher magnitudes of charge</strong> tend to increase lattice energy magnitude (more exothermic formation from ions). Coulomb’s law reasoning (shorter distance, larger <em>q</em>) is the AP justification.
+      </p>
+
+      <h3>Formula unit vs “molecule”</h3>
+      <p>
+        NaCl(s) is summarized by the formula NaCl because the crystal has a 1:1 stoichiometry of ions, not because NaCl units float around as neutral diatomics. Use “formula unit” language for ionic solids; reserve “molecule” for species with discrete covalent connectivity in context.
+      </p>
+
+      <h3>Born–Haber mindset (Unit 2 level)</h3>
+      <p>
+        A Born–Haber cycle links atomization, ionization, electron affinity, and lattice formation. You may not assemble a full cycle on every MCQ, but recognizing that lattice energy fits into an energy loop helps you sign-process arguments (e.g., large exothermic lattice formation stabilizes an ionic salt).
+      </p>
+
+      <div class="note-box">
+        <strong>Particulate drawings:</strong> Show regular repeating arrays; avoid drawing “molecules” of NaCl in the solid when the question is about the lattice model.
+      </div>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.3">Practice 2.3</a></p>
+    </section>
+
+    <section class="notes-section" id="t24">
+      <h2>2.4 Structure of Metals and Alloys</h2>
+      <p class="notes-lead">
+        Metals are often modeled as cations in a sea of delocalized electrons. That model explains conductivity, malleability, and luster. Alloys modify properties by introducing other atoms into the metallic structure.
+      </p>
+
+      <h3>Metallic bonding</h3>
+      <ul class="dense">
+        <li>Delocalized electrons are mobile → electrical and thermal conductivity.</li>
+        <li>Layers can slip past one another without losing attraction → malleability and ductility.</li>
+      </ul>
+
+      <h3>Alloys</h3>
+      <ul class="dense">
+        <li><strong>Substitutional</strong>: solute atoms replace host atoms (similar atomic radii help).</li>
+        <li><strong>Interstitial</strong>: smaller atoms fit in holes between host atoms.</li>
+      </ul>
+
+      <h3>Packing vocabulary (introductory)</h3>
+      <p>
+        Metals crystallize in efficient packing (e.g., face-centered cubic, body-centered cubic). You rarely derive layer sequences on a timed MCQ; instead, connect “close-packed layers can slip” to malleability and connect packing density to typical metallic properties compared with brittle ionic lattices.
+      </p>
+
+      <p class="exam-tip">Contrast metals (delocalized e⁻) with ionic solids (localized ions in fixed sites) when explaining conductivity in the solid state.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.4">Practice 2.4</a></p>
+    </section>
+
+    <section class="notes-section" id="t25">
+      <h2>2.5 Lewis Diagrams</h2>
+      <p class="notes-lead">
+        Lewis structures track valence electrons: bonds as shared pairs, lone pairs as dots. They are a bookkeeping tool that you refine with formal charge and resonance (2.6) and connect to geometry (2.7).
+      </p>
+
+      <h3>Steps (typical)</h3>
+      <ol class="steps">
+        <li>Count total valence electrons (adjust for charge on ions).</li>
+        <li>Choose a reasonable skeleton (often least EN central, except H).</li>
+        <li>Distribute electrons: single bonds first, then complete octets on outer atoms, then place remaining electrons on central.</li>
+        <li>Form multiple bonds if central atom lacks an octet (where appropriate).</li>
+      </ol>
+
+      <h3>Octet rule (scope)</h3>
+      <p>
+        Second-row elements often obey the octet rule; expanded octets appear for some third-row-and-below centers in AP examples. Know your reference problems and course emphasis.
+      </p>
+
+      <h3>Polyatomic ions in Lewis work</h3>
+      <p>
+        Treat SO<sub>4</sub><sup>2−</sup>, NO<sub>3</sub><sup>−</sup>, NH<sub>4</sub><sup>+</sup>, etc. as units with known charges when counting valence electrons. Choose skeletons that place the least electronegative plausible central atom (often in the oxyacid/oxyanion families, that is still a structured rule set—follow the prompts your item gives).
+      </p>
+
+      <h3>Radicals and odd electron counts</h3>
+      <p>
+        Some species (e.g., NO) have an odd total valence count. You represent them with one unpaired electron in the Lewis picture; AP may test that you recognize the odd count rather than force an impossible octet on every atom.
+      </p>
+
+      <div class="note-box">
+        <strong>Resonance preview:</strong> If you can draw multiple valid Lewis diagrams that differ only in π-bond placement, the species is often treated with resonance (see 2.6).
+      </div>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.5">Practice 2.5</a></p>
+    </section>
+
+    <section class="notes-section" id="t26">
+      <h2>2.6 Resonance and Formal Charge</h2>
+      <p class="notes-lead">
+        Resonance means the real electronic structure is a <strong>hybrid</strong> of Lewis contributors—not rapid switching. Formal charge helps you rank contributors and pick reasonable atom placements in skeletons.
+      </p>
+
+      <h3>Formal charge</h3>
+      <p class="chem-eq">FC = (valence e⁻ for the free atom) − (nonbonding e⁻ on the atom) − ½(bonding e⁻ assigned to that atom)</p>
+      <ul class="dense">
+        <li>Sum of formal charges = overall charge of the ion or 0 for a neutral molecule.</li>
+        <li>Prefer structures with FC closest to zero; negative FC on more electronegative atoms is often favored.</li>
+      </ul>
+
+      <h3>Resonance hybrid</h3>
+      <p>
+        Bond lengths in a hybrid (e.g., carbonate) are intermediate between single and double if π bonding is delocalized. The College Board may ask you to explain why experimental bond lengths are equal in such ions.
+      </p>
+
+      <h3>Ozone vs carbonate (why both “need” resonance)</h3>
+      <p>
+        O<sub>3</sub> is a neutral molecule with two equivalent O–O linkages in the real structure; no single Lewis line structure matches that symmetry without π delocalization.
+        CO<sub>3</sub><sup>2−</sup> has three equivalent C–O bonds experimentally; three contributors that rotate the double bond predict that equality in the hybrid. Use the same vocabulary—delocalized π density—for both cases.
+      </p>
+      <p class="exam-tip">Never describe resonance as the molecule “alternating” between structures in time at ordinary conditions—that is a common distractor.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.6">Practice 2.6</a></p>
+    </section>
+
+    <section class="notes-section" id="t27">
+      <h2>2.7 VSEPR and Hybridization</h2>
+      <p class="notes-lead">
+        VSEPR (Valence Shell Electron Pair Repulsion) predicts three-dimensional shape from electron domains around a central atom. Hybridization (sp, sp², sp³, and extensions) matches the number of σ domains used in the AP hybridization narrative.
+      </p>
+
+      <h3>Electron domains</h3>
+      <ul class="dense">
+        <li>Count <strong>σ bonds</strong> and <strong>lone pairs</strong> on the central atom as domains (double/triple bonds count as <em>one</em> domain toward geometry in the usual AP treatment).</li>
+        <li>Domain count → electron-domain geometry; lone pairs modify <strong>molecular geometry</strong> names and bond angles.</li>
+      </ul>
+
+      <h3>Common mappings (introductory)</h3>
+      <ul class="dense">
+        <li>2 domains → linear → sp (typical).</li>
+        <li>3 domains → trigonal planar → sp² (typical).</li>
+        <li>4 domains → tetrahedral → sp³ (typical).</li>
+      </ul>
+
+      <h3>Five and six electron domains</h3>
+      <p>
+        Five domains → trigonal-bipyramidal <strong>electron geometry</strong>. Lone pairs occupy equatorial sites first to minimize 90° lone-pair–bonding-pair interactions. That logic gives molecular shapes such as seesaw (AX<sub>4</sub>E) and T-shaped (AX<sub>3</sub>E<sub>2</sub>).
+      </p>
+      <p>
+        Six domains → octahedral electron geometry; placing two lone pairs <strong>trans</strong> explains square-planar molecular geometry (AX<sub>4</sub>E<sub>2</sub>, e.g., XeF<sub>4</sub> in the usual AP example set).
+      </p>
+
+      <p>
+        Lone pairs repel more strongly than bonding pairs → angles often compress (e.g., H<sub>2</sub>O vs CH<sub>4</sub>).
+      </p>
+
+      <div class="note-box">
+        <strong>Hybridization limits:</strong> Use the course’s expected model; for expanded octets, d-orbital participation in hybridization may or may not be emphasized—follow your teacher’s AP-aligned framework.
+      </div>
+      <p class="exam-tip">Practice the chain: Lewis → domain count → VSEPR name → bond angles → hybridization of the central atom.</p>
+      <p><a class="btn btn-secondary" href="quiz.html?unit=2&amp;section=2.7">Practice 2.7</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>AP Chemistry Unit 2 practice site</p>
+      <p><a href="quiz.html?unit=2">Practice quiz</a> · <a href="index.html">Unit 1</a></p>
+    </div>
+  </footer>
+</body>
+</html>

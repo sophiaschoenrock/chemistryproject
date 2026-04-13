@@ -6,9 +6,10 @@ Static website and optional Java CLI for **AP Chemistry Unit 1** (Atomic Structu
 
 | Part | Description |
 |------|-------------|
-| **Home** (`index.html` + `index.js`) | Unit overview and topic cards; `index.js` loads `questions.json` and shows how many questions exist per subsection. |
-| **Quiz** (`quiz.html` + `quiz.js`) | Filter by topic or all topics (shuffled); check answers and read all rationales. |
-| **Notes** (`notes.html`) | Study notes aligned to the same subsections. |
+| **Unit 1 home** (`index.html` + `index.js`) | Unit1 overview and topic cards; `index.js` loads `questions.json` and shows how many questions exist per subsection (any `1.x` / `2.x` prefix on the page’s cards). |
+| **Unit 2 home** (`index-unit2.html` + `index.js`) | Same pattern for CED **2.1–2.7**; links use `quiz.html?unit=2&section=2.x`. |
+| **Quiz** (`quiz.html` + `quiz.js`) | `?unit=1` or `?unit=2` selects the topic list; filter by subsection or all topics in that unit (shuffled); check answers and read all rationales. |
+| **Notes** (`notes.html`, `notes-unit2.html`) | Static notes for Unit 1 and Unit 2 subsections. |
 | **Data** (`questions.json`) | Single source of truth for the web quiz (array of items with `subsection`, `stem`, `stimulus`, `correct`, `options`). |
 | **Java** (`src/main/java/...`) | Optional command-line practice using the same bank via `src/main/resources/questions.json`. |
 

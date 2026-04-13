@@ -1,13 +1,12 @@
 // =============================================================================
-// quiz.js — Interactive AP Unit 1 multiple-choice page (quiz.html)
+// quiz.js — AP Chemistry MCQ practice (quiz.html)
 // Runs in the browser only. No bundler; modern ES (const/let, fetch) is fine for target browsers.
 //
 // Execution flow (high level):
-//   init() runs on load → syncSelectFromUrl() applies ?section= from links → loadQuestions()
-//   fetches questions.json → startSession() builds session array + calls renderQuestion().
-//   User: Check → checkAnswer() (show rationales) → Next → nextQuestion() or finish().
-//   Dropdown / Restart / Again → startSession() again. Missing DOM ids → init() exits early.
-// Data: each question matches questions.json — subsection, stimulus, stem, correct, options[].
+//   init() → resolve ?unit= (1 or 2) → build topic dropdown → sync ?section= → loadQuestions()
+//   fetches questions.json → startSession() filters by unit + subsection → renderQuestion() …
+// URL: quiz.html, quiz.html?unit=2&section=2.3, etc. Missing unit defaults to 1.
+// Data: subsection strings must start with "1." or "2." (etc.) to match the selected unit.
 // =============================================================================
 
 (function () {
@@ -35,7 +34,7 @@
     error: document.getElementById("quiz-error"), // Red error banner when JSON fails to load
     app: document.getElementById("quiz-app"), // Main quiz UI wrapper (hidden until data loads)
     scope: document.getElementById("quiz-scope"), // Subtitle: current filter / topic description
-    sectionSelect: document.getElementById("section-select"), // Dropdown: all topics or 1.1–1.8
+    sectionSelect: document.getElementById("section-select"), // Dropdown: rebuilt per unit (1.x or 2.x)
     progress: document.getElementById("quiz-progress"), // "Question i of n" text
     score: document.getElementById("quiz-score"), // Running count of correct answers
     stimulusWrap: document.getElementById("stimulus-wrap"), // Container for optional passage (hidden if empty)
@@ -63,6 +62,74 @@
   let selected = null; // String "A"|"B"|"C"|"D" from the chosen radio, or null if none chosen
   let answered = false; // True after "Check answer" for current question; locks radios until Next
 
+  /** @type {string} Active CED unit number as string key, e.g. "1" or "2". */
+  let currentUnit = "1";
+
+  /** Subsection dropdown labels per unit (must match `subsection` prefixes in questions.json). */
+  const UNIT_SECTIONS = {
+    "1": {
+      scopeAll: "Unit 1 · Atomic Structure and Properties",
+      sections: [
+        { value: "1.1", label: "1.1 Moles and Molar Mass" },
+        { value: "1.2", label: "1.2 Mass Spectra of Elements" },
+        { value: "1.3", label: "1.3 Elemental Composition of Pure Substances" },
+        { value: "1.4", label: "1.4 Composition of Mixtures" },
+        { value: "1.5", label: "1.5 Atomic Structure and Electron Configuration" },
+        { value: "1.6", label: "1.6 Photoelectron Spectroscopy" },
+        { value: "1.7", label: "1.7 Periodic Trends" },
+        { value: "1.8", label: "1.8 Valence Electrons and Ionic Compounds" },
+      ],
+    },
+    "2": {
+      scopeAll: "Unit 2 · Compound Structure and Properties",
+      sections: [
+        { value: "2.1", label: "2.1 Types of Chemical Bonds" },
+        { value: "2.2", label: "2.2 Intramolecular Force and Potential Energy" },
+        { value: "2.3", label: "2.3 Structure of Ionic Solids" },
+        { value: "2.4", label: "2.4 Structure of Metals and Alloys" },
+        { value: "2.5", label: "2.5 Lewis Diagrams" },
+        { value: "2.6", label: "2.6 Resonance and Formal Charge" },
+        { value: "2.7", label: "2.7 VSEPR and Hybridization" },
+      ],
+    },
+  };
+
+  function resolveUnit() {
+    let u = getParam("unit");
+    if (!u) {
+      const sec = getParam("section");
+      if (sec && sec.startsWith("2.")) u = "2";
+      else u = "1";
+    }
+    if (!UNIT_SECTIONS[u]) u = "1";
+    currentUnit = u;
+    return u;
+  }
+
+  function buildSectionSelect(unit) {
+    const meta = UNIT_SECTIONS[unit];
+    if (!meta || !els.sectionSelect) return;
+    const sel = els.sectionSelect;
+    sel.innerHTML = "";
+    const allOpt = document.createElement("option");
+    allOpt.value = "all";
+    allOpt.textContent = "All topics (shuffled)";
+    sel.appendChild(allOpt);
+    for (const row of meta.sections) {
+      const o = document.createElement("option");
+      o.value = row.value;
+      o.textContent = row.label;
+      sel.appendChild(o);
+    }
+  }
+
+  function questionsInUnit(qs, unit) {
+    const prefix = String(unit) + ".";
+    return qs.filter(
+      (q) => typeof q.subsection === "string" && q.subsection.startsWith(prefix)
+    );
+  }
+
   function shuffle(array) {
     // Fisher–Yates shuffle to randomize practice order without bias.
     const a = array.slice(); // Copy so we never mutate the caller's array
@@ -79,19 +146,20 @@
     return params.get(name); // Returns string or null if key missing
   }
 
-  function filterBySection(qs, section) {
-    // We keep the filter string-based so URLs like `?section=1.6` work without
-    // maintaining a separate ID system. It relies on `q.subsection` starting with "1.x".
-    if (!section || section === "all") return qs.slice(); // Clone full list (no filter)
-    return qs.filter(
+  function filterBySection(qs, section, unit) {
+    const inUnit = questionsInUnit(qs, unit);
+    if (!section || section === "all") return inUnit.slice();
+    return inUnit.filter(
       (q) => typeof q.subsection === "string" && q.subsection.startsWith(section)
-    ); // e.g. "1.6 ..." matches prefix "1.6"
+    );
   }
 
   function setScopeLabel(section) {
     if (!els.scope) return; // No DOM node — nothing to update
+    const meta = UNIT_SECTIONS[currentUnit];
+    const unitLine = meta ? meta.scopeAll : "AP Chemistry";
     if (!section || section === "all") {
-      els.scope.textContent = "All Unit 1 topics · order shuffled"; // User-facing description
+      els.scope.textContent = `All ${unitLine} · order shuffled`;
       return;
     }
     const first = session[0]; // First question in filtered list (subsection string is full title)
@@ -124,8 +192,8 @@
   function startSession() {
     // A "session" is the working set of questions the student will see this run:
     // either all topics shuffled, or a single subsection in listed order.
-    const section = els.sectionSelect.value; // Current dropdown value: "all" or "1.1" … "1.8"
-    const qs = filterBySection(allQuestions, section); // Subset or full list
+    const section = els.sectionSelect.value; // Current dropdown value: "all" or e.g. "2.3"
+    const qs = filterBySection(allQuestions, section, currentUnit); // Subset within this unit
     if (qs.length === 0) {
       showError("No questions for this filter."); // Should not happen if JSON matches UI
       return;
@@ -306,11 +374,47 @@
   }
 
   function syncSelectFromUrl() {
-    const s = getParam("section"); // e.g. "1.3" from index.html topic links
+    const s = getParam("section"); // e.g. "1.3" or "2.5" from topic cards
     if (s && [...els.sectionSelect.options].some((o) => o.value === s)) {
-      // Only set if the value exists on an <option> (prevents invalid state)
       els.sectionSelect.value = s;
     }
+  }
+
+  function syncUnitInUrl() {
+    const u = new URL(window.location.href);
+    u.searchParams.set("unit", currentUnit);
+    window.history.replaceState({}, "", u);
+  }
+
+  /** Highlight Unit 1 / Unit 2 toggle to match `currentUnit`. */
+  function updateUnitSwitcher() {
+    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
+      const u = btn.getAttribute("data-quiz-unit");
+      const on = u === currentUnit;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  /** Switch unit: reset topic to “all”, update URL, restart session if bank is loaded. */
+  function switchQuizUnit(u) {
+    if (!UNIT_SECTIONS[u] || u === currentUnit) return;
+    currentUnit = u;
+    buildSectionSelect(currentUnit);
+    if (els.sectionSelect) els.sectionSelect.value = "all";
+    const url = new URL(window.location.href);
+    url.searchParams.set("unit", currentUnit);
+    url.searchParams.delete("section");
+    window.history.replaceState({}, "", url);
+    updateUnitSwitcher();
+    resetQuizCard();
+    if (allQuestions.length) startSession();
+  }
+
+  function setUnitSwitchDisabled(disabled) {
+    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
+      btn.disabled = disabled;
+    });
   }
 
   function init() {
@@ -326,13 +430,26 @@
       return; // quiz.js may be absent on other pages — do nothing
     }
 
-    syncSelectFromUrl(); // Honor ?section= when landing from homepage cards
+    resolveUnit();
+    buildSectionSelect(currentUnit);
+    syncSelectFromUrl(); // Honor ?section= when landing from topic cards
+    syncUnitInUrl(); // Keep ?unit= in the address bar for sharing / reload
+    updateUnitSwitcher();
+
+    setUnitSwitchDisabled(true);
+    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        switchQuizUnit(btn.getAttribute("data-quiz-unit"));
+      });
+    });
 
     loadQuestions() // Async fetch
       .then(() => {
+        setUnitSwitchDisabled(false);
         startSession(); // After JSON is in memory, build first session
       })
       .catch(() => {
+        setUnitSwitchDisabled(true);
         showError(
           "Could not load questions.json. If you opened this file directly (file://), run a local server (for example: python3 -m http.server) and open http://localhost:8080/quiz.html"
         );
@@ -340,6 +457,7 @@
 
     els.sectionSelect.addEventListener("change", () => {
       const u = new URL(window.location.href); // Clone current URL for history API
+      u.searchParams.set("unit", currentUnit);
       if (els.sectionSelect.value === "all") {
         u.searchParams.delete("section"); // Clean URL when viewing all topics
       } else {

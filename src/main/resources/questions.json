@@ -3106,5 +3106,3113 @@
         "rationale": "Incorrect. This is not the common oxide ion charge."
       }
     ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which description best matches the bonding in solid NaCl?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "A continuous covalent network of shared electron pairs only",
+        "rationale": "Incorrect. NaCl is composed of Na⁺ and Cl⁻ ions held by ionic attractions, not an extended covalent network like diamond."
+      },
+      {
+        "label": "B",
+        "text": "Ions arranged in a three-dimensional lattice with electrostatic attractions",
+        "rationale": "Correct. Ionic solids consist of alternating cations and anions in a repeating lattice; stability comes from Coulombic attraction."
+      },
+      {
+        "label": "C",
+        "text": "Neutral NaCl molecules held by London dispersion forces only",
+        "rationale": "Incorrect. The ionic model emphasizes ions in a lattice, not discrete NaCl molecules with only dispersion forces."
+      },
+      {
+        "label": "D",
+        "text": "Delocalized electrons moving through fixed Na and Cl nuclei only",
+        "rationale": "Incorrect. That picture fits metallic bonding, not the localized ion charges in NaCl."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Compared to a C–C bond in ethane, the intramolecular O–H bond inside a single water molecule is best classified as:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Intermolecular because water can hydrogen-bond to other molecules",
+        "rationale": "Incorrect. Hydrogen bonding between separate water molecules is intermolecular; the O–H bond inside one H₂O is intramolecular."
+      },
+      {
+        "label": "B",
+        "text": "Ionic because oxygen is more electronegative than hydrogen",
+        "rationale": "Incorrect. Large ΔEN can give polar covalent character, but O–H is still modeled as a covalent bond within the molecule."
+      },
+      {
+        "label": "C",
+        "text": "Polar covalent: shared electrons are pulled toward oxygen",
+        "rationale": "Correct. Oxygen is more electronegative than hydrogen, so the bond is covalent with a partial negative on O and partial positive on H."
+      },
+      {
+        "label": "D",
+        "text": "Nonpolar covalent because both atoms appear in many organic molecules",
+        "rationale": "Incorrect. Polarity depends on ΔEN between the two bonded atoms, not on general organic occurrence."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which interaction is strictly intermolecular?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The Si–O bonds within a quartz network",
+        "rationale": "Incorrect. Those are strong bonds within an extended structure (intramolecular / network covalent in the usual particulate model)."
+      },
+      {
+        "label": "B",
+        "text": "The C≡C triple bond in ethyne",
+        "rationale": "Incorrect. That bond is inside one molecule."
+      },
+      {
+        "label": "C",
+        "text": "The N≡N triple bond in N₂",
+        "rationale": "Incorrect. That is an intramolecular covalent bond."
+      },
+      {
+        "label": "D",
+        "text": "Dipole–dipole attractions between separate acetone molecules in the liquid",
+        "rationale": "Correct. These attractions act between different molecules in the bulk phase."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Two identical chlorine atoms form Cl₂. The bond is best described as:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nonpolar covalent with equal sharing",
+        "rationale": "Correct. Identical atoms have the same electronegativity, so electron density is shared symmetrically."
+      },
+      {
+        "label": "B",
+        "text": "Polar covalent with δ− on the left Cl",
+        "rationale": "Incorrect. There is no basis to assign different partial charges to identical atoms."
+      },
+      {
+        "label": "C",
+        "text": "Ionic with separate Cl⁺ and Cl⁻ ions in the bond",
+        "rationale": "Incorrect. Electron transfer to form ions is not the model for homonuclear diatomic chlorine."
+      },
+      {
+        "label": "D",
+        "text": "Purely metallic",
+        "rationale": "Incorrect. Cl₂ is a molecular substance, not a metal."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "At the equilibrium bond distance, the potential energy of a diatomic molecule is:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always zero by definition",
+        "rationale": "Incorrect. The zero of potential energy is arbitrary; what matters is the minimum relative to separated atoms."
+      },
+      {
+        "label": "B",
+        "text": "At a minimum for that bond’s potential-energy curve",
+        "rationale": "Correct. Equilibrium separation corresponds to the bottom of the well on a typical bond-energy diagram."
+      },
+      {
+        "label": "C",
+        "text": "At a maximum because attraction and repulsion cancel",
+        "rationale": "Incorrect. At the minimum, net force is zero, but the energy is low, not at a crest."
+      },
+      {
+        "label": "D",
+        "text": "Unrelated to bond length",
+        "rationale": "Incorrect. The energy curve is explicitly a function of internuclear separation."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Which change requires an input of energy in the usual bond-dissociation convention?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Forming bonds from gas-phase atoms",
+        "rationale": "Incorrect. Bond formation typically releases energy as the system drops toward the potential minimum."
+      },
+      {
+        "label": "B",
+        "text": "Moving bonded atoms even closer than the equilibrium bond length from a compressed state",
+        "rationale": "Incorrect. That can release energy if starting from an artificially stretched state, but the standard BDE question focuses on breaking bonds."
+      },
+      {
+        "label": "C",
+        "text": "Homolytically breaking one mole of gaseous H–H bonds into H atoms",
+        "rationale": "Correct. Breaking bonds separates atoms and raises the system’s energy; ΔH for bond breaking is endothermic."
+      },
+      {
+        "label": "D",
+        "text": "Allowing atoms to approach from infinite separation to the equilibrium bond length",
+        "rationale": "Incorrect. That process corresponds to bond formation and is exothermic relative to separated atoms."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "For comparable single bonds between the same two elements, a shorter bond most often implies:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Greater bond strength (higher bond dissociation energy)",
+        "rationale": "Correct. Shorter bonds usually mean stronger attraction and harder dissociation for the same bond order and pair of elements."
+      },
+      {
+        "label": "B",
+        "text": "Weaker bonding and easier dissociation",
+        "rationale": "Incorrect. That trend is usually opposite for similar bond types."
+      },
+      {
+        "label": "C",
+        "text": "No relationship to bond energy",
+        "rationale": "Incorrect. Length and strength are correlated in introductory models."
+      },
+      {
+        "label": "D",
+        "text": "A lower potential energy for separated atoms",
+        "rationale": "Incorrect. Separated atoms are typically higher in energy than the bonded minimum."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Why does a double bond between the same two atoms typically have a higher bond energy than a single bond between them?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Because double bonds are always longer",
+        "rationale": "Incorrect. Multiple bonds are usually shorter than single bonds between the same atoms."
+      },
+      {
+        "label": "B",
+        "text": "Because π orbitals do not overlap",
+        "rationale": "Incorrect. π overlap is part of the multiple-bond model."
+      },
+      {
+        "label": "C",
+        "text": "Because only σ bonds store energy",
+        "rationale": "Incorrect. π bonding contributes to overall bond strength."
+      },
+      {
+        "label": "D",
+        "text": "Because greater electron density between nuclei lowers energy relative to a single bond",
+        "rationale": "Correct. Additional bonding interactions (σ + π) increase net stabilization for a double bond versus a single bond."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Which statement about lattice energy is most accurate in a qualitative AP argument?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Lattice energy is unrelated to ion charge",
+        "rationale": "Incorrect. Coulombic attraction depends strongly on ion charges; higher |q| usually means a more exothermic lattice formation (larger magnitude)."
+      },
+      {
+        "label": "B",
+        "text": "For similar structures, increasing ion charge magnitude tends to increase lattice energy magnitude",
+        "rationale": "Correct. Coulombic attraction scales with |q₁q₂|; higher charges pull ions together more strongly in the lattice model."
+      },
+      {
+        "label": "C",
+        "text": "Larger ions always give larger lattice energies",
+        "rationale": "Incorrect. Larger ions increase separation and usually weaken attraction compared with smaller ions of the same charge."
+      },
+      {
+        "label": "D",
+        "text": "Ionic solids contain freely moving molecular ions like an ideal gas",
+        "rationale": "Incorrect. Ions occupy fixed lattice sites with vibrational motion, not gas-like free motion."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Why are many ionic crystals brittle when hammered?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Because metallic layers slip easily",
+        "rationale": "Incorrect. Layer slipping is a metals explanation, not the primary ionic one."
+      },
+      {
+        "label": "B",
+        "text": "Because covalent bonds rotate freely",
+        "rationale": "Incorrect. Ionic lattices do not behave like freely rotating molecular chains."
+      },
+      {
+        "label": "C",
+        "text": "Because shifting layers can bring like charges adjacent, causing repulsion and fracture",
+        "rationale": "Correct. Small shifts can align ions of the same sign along planes, producing strong repulsion."
+      },
+      {
+        "label": "D",
+        "text": "Because ionic bonds are weaker than all covalent bonds",
+        "rationale": "Incorrect. Brittleness is about mechanical response, not a blanket comparison of bond strengths."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "In the particulate model, a formula unit of CaF₂ in the crystal contains:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "One Ca²⁺ and two F⁻ in the stoichiometric ratio",
+        "rationale": "Correct. The formula reflects charge balance: one calcium ion and two fluoride ions per formula unit."
+      },
+      {
+        "label": "B",
+        "text": "One Ca⁺ and one F⁻",
+        "rationale": "Incorrect. That would not balance charges for calcium and fluorine in CaF₂."
+      },
+      {
+        "label": "C",
+        "text": "Neutral CaF₂ molecules only",
+        "rationale": "Incorrect. The extended lattice model emphasizes ions, not isolated neutral triatomic molecules as the sole picture."
+      },
+      {
+        "label": "D",
+        "text": "Delocalized electrons only",
+        "rationale": "Incorrect. That describes metals, not the ionic fluoride lattice."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Compared to Na⁺ and Cl⁻, Mg²⁺ and O²⁻ typically produce a crystal with:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Lower lattice energy magnitude because both ions are smaller",
+        "rationale": "Incorrect. Smaller, higher-charge ions usually strengthen lattice attractions."
+      },
+      {
+        "label": "B",
+        "text": "Identical lattice energy because both are 1:1 salts",
+        "rationale": "Incorrect. MgO is not 1:1 in the same way as NaCl regarding charge magnitudes; MgO has doubly charged ions."
+      },
+      {
+        "label": "C",
+        "text": "Weaker attraction because oxygen is less electronegative than chlorine",
+        "rationale": "Incorrect. Lattice energy arguments focus on ion charges and distances, not EN of neutral atoms alone."
+      },
+      {
+        "label": "D",
+        "text": "Greater lattice energy magnitude due to higher charges and short ion separation",
+        "rationale": "Correct. +2/−2 attractions and small ions combine to a very stable lattice."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "The ‘electron sea’ model explains which observation best?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ionic crystals shattering along planes",
+        "rationale": "Incorrect. That is tied to ion stacking and repulsion, not delocalized electrons."
+      },
+      {
+        "label": "B",
+        "text": "Electrical conductivity in copper wire",
+        "rationale": "Correct. Mobile delocalized electrons can move under a potential difference."
+      },
+      {
+        "label": "C",
+        "text": "Hydrogen bonding in ice",
+        "rationale": "Incorrect. That is molecular and intermolecular, not metallic."
+      },
+      {
+        "label": "D",
+        "text": "π delocalization in benzene",
+        "rationale": "Incorrect. That is a covalent resonance picture in a molecule, not bulk metallic bonding."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "A substitutional alloy is formed when:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Some host metal atoms are replaced by atoms of similar size",
+        "rationale": "Correct. Substitutional alloys substitute solute atoms onto lattice sites of the solvent metal."
+      },
+      {
+        "label": "B",
+        "text": "Only nonmetals fill interstitial holes",
+        "rationale": "Incorrect. That pattern is closer to an interstitial model with small atoms in voids."
+      },
+      {
+        "label": "C",
+        "text": "Ions pack in an NaCl-type lattice only",
+        "rationale": "Incorrect. That describes an ionic structure type, not the general definition of substitutional alloying."
+      },
+      {
+        "label": "D",
+        "text": "All electrons are localized in lone pairs",
+        "rationale": "Incorrect. Metallic bonding relies on delocalization."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Why can metals be drawn into wires (ductile)?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Because ionic layers repel and slide",
+        "rationale": "Incorrect. That is not the primary metals explanation."
+      },
+      {
+        "label": "B",
+        "text": "Because all metallic bonds break and reform as gases",
+        "rationale": "Incorrect. The solid remains metallic while layers slip."
+      },
+      {
+        "label": "C",
+        "text": "Because metal ions can slide past one another while the electron sea maintains attraction",
+        "rationale": "Correct. Delocalized electrons still attract cations after slip, so the material does not shatter like many ionic solids."
+      },
+      {
+        "label": "D",
+        "text": "Because hydrogen bonds reform continuously",
+        "rationale": "Incorrect. Metals are not held by hydrogen bonding."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Compared to a typical ionic solid, a metal’s melting point trend is not universally higher or lower, but metals are distinguished at the particulate level by:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fixed molecular formula units only",
+        "rationale": "Incorrect. Metals are not described as discrete small molecules in the sea model."
+      },
+      {
+        "label": "B",
+        "text": "Complete absence of positive centers in the lattice",
+        "rationale": "Incorrect. Cations (or atomic cores) are present in the metallic lattice."
+      },
+      {
+        "label": "C",
+        "text": "Only van der Waals attractions",
+        "rationale": "Incorrect. Metallic bonding is stronger than dispersion-only solids for many metals."
+      },
+      {
+        "label": "D",
+        "text": "Delocalized valence electrons shared among many atoms",
+        "rationale": "Correct. This feature differentiates metallic bonding from localized ionic or molecular pictures."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "How many valence electrons must be accounted for in a Lewis structure for phosphate ion PO₄³⁻?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "5",
+        "rationale": "Incorrect. That counts only phosphorus valence electrons and ignores oxygen and charge."
+      },
+      {
+        "label": "B",
+        "text": "32",
+        "rationale": "Correct. P contributes 5, each O contributes 6 (×4 = 24), and the 3− charge adds 3: total 32 valence electrons."
+      },
+      {
+        "label": "C",
+        "text": "26",
+        "rationale": "Incorrect. This misses electrons from oxygen or the charge."
+      },
+      {
+        "label": "D",
+        "text": "29",
+        "rationale": "Incorrect. Re-sum valence electrons including the anionic charge."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "In a correct Lewis structure for formaldehyde CH₂O with carbon central, how many lone pairs are on the oxygen atom in the usual octet representation?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "None",
+        "rationale": "Incorrect. Oxygen typically completes an octet with lone pairs in this molecule."
+      },
+      {
+        "label": "B",
+        "text": "One",
+        "rationale": "Incorrect. That would not give oxygen eight electrons in a typical double-bonded aldehyde oxygen."
+      },
+      {
+        "label": "C",
+        "text": "Two",
+        "rationale": "Correct. A double-bonded oxygen with two lone pairs gives eight valence electrons on O."
+      },
+      {
+        "label": "D",
+        "text": "Three",
+        "rationale": "Incorrect. Three lone pairs plus a double bond would exceed an octet on oxygen in this model."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "Which violates the octet rule for a second-row central atom in a common AP Lewis drill?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "BF₃ with boron as central atom and three B–F single bonds",
+        "rationale": "Correct. Boron has only six valence electrons in that structure—an incomplete octet that AP often highlights."
+      },
+      {
+        "label": "B",
+        "text": "NH₃ with three N–H bonds and one lone pair on nitrogen",
+        "rationale": "Incorrect. Nitrogen has a complete octet in NH₃."
+      },
+      {
+        "label": "C",
+        "text": "H₂O with two O–H bonds and two lone pairs on oxygen",
+        "rationale": "Incorrect. Oxygen has a complete octet."
+      },
+      {
+        "label": "D",
+        "text": "CH₄ with four C–H bonds",
+        "rationale": "Incorrect. Carbon has a complete octet."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "The skeleton N–C–N for cyanamide H₂NCN (simplified) reminds you that the least electronegative atom that can expand the skeleton is often placed central. For HCN, the skeleton is:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "H–C–N",
+        "rationale": "Correct. Carbon is less electronegative than nitrogen and forms the chain H–C–N; the finished Lewis structure includes a C≡N triple bond."
+      },
+      {
+        "label": "B",
+        "text": "C–H–N",
+        "rationale": "Incorrect. Hydrogen forms one bond and is not a central atom with two heavy-atom neighbors in HCN."
+      },
+      {
+        "label": "C",
+        "text": "N–H–C",
+        "rationale": "Incorrect. That is not the usual connectivity for hydrogen cyanide."
+      },
+      {
+        "label": "D",
+        "text": "H–N–C",
+        "rationale": "Incorrect. Nitrogen is not the central atom in the standard HCN Lewis skeleton."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "The carbonate ion CO₃²⁻ is often drawn with three equivalent C–O bonds experimentally because:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "The ion rapidly isomerizes between single and double bonds in time",
+        "rationale": "Incorrect. Resonance is not mechanical flipping at ordinary timescales in this model."
+      },
+      {
+        "label": "B",
+        "text": "π electron density is delocalized over all three C–O linkages in the resonance hybrid",
+        "rationale": "Correct. Multiple Lewis contributors average to equivalent C–O bonds in the hybrid."
+      },
+      {
+        "label": "C",
+        "text": "Carbon has a +2 formal charge in all structures",
+        "rationale": "Incorrect. Formal charges vary by contributor; the hybrid rationalizes equal bond lengths."
+      },
+      {
+        "label": "D",
+        "text": "Oxygen never obeys an octet in carbonate",
+        "rationale": "Incorrect. Oxygen can obey an octet in standard contributors."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "In one Lewis contributor for ozone O₃ with a central O, a terminal O is double-bonded and the other terminal O is single-bonded. The actual O–O bond lengths:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Match the single bond exactly in one pair and double in the other",
+        "rationale": "Incorrect. Experimentally, ozone has intermediate character between single and double."
+      },
+      {
+        "label": "B",
+        "text": "Are impossible to measure",
+        "rationale": "Incorrect. Bond lengths can be measured spectroscopically or by diffraction."
+      },
+      {
+        "label": "C",
+        "text": "Are intermediate between typical O–O single and double bonds due to delocalization",
+        "rationale": "Correct. The resonance hybrid predicts partial double-bond character for both linkages."
+      },
+      {
+        "label": "D",
+        "text": "Prove ozone is always O=O–O with no resonance",
+        "rationale": "Incorrect. The equal-ish bond lengths support delocalization."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "For nitrate NO₃⁻, what is the formal charge on nitrogen in a contributor where N forms one N=O double bond and two N–O single bonds (assuming oxygens complete octets)?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "+1",
+        "rationale": "Correct. A common bookkeeping gives N with four bonds worth of shared electrons in that skeleton; FC = 5 − 0 − 4 = +1 with the usual counting."
+      },
+      {
+        "label": "B",
+        "text": "0",
+        "rationale": "Incorrect. Recompute formal charge for that contributor carefully."
+      },
+      {
+        "label": "C",
+        "text": "−1",
+        "rationale": "Incorrect. Nitrogen is less electronegative than oxygen but formal charge depends on bonding pattern."
+      },
+      {
+        "label": "D",
+        "text": "+2",
+        "rationale": "Incorrect. That overcounts positive character for this contributor."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "When choosing the best set of resonance contributors, AP reasoning often prefers structures with:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "The largest possible formal charges on all atoms",
+        "rationale": "Incorrect. Large magnitudes of FC usually mean a less important contributor."
+      },
+      {
+        "label": "B",
+        "text": "Negative formal charge on the least electronegative atom",
+        "rationale": "Incorrect. Negative charge typically resides on more electronegative atoms in better contributors."
+      },
+      {
+        "label": "C",
+        "text": "Expanded octets on second-row elements only",
+        "rationale": "Incorrect. That is not a general selection rule for all species."
+      },
+      {
+        "label": "D",
+        "text": "Formal charges closest to zero, with negative charge on more electronegative atoms when possible",
+        "rationale": "Correct. This minimizes charge separation consistent with electronegativity."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "What is the molecular geometry of SF₄ if the central sulfur has four bonding domains and one lone pair (five total electron domains)?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect. Tetrahedral is the geometry for four domains and no lone pairs on the central atom."
+      },
+      {
+        "label": "B",
+        "text": "Seesaw",
+        "rationale": "Correct. Five domains with one lone pair in a trigonal-bipyramidal electron arrangement gives a seesaw molecular shape."
+      },
+      {
+        "label": "C",
+        "text": "Square planar",
+        "rationale": "Incorrect. Square planar arises from six domains with two lone pairs in an octahedral-based arrangement."
+      },
+      {
+        "label": "D",
+        "text": "Trigonal planar",
+        "rationale": "Incorrect. That corresponds to three domains around the central atom."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "The H–N–H bond angle in NH₃ is slightly less than the ideal 109.5° because:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "A lone pair on nitrogen repels bonding pairs more strongly than bonding pairs repel each other",
+        "rationale": "Correct. Lone-pair–bond-pair repulsion compresses angles between bonds."
+      },
+      {
+        "label": "B",
+        "text": "Nitrogen uses sp hybridization only",
+        "rationale": "Incorrect. NH₃ is commonly described with sp³ hybridization on nitrogen."
+      },
+      {
+        "label": "C",
+        "text": "Hydrogen atoms are too large",
+        "rationale": "Incorrect. The angle trend is explained by electron-domain repulsion, not H size alone."
+      },
+      {
+        "label": "D",
+        "text": "Ammonia is linear",
+        "rationale": "Incorrect. NH₃ is pyramidal."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "What is the hybridization of the central carbon in ethene C₂H₄?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "sp³",
+        "rationale": "Incorrect. sp³ would suggest four σ domains in a tetrahedral arrangement; the π bond in C=C requires a different hybrid picture."
+      },
+      {
+        "label": "B",
+        "text": "sp",
+        "rationale": "Incorrect. sp fits two σ domains (linear)."
+      },
+      {
+        "label": "C",
+        "text": "sp2",
+        "rationale": "Correct. Each carbon is trigonal planar with three σ domains (two C–H and one C–C σ component), described by sp² hybridization."
+      },
+      {
+        "label": "D",
+        "text": "unhybridized p only",
+        "rationale": "Incorrect. σ framework still uses hybrid orbitals in the usual model."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "XeF₄ with square planar molecular geometry implies how many lone pairs on xenon in the octahedral-based electron-domain picture?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Zero",
+        "rationale": "Incorrect. Square planar is not the shape for six bonding pairs only."
+      },
+      {
+        "label": "B",
+        "text": "One",
+        "rationale": "Incorrect. One lone pair on six domains gives square pyramidal molecular geometry."
+      },
+      {
+        "label": "C",
+        "text": "Two lone pairs that are cis (90° apart) on the octahedron",
+        "rationale": "Incorrect. Pairing lone pairs at 90° maximizes lone-pair repulsion; XeF₄ places lone pairs trans (180° apart)."
+      },
+      {
+        "label": "D",
+        "text": "Two lone pairs arranged trans on an octahedral electron geometry",
+        "rationale": "Correct. Six domains: four F and two lone pairs opposite each other gives square planar molecular geometry."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Bonding within one CO₂ molecule is best described as:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fully ionic carbon cations and oxide ions as in a salt",
+        "rationale": "Incorrect. CO₂ is modeled with covalent sharing, not full electron transfer."
+      },
+      {
+        "label": "B",
+        "text": "Metallic delocalization",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Polar covalent C–O bonds",
+        "rationale": "Correct. Oxygen pulls electron density more than carbon."
+      },
+      {
+        "label": "D",
+        "text": "Only London forces",
+        "rationale": "Incorrect. Those act between molecules."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which interaction exists between separate Ne atoms in liquid neon?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Covalent bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Ionic bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Hydrogen bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "London dispersion forces",
+        "rationale": "Correct. Noble gases interact via temporary dipoles."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Diamond is an example of:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "A covalent network solid",
+        "rationale": "Correct. Each C is tetrahedrally bonded throughout the crystal."
+      },
+      {
+        "label": "B",
+        "text": "An ionic crystal",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "A molecular solid held only by dipole forces",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "A metal",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which molecule is nonpolar despite having polar bonds?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "H₂O",
+        "rationale": "Incorrect. Bent shape gives a net dipole."
+      },
+      {
+        "label": "B",
+        "text": "CCl₄ (tetrahedral)",
+        "rationale": "Correct. Symmetry cancels bond dipoles."
+      },
+      {
+        "label": "C",
+        "text": "NH₃",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "HCl",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "The bond between identical Br atoms in Br₂ is:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ionic",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Polar covalent",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Nonpolar covalent",
+        "rationale": "Correct. Equal sharing."
+      },
+      {
+        "label": "D",
+        "text": "Metallic",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "MgO(s) is primarily classified as:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ionic",
+        "rationale": "Correct. Mg²⁺ and O²⁻ in a lattice."
+      },
+      {
+        "label": "B",
+        "text": "Molecular",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Metallic",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Network covalent like quartz",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which requires a substance to have H bonded to N, O, or F for the strongest intermolecular case?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Dipole–dipole only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Hydrogen bonding",
+        "rationale": "Correct. The classic AP definition."
+      },
+      {
+        "label": "C",
+        "text": "Metallic bonding",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Ion–ion in NaCl",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "In PCl₃, the P–Cl bonds are:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nonpolar",
+        "rationale": "Incorrect. Cl is more electronegative than P."
+      },
+      {
+        "label": "B",
+        "text": "Pure ionic",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Metallic",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Polar covalent",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Dry ice (CO₂) sublimes; the weak forces overcome between molecules are:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Covalent bonds breaking",
+        "rationale": "Incorrect. Intramolecular bonds stay intact."
+      },
+      {
+        "label": "B",
+        "text": "Ionic attractions",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "London dispersion forces",
+        "rationale": "Correct. Nonpolar CO₂ relies on dispersion."
+      },
+      {
+        "label": "D",
+        "text": "Hydrogen bonds",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which is true of a sample of copper wire?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Metallic bonding allows electron flow under voltage",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "Electrons are localized between two Cu atoms only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "It is held together by hydrogen bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "It is an ionic crystal",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Intramolecular forces in a polyethylene chain refer to:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Forces between polymer chains",
+        "rationale": "Incorrect. Those are intermolecular."
+      },
+      {
+        "label": "B",
+        "text": "C–C and C–H covalent bonds along the backbone",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Only dispersion",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Ion–dipole attractions",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.1 Types of Chemical Bonds",
+    "stimulus": "",
+    "stem": "Which has the greatest ionic character in the bond between the two atoms listed?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "C–H",
+        "rationale": "Incorrect. Small ΔEN."
+      },
+      {
+        "label": "B",
+        "text": "Cl–Cl",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "N–N",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Cs–F",
+        "rationale": "Correct. Very large ΔEN."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "If two nuclei are squeezed closer than the equilibrium bond length, potential energy typically:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increases sharply due to nuclear repulsion",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "Decreases without bound",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Stays flat",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Equals the separated-atom limit",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "A larger bond dissociation energy for a diatomic usually means:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Weaker attraction",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Longer equilibrium bond",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Harder to break into atoms",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Lower electron density between nuclei",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Comparing C–C single and C=C in the same framework, the double bond has:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Lower bond energy",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Higher bond energy",
+        "rationale": "Correct. π bonding adds stabilization."
+      },
+      {
+        "label": "C",
+        "text": "Same bond energy",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Undefined bond order",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Energy released when forming one mole of HF(g) from H(g) and F(g) is related to:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Only nuclear fusion",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Breaking H–H bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Vaporization of HF",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "The depth of the HF potential well relative to separated atoms",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "At equilibrium separation, net force on the nuclei is:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Zero",
+        "rationale": "Correct. Minimum of U implies F = −dU/dr = 0."
+      },
+      {
+        "label": "B",
+        "text": "Maximized attractive",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Maximized repulsive",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Undefined",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Which process is endothermic?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Atoms combining to make N₂",
+        "rationale": "Incorrect. Bond formation releases energy."
+      },
+      {
+        "label": "B",
+        "text": "Condensation of water",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Breaking Cl–Cl bonds to Cl atoms",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Freezing water",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Compared with N₂, the bond in N₂⁺ (one electron removed from a bonding orbital) is expected to:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Stay identical",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Increase",
+        "rationale": "Correct. Lower bond order lengthens the bond in typical MO reasoning."
+      },
+      {
+        "label": "C",
+        "text": "Decrease",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Become infinite",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "The σ bond in ethane arises from:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Side-on p overlap only",
+        "rationale": "Incorrect. That describes π."
+      },
+      {
+        "label": "B",
+        "text": "Complete electron transfer",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Metallic sea overlap",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "End-on overlap along the internuclear axis",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Which statement about bond order is accurate?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Higher bond order often correlates with shorter bond length for the same atom pair",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "Bond order is unrelated to bond length",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Single bonds are always longer than triple bonds between different atoms",
+        "rationale": "Incorrect. Cross-comparing different elements is ambiguous."
+      },
+      {
+        "label": "D",
+        "text": "Bond order applies only to ionic bonds",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Cooling a gas so atoms associate into diatomic molecules mainly:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increases potential energy of the system",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Prevents bond formation",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Allows attractive interactions to form bonds lowering energy",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Removes all kinetic energy at any finite T",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "A Morse-like curve shows bond stretching; a small vibrational displacement from Rₑ typically:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Never changes energy",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Raises energy approximately quadratically for small displacements (harmonic approximation)",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Always dissociates",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Removes all electrons",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.2 Intramolecular Force and Potential Energy",
+    "stimulus": "",
+    "stem": "Which has the shortest C–O bond among these (conceptual ranking)?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "CH₃OH single C–O",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "CH₃OCH₃ C–O",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "CO₂ as if one single C–O contributor only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "CO with a bond order near three",
+        "rationale": "Correct. Carbon monoxide has very strong short C–O linkage."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Ionic solids typically ______ electricity when solid.",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Do not conduct",
+        "rationale": "Correct. Ions are locked."
+      },
+      {
+        "label": "B",
+        "text": "Conduct well",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Conduct only by proton hopping",
+        "rationale": "Incorrect in the usual NaCl model."
+      },
+      {
+        "label": "D",
+        "text": "Behave like metals",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Which factor increases lattice energy magnitude most directly?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Larger anion radius with same charge",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Lower charges on ions",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Higher product of ion charges with smaller radii",
+        "rationale": "Correct. Coulombic reasoning."
+      },
+      {
+        "label": "D",
+        "text": "Molecular shape only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "CsCl structure type vs NaCl differs mainly in:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "CsCl is molecular",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Coordination number / packing arrangement",
+        "rationale": "Correct. Different common structure types."
+      },
+      {
+        "label": "C",
+        "text": "CsCl has no ions",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "NaCl is always gas",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Hydration of ions in solution ______ the gas-phase ion assembly energy argument.",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Is unrelated to lattice energy",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Proves lattices do not exist",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Eliminates Coulomb’s law",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Provides additional stabilization when ions are solvated",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Which compound is expected to have a higher lattice energy magnitude than RbI?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "SrO",
+        "rationale": "Correct. +2/−2 and smaller ions beat +1/−1 in typical ranking."
+      },
+      {
+        "label": "B",
+        "text": "CsBr",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "RbBr",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "HI molecular solid",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Brittle fracture in CaCO₃ is consistent with:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Metal slip",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Hydrogen bond breaking only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Ion layers shifting to align like charges",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Free electron loss",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "A ‘formula unit’ of BaCl₂ contains:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "One Ba⁺ and one Cl⁻",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "One Ba²⁺ and two Cl⁻",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Neutral BaCl₂ molecules only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Delocalized electrons only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Melting an ionic crystal primarily:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Removes all ions",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Breaks only covalent bonds in NaCl",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Converts ions to atoms in one step",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Supplies energy to overcome lattice attractions so ions can move",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Lattice energy is associated with:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Forming the ionic solid from gas-phase ions",
+        "rationale": "Correct in the standard definition."
+      },
+      {
+        "label": "B",
+        "text": "Vaporizing metals only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Breaking all covalent bonds in diamond",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Ideal gas expansion only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Which is NOT typical of many ionic crystals at room temperature?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "High melting point",
+        "rationale": "Incorrect—it is typical."
+      },
+      {
+        "label": "B",
+        "text": "Brittle",
+        "rationale": "Incorrect—it is typical."
+      },
+      {
+        "label": "C",
+        "text": "Malleable like copper",
+        "rationale": "Correct. Malleability is a metals hallmark."
+      },
+      {
+        "label": "D",
+        "text": "Insulating as solid",
+        "rationale": "Incorrect—it is typical."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Smallest ions among isoelectronic series often produce:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Weaker lattices",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Stronger lattice attractions for the same charge pattern",
+        "rationale": "Correct. Shorter distances."
+      },
+      {
+        "label": "C",
+        "text": "No effect",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Metallic behavior",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.3 Structure of Ionic Solids",
+    "stimulus": "",
+    "stem": "Na⁺ and Cl⁻ in the crystal are held by:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Covalent sharing only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Hydrogen bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "London forces only between molecules",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Electrostatic attraction in a lattice",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Steel with interstitial carbon is an example of:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Interstitial alloying",
+        "rationale": "Correct. Small C fits in Fe voids."
+      },
+      {
+        "label": "B",
+        "text": "Substitutional only with no carbon",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Ionic substitution",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "A molecular crystal",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Heating a metal increases electrical resistance mainly because:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Electrons disappear",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Ions become negative",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Lattice vibrations scatter electron motion more",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Metallic bonding turns ionic",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Gold’s shiny appearance relates to:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Ionic color centers only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Electron transitions involving the conduction band / sea",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Only nuclear transitions",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Hydrogen bond absorption",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Compared to sodium, magnesium metal has:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fewer delocalized electrons per atom in the sea model",
+        "rationale": "Incorrect. Mg contributes more valence electrons per atom."
+      },
+      {
+        "label": "B",
+        "text": "No mobile electrons",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Ionic bonding",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "More valence electrons per atom contributing to the sea",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Which property is least consistent with pure metallic bonding?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Low electrical conductivity as a solid",
+        "rationale": "Correct. Metals conduct."
+      },
+      {
+        "label": "B",
+        "text": "Thermal conductivity",
+        "rationale": "Incorrect—it matches metals."
+      },
+      {
+        "label": "C",
+        "text": "Malleability",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Luster",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Bronze (Cu–Sn) is commonly:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "A molecular compound",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "A substitutional alloy if Sn replaces some Cu sites",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Pure ionic SnCu",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "A noble gas mixture",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "The electron sea model explains thermal conductivity in metals by:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Vibration of fixed molecules only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Hydrogen transfer",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Mobile electrons carrying kinetic energy",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Ion diffusion only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Work-hardening a metal ______ dislocation motion.",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Eliminates all bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Has no effect",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Always melts the sample",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Can impede slip by introducing defects",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Alloying often changes metal hardness because:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Different atom sizes disrupt regular layer slip",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "All electrons are removed",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Ionic bonds replace metallic bonds completely",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Hydrogen bonds dominate",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Mercury is a liquid at room temperature yet still metallic because:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "It has no conduction electrons",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "It still has delocalized valence electrons despite weaker attractions",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "It is ionic",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "It is covalent only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Which statement contrasts metals and ionic solids fairly?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Both conduct well as solids",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Neither has ordered structures",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Metals conduct via electrons; ionic solids often conduct when molten or dissolved via ions",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Both are always brittle",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.4 Structure of Metals and Alloys",
+    "stimulus": "",
+    "stem": "Wires are drawn from metals rather than NaCl because:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "NaCl has too many electrons",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Metals lack positive centers",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "NaCl is too conductive as a solid",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Metallic slip preserves bonding; ionic slip aligns repulsive faces",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "Valence electrons for HCN (neutral):",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "10",
+        "rationale": "Correct. H1 + C4 + N5."
+      },
+      {
+        "label": "B",
+        "text": "8",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "12",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "14",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "In SO₂ the central atom is:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "O",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "S",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Either atom with equal preference",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "There is no central atom",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "Total valence electrons for H₂CO (formaldehyde):",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "10",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "14",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "12",
+        "rationale": "Correct. H×2 + C4 + O6."
+      },
+      {
+        "label": "D",
+        "text": "16",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "An expanded octet on P in PCl₅ implies:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "P obeys octet strictly",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Only two chlorines bond",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "P forms ionic bonds only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "More than eight electrons around P in the Lewis representation",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "For N₂, the Lewis structure shows:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "A triple bond and one lone pair on each nitrogen",
+        "rationale": "Correct in the usual octet structure."
+      },
+      {
+        "label": "B",
+        "text": "Only single bonds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Ionic N⁺ and N³⁻",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "No lone pairs",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "The skeleton for ClO₃⁻ typically places ______ central.",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "O",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Cl",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "A hydrogen",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "No central atom",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "BeCl₂ (g) often drawn with only four electrons on Be illustrates:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "An octet on Be",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Metallic bonding",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "An incomplete octet on Be",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Resonance only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "How many lone pairs on terminal F in ClF₃ (each F completes octet)?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "0",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "1",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "4",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "3",
+        "rationale": "Correct. Three lone pairs per terminal F with one bond."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "For CO, valence electron total is:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "10",
+        "rationale": "Correct. C4 + O6."
+      },
+      {
+        "label": "B",
+        "text": "12",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "8",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "14",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "A resonance-stabilized oxyacid anion often has multiple Lewis forms differing in:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Atom connectivity",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "π bond placement",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Nuclear charge",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Number of atoms",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "CH₃OH: how many lone pairs on oxygen in the Lewis structure with two single bonds to C and H?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "0",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "1",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "2",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "3",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.5 Lewis Diagrams",
+    "stimulus": "",
+    "stem": "XeF₄ Lewis picture requires ______ electron pairs around Xe in the expanded octet model.",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "4",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "5",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "7",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "6 bonding+lone domains (12 electrons in pairs around Xe in the usual count)",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "The best resonance contributor to CO₂ often has:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Formal charges of zero on C and O with double bonds",
+        "rationale": "Correct in the symmetric preferred form."
+      },
+      {
+        "label": "B",
+        "text": "Single bonds only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "C with −2 and O with +1 each",
+        "rationale": "Incorrect as the favored picture."
+      },
+      {
+        "label": "D",
+        "text": "Only one oxygen participating",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "Benzene’s equal C–C bond lengths imply:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Rapid single-double flipping",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Only one Kekulé form is real",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Delocalized π system",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "No π bonds",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "Formal charge on S in SO₂ with one S=O double and one S–O single (octets) in one contributor:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "0",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "+1",
+        "rationale": "Correct with usual counting."
+      },
+      {
+        "label": "C",
+        "text": "−2",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "+3",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "Which ion commonly needs resonance to match equal bond lengths experimentally?",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "Cl⁻",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Na⁺",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "OH⁻",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "NO₃⁻",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "A contributor with adjacent like formal charges is usually:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Less important than one with separated opposite charges minimized",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "Always the best",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Required for neutrals",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Impossible to draw",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "O₃ bond order in the hybrid picture is between:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "3 and 4",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "0 and 1",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "1 and 2 for each O–O link",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Exactly 1 only",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "When ranking resonance structures, placing a negative formal charge on oxygen rather than carbon is often favored because:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Carbon is more electronegative",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Oxygen is more electronegative",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Oxygen has fewer protons",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Formal charge ignores EN",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "The sum of formal charges in a neutral molecule must be:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "+1",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "−1",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Undefined",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Zero",
+        "rationale": "Correct."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "Which species is NOT well described by a single Lewis structure without resonance arguments?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "CO₃²⁻",
+        "rationale": "Correct."
+      },
+      {
+        "label": "B",
+        "text": "H₂O",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "CH₄",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "NH₃",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "In N₂O (connectivity N–N–O for this item), formal charge arguments help choose:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Nuclear masses",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Vibration frequency only",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Which Lewis contributors are more important",
+        "rationale": "Correct."
+      },
+      {
+        "label": "D",
+        "text": "Atomic radii",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.6 Resonance and Formal Charge",
+    "stimulus": "",
+    "stem": "Double-headed resonance arrows between Lewis structures mean:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "The molecule physically flips between structures at ordinary speeds",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "The true wavefunction is a combination of those limiting forms",
+        "rationale": "Correct."
+      },
+      {
+        "label": "C",
+        "text": "Only the left structure exists",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Electrons are deleted",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Molecular geometry of BF₃:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Trigonal planar",
+        "rationale": "Correct. Three domains, no lone pairs on B."
+      },
+      {
+        "label": "B",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Bent",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Pyramidal",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Electron-domain geometry of NH₃:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect—that is molecular shape name confusion."
+      },
+      {
+        "label": "B",
+        "text": "Trigonal planar",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Tetrahedral arrangement of four domains",
+        "rationale": "Correct. Three bonds + one lone pair."
+      },
+      {
+        "label": "D",
+        "text": "Linear",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Hybridization of S in SF₆:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "sp",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "sp²",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "sp³",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "sp³d²",
+        "rationale": "Correct for six σ domains in the expanded octet model."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Bond angle in CO₂:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "109.5°",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "180°",
+        "rationale": "Correct. Linear."
+      },
+      {
+        "label": "C",
+        "text": "120°",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "90°",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "ClF₃ molecular geometry:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "T-shaped",
+        "rationale": "Correct. Five domains, two lone pairs equatorial."
+      },
+      {
+        "label": "B",
+        "text": "Trigonal planar",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Linear",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "PCl₅ in the gas phase has which electron-domain geometry?",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "Octahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Trigonal bipyramidal",
+        "rationale": "Correct. Five domains."
+      },
+      {
+        "label": "D",
+        "text": "Square planar",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Hybridization of central C in CO₂:",
+    "correct": "D",
+    "options": [
+      {
+        "label": "A",
+        "text": "sp³",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "sp³d",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "sp³d²",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "sp",
+        "rationale": "Correct. Two σ domains linear."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Which is polar?",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "CCl₄",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "CH₂Cl₂",
+        "rationale": "Correct. Asymmetric substitution."
+      },
+      {
+        "label": "C",
+        "text": "CO₂",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "BF₃",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "XeF₂ molecular shape:",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "Linear",
+        "rationale": "Correct. Five domains, three lone pairs equatorial."
+      },
+      {
+        "label": "B",
+        "text": "Bent",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Square planar",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Approximate H–C–H angle in ethene:",
+    "correct": "C",
+    "options": [
+      {
+        "label": "A",
+        "text": "109.5°",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "104.5°",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "120°",
+        "rationale": "Correct. Trigonal planar carbons."
+      },
+      {
+        "label": "D",
+        "text": "180°",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "BrF₅ molecular geometry:",
+    "correct": "B",
+    "options": [
+      {
+        "label": "A",
+        "text": "Octahedral",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "B",
+        "text": "Square pyramidal",
+        "rationale": "Correct. Six domains, one lone pair."
+      },
+      {
+        "label": "C",
+        "text": "Pentagonal planar",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "Tetrahedral",
+        "rationale": "Incorrect."
+      }
+    ]
+  },
+  {
+    "subsection": "2.7 VSEPR and Hybridization",
+    "stimulus": "",
+    "stem": "Which has a tetrahedral electron geometry around the central atom?",
+    "correct": "A",
+    "options": [
+      {
+        "label": "A",
+        "text": "CH₄",
+        "rationale": "Correct. Four bonding domains."
+      },
+      {
+        "label": "B",
+        "text": "XeF₄",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "C",
+        "text": "SF₆",
+        "rationale": "Incorrect."
+      },
+      {
+        "label": "D",
+        "text": "CO₂",
+        "rationale": "Incorrect."
+      }
+    ]
   }
 ]
