@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  quiz.html — MCQ UI; quiz.js loads questions.json, filters by ?unit= + dropdown / ?section=, grades answers.
+  quiz.html — MCQ UI; quiz.js loads questions.json, filters by unit (1–9) + topic / ?section=, grades answers.
   Topic options are built in quiz.js from UNIT_SECTIONS.
 -->
 <html lang="en">
@@ -18,7 +18,7 @@
       <a class="logo" href="index.html">AP Chem</a>
       <nav aria-label="Main">
         <ul class="nav-list">
-          <li><a href="index.html">Unit 1</a></li>
+          <li><a href="unit1-landing.html">Unit 1</a></li>
           <li><a href="index-unit2.html">Unit 2</a></li>
           <li><a href="notes.html">Notes U1</a></li>
           <li><a href="notes-unit2.html">Notes U2</a></li>
@@ -31,30 +31,14 @@
   <main class="container quiz-layout" id="main">
     <div class="quiz-toolbar">
       <div class="quiz-toolbar-lead">
-        <div
-          class="unit-switch"
-          role="group"
-          aria-label="Choose AP Chemistry unit for practice"
-        >
+        <div class="unit-switch">
           <span class="unit-switch-label" id="unit-switch-label">Practice unit</span>
-          <button
-            type="button"
-            class="unit-switch-btn"
-            data-quiz-unit="1"
-            aria-pressed="true"
+          <label class="sr-only" for="unit-select">Unit</label>
+          <select
+            id="unit-select"
+            class="select-input unit-select-wide"
             aria-describedby="unit-switch-label"
-          >
-            Unit 1
-          </button>
-          <button
-            type="button"
-            class="unit-switch-btn"
-            data-quiz-unit="2"
-            aria-pressed="false"
-            aria-describedby="unit-switch-label"
-          >
-            Unit 2
-          </button>
+          ></select>
         </div>
         <h1 class="quiz-title">Multiple choice practice</h1>
         <p id="quiz-scope" class="quiz-scope">Loading…</p>
@@ -109,7 +93,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p><a href="index.html">Unit 1</a> · <a href="index-unit2.html">Unit 2</a></p>
+      <p><a href="unit1-landing.html">Unit 1</a> · <a href="index-unit2.html">Unit 2</a></p>
     </div>
   </footer>
   <!-- defer: quiz logic in quiz.js; requires HTTP(S) or localhost so fetch(questions.json) works. -->

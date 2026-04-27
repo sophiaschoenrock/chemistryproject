@@ -1,0 +1,1142 @@
+[
+  {
+    "id": 1,
+    "unit": "1",
+    "topic": "1.3",
+    "question": "A student measures the density of a liquid sample three times and records values of 0.872 g/mL, 0.874 g/mL, and 0.873 g/mL. The accepted value is 0.910 g/mL. Which statement best describes the student's measurements?",
+    "choices": {
+      "A": "High accuracy, high precision",
+      "B": "Low accuracy, high precision",
+      "C": "High accuracy, low precision",
+      "D": "Low accuracy, low precision"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Accuracy describes how close a measurement is to the accepted value — here the student's values are consistently about 0.038 g/mL below the accepted 0.910 g/mL, so accuracy is low. Don't confuse consistent readings with correct readings.",
+      "B": "These three measurements are clustered tightly together (within 0.002 g/mL of each other), which means the student has high precision — the results are reproducible. However, all three values are far from the accepted value of 0.910 g/mL, indicating a systematic error and low accuracy.",
+      "C": "This choice reverses the roles of precision and accuracy. The measurements are not close to the accepted value (low accuracy), and they ARE consistent with each other (high precision, not low). Review how each term is defined independently.",
+      "D": "Precision reflects reproducibility — the three measurements vary by less than 0.002 g/mL, which is actually very precise. While accuracy is indeed low, calling precision low here is incorrect."
+    }
+  },
+  {
+    "id": 2,
+    "unit": "2",
+    "topic": "2.2",
+    "question": "Which of the following correctly explains why the first ionization energy of oxygen (O) is lower than that of nitrogen (N), even though O has a higher nuclear charge?",
+    "choices": {
+      "A": "Oxygen has more electrons that shield the nucleus more effectively than nitrogen's electrons.",
+      "B": "Oxygen's 2p subshell is half-filled, making it especially stable and difficult to ionize.",
+      "C": "Removing an electron from oxygen relieves electron-electron repulsion in a doubly occupied 2p orbital.",
+      "D": "Oxygen has a larger atomic radius than nitrogen, so the valence electrons are farther from the nucleus."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "While increased shielding is a real concept, nitrogen and oxygen both have the same core electrons (1s2 2s2), so their shielding is essentially equivalent. The difference is not due to shielding — it is about repulsion within the 2p subshell.",
+      "B": "This statement actually describes nitrogen, not oxygen. Nitrogen's 2p subshell is exactly half-filled (one electron in each of three orbitals), giving it extra stability. That is precisely why nitrogen has a higher first ionization energy than expected — you are confusing the two elements.",
+      "C": "Nitrogen has three 2p electrons, each in its own orbital (no pairing). Oxygen has four 2p electrons, meaning one orbital must hold two electrons. That paired electron experiences repulsion from its partner, making it easier to remove — so despite higher nuclear charge, oxygen's first IE is lower than nitrogen's.",
+      "D": "In fact, oxygen has a smaller atomic radius than nitrogen because of its higher nuclear charge pulling electrons inward. Atomic radius trends do not explain this particular anomaly — this question specifically targets the half-filled/spin-pairing exception."
+    }
+  },
+  {
+    "id": 3,
+    "unit": "3",
+    "topic": "3.2",
+    "question": "Which of the following molecules has a net dipole moment of zero despite having polar bonds?",
+    "choices": {
+      "A": "H2O",
+      "B": "NH3",
+      "C": "CO2",
+      "D": "HCl"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Water has two polar O-H bonds, but the bent molecular geometry (caused by two lone pairs on oxygen) means the bond dipoles do NOT cancel — they add to give a significant net dipole. Water is highly polar.",
+      "B": "Ammonia has three polar N-H bonds arranged in a trigonal pyramidal shape. Because the molecule is asymmetric due to the lone pair, the dipoles do not cancel, giving NH3 a net dipole moment.",
+      "C": "CO2 is linear, with two identical C=O bonds pointing in exactly opposite directions (180 degrees apart). The bond dipoles are equal in magnitude and opposite in direction, so they cancel completely — yielding a net dipole of zero, even though each individual bond is quite polar.",
+      "D": "HCl is a diatomic molecule with one polar bond. There is no second bond to oppose it, so there is always a net dipole moment. A single polar bond in a diatomic can never cancel itself."
+    }
+  },
+  {
+    "id": 4,
+    "unit": "4",
+    "topic": "4.1",
+    "question": "A saturated solution of AgCl is in equilibrium with excess solid AgCl. If NaCl is added to this system, which of the following best describes what happens?",
+    "choices": {
+      "A": "More AgCl dissolves to maintain the equilibrium constant.",
+      "B": "AgCl precipitates further because Q > Ksp.",
+      "C": "The Ksp of AgCl increases to accommodate the added Cl- ions.",
+      "D": "The solution becomes unsaturated as Cl- ions pair with Ag+."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This is backward. Le Chatelier's principle says that adding a product (Cl- is a product of AgCl dissolution) shifts equilibrium toward the reactant side — meaning AgCl precipitates, not dissolves. Adding NaCl suppresses dissolving.",
+      "B": "Adding NaCl increases the concentration of Cl- in solution. This makes the reaction quotient Q = [Ag+][Cl-] exceed Ksp. To re-establish equilibrium, the reverse reaction is favored — AgCl precipitates out of solution until Q drops back to Ksp. This is the common ion effect.",
+      "C": "Ksp is a thermodynamic equilibrium constant that depends only on temperature — it cannot change when a reagent is added. Students often confuse the value of Ksp changing with the system shifting to a new equilibrium position.",
+      "D": "Cl- and Ag+ do pair — that is exactly why AgCl precipitates. But this does not make the solution unsaturated; it pushes the solution below saturation only temporarily, and the excess solid maintains the saturated equilibrium. The wording here is misleading and incorrect."
+    }
+  },
+  {
+    "id": 5,
+    "unit": "5",
+    "topic": "5.4",
+    "question": "For the reaction 2NO(g) + O2(g) → 2NO2(g), the rate law is experimentally determined to be rate = k[NO]2[O2]. What is the overall reaction order, and what does this imply?",
+    "choices": {
+      "A": "Second order; the reaction proceeds in a single bimolecular step.",
+      "B": "Third order; the rate law was derived from the balanced equation.",
+      "C": "Third order; the rate law was determined experimentally and reflects the mechanism.",
+      "D": "Second order; doubling [O2] quadruples the rate."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "The overall order is 2 + 1 = 3 (second order in NO, first order in O2), not second order. Second order would mean the exponents sum to 2. Also, the mechanism cannot be assumed to be a single step just from the stoichiometry.",
+      "B": "The overall order is indeed third, but the reasoning is critically wrong. Rate laws must NEVER be derived directly from balanced equations — they can only be determined by experiment. The stoichiometric coefficients and rate law exponents coincidentally match here, but that is not always the case.",
+      "C": "Adding the exponents: 2 (for NO) + 1 (for O2) = 3rd order overall. The crucial AP concept here is that rate laws are always experimentally determined — they reflect the slowest step (rate-determining step) of the mechanism, not the overall stoichiometry.",
+      "D": "Doubling [O2] with a first-order dependence on O2 would only double the rate, not quadruple it. Quadrupling occurs when you double a species with a second-order dependence. Also, the overall order is third, not second."
+    }
+  },
+  {
+    "id": 6,
+    "unit": "6",
+    "topic": "6.1",
+    "question": "A reaction is found to be spontaneous at all temperatures. What must be true about the signs of deltaH and deltaS for this reaction?",
+    "choices": {
+      "A": "deltaH > 0, deltaS > 0",
+      "B": "deltaH < 0, deltaS < 0",
+      "C": "deltaH < 0, deltaS > 0",
+      "D": "deltaH > 0, deltaS < 0"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "A positive deltaH (endothermic) combined with positive deltaS gives deltaG = deltaH - T*deltaS that is only negative (spontaneous) at high temperatures. At low temperatures, deltaG would be positive. This does not satisfy the 'all temperatures' condition.",
+      "B": "Negative deltaH (favorable) combined with negative deltaS means deltaG = deltaH - T*deltaS becomes less negative (or positive) as T increases. This reaction would be spontaneous only at low temperatures, not all temperatures.",
+      "C": "When deltaH < 0 (exothermic) and deltaS > 0 (entropy increases), then deltaG = deltaH - T*deltaS is negative for every value of T > 0. Both terms work together — the T*deltaS term makes deltaG even more negative as temperature rises. Spontaneous at all temperatures.",
+      "D": "Positive deltaH and negative deltaS make deltaG = deltaH - T*deltaS positive at all temperatures. This reaction is non-spontaneous under all conditions — the exact opposite of what the question asks."
+    }
+  },
+  {
+    "id": 7,
+    "unit": "7",
+    "topic": "7.3",
+    "question": "Consider the equilibrium: N2(g) + 3H2(g) ⇌ 2NH3(g). If the volume of the container is suddenly halved at constant temperature, which of the following correctly predicts the direction of the shift?",
+    "choices": {
+      "A": "Toward products, because increasing pressure favors the side with fewer moles of gas.",
+      "B": "Toward reactants, because the reaction is exothermic and compression releases heat.",
+      "C": "No shift occurs, because the equilibrium constant K does not change with pressure.",
+      "D": "Toward products, because NH3 has a higher molar mass and is more stable at high pressure."
+    },
+    "correct_answer": "A",
+    "explanations": {
+      "A": "Halving the volume doubles the pressure. Le Chatelier's principle predicts a shift toward the side with fewer moles of gas to relieve the increased pressure. The reactant side has 1 + 3 = 4 mol gas; the product side has 2 mol gas. The equilibrium shifts toward products (toward NH3).",
+      "B": "While the Haber process is indeed exothermic, that is irrelevant here — changing volume at constant temperature is a pressure effect, not a temperature effect. Temperature changes affect K; pressure changes shift equilibrium without changing K. This answer confuses two separate Le Chatelier effects.",
+      "C": "It is true that K does not change with pressure (only temperature changes K). However, Q changes when the volume changes, so the system WILL shift to re-establish equilibrium. Saying no shift occurs is incorrect — it conflates K not changing with the system not responding.",
+      "D": "Molar mass has no bearing on Le Chatelier's principle. Stability arguments like 'more stable at high pressure' are not a valid thermodynamic reasoning tool in this context. The direction of shift is determined entirely by moles of gas on each side."
+    }
+  },
+  {
+    "id": 8,
+    "unit": "8",
+    "topic": "8.4",
+    "question": "A buffer is prepared by mixing acetic acid (CH3COOH, pKa = 4.74) and sodium acetate. Which of the following changes would cause the greatest decrease in the buffer's pH?",
+    "choices": {
+      "A": "Adding a small amount of NaOH",
+      "B": "Adding a large amount of HCl",
+      "C": "Diluting the buffer with distilled water",
+      "D": "Adding a small amount of HCl"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Adding NaOH to an acetic acid/acetate buffer neutralizes some of the weak acid, shifting the ratio of acid to conjugate base. This actually increases pH, not decreases it. Small amounts of base are what the buffer is designed to resist.",
+      "B": "A large amount of HCl would overwhelm the buffer capacity. Once all the conjugate base (acetate) is consumed, the buffer can no longer neutralize added acid and the pH drops dramatically. A small amount would be buffered, but a large amount destroys buffering capacity.",
+      "C": "Diluting a buffer with water has almost no effect on pH. The Henderson-Hasselbalch equation shows pH = pKa + log([A-]/[HA]); dilution affects both concentrations equally, so the ratio stays the same and pH remains nearly constant.",
+      "D": "A small amount of HCl is exactly what the buffer is designed to handle. The acetate ion will neutralize the added H+, and the pH will decrease only slightly. A buffer resists small pH changes, so this is a much smaller effect than choice B."
+    }
+  },
+  {
+    "id": 9,
+    "unit": "9",
+    "topic": "9.7",
+    "question": "In a galvanic cell, zinc is oxidized and copper(II) ions are reduced. Which of the following statements about this cell is correct?",
+    "choices": {
+      "A": "Electrons flow from the copper electrode to the zinc electrode through the external circuit.",
+      "B": "The zinc electrode is the cathode and gains mass during the reaction.",
+      "C": "The salt bridge allows electrons to flow between the two half-cells.",
+      "D": "The zinc electrode is the anode and loses mass as the reaction proceeds."
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "In a galvanic cell, oxidation occurs at the anode (zinc) — electrons are released there and flow through the external wire to the cathode (copper), not the other way around. Electron flow always goes from anode to cathode in spontaneous cells.",
+      "B": "Zinc undergoes oxidation, so it is the anode, not the cathode. The cathode is the copper electrode where Cu2+ ions are reduced and deposit as solid copper — gaining mass. Zinc dissolves as Zn2+ ions enter solution.",
+      "C": "The salt bridge does NOT carry electrons — electrons travel through the external wire. The salt bridge carries ions (cations and anions) to maintain electrical neutrality in each half-cell. Confusing electrons and ions in the salt bridge is an extremely common misconception.",
+      "D": "Zinc is oxidized at the anode: Zn(s) → Zn2+(aq) + 2e-. As zinc atoms are converted to aqueous ions, the solid zinc electrode literally dissolves — losing mass over time. The anode always loses mass when a metal is oxidized in a galvanic cell."
+    }
+  },
+  {
+    "id": 10,
+    "unit": "3",
+    "topic": "3.7",
+    "question": "Which of the following correctly ranks the melting points of NaCl, MgO, and SiO2 from lowest to highest?",
+    "choices": {
+      "A": "SiO2 < NaCl < MgO",
+      "B": "NaCl < SiO2 < MgO",
+      "C": "MgO < NaCl < SiO2",
+      "D": "NaCl < MgO < SiO2"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "This order is incorrect. SiO2 is a covalent network solid with strong Si-O bonds throughout a 3D lattice, giving it a very high melting point (~1713°C) — it should be ranked higher, not lowest.",
+      "B": "MgO melts at approximately 2852°C — among the highest for any ionic compound. Its Mg2+ and O2- ions both have high charges, creating very strong lattice energy. Placing MgO last is incorrect.",
+      "C": "This is essentially reversed. NaCl (801°C) melts lower than SiO2 (~1713°C) which melts lower than MgO (~2852°C). MgO should be highest, not lowest.",
+      "D": "NaCl has singly charged ions (Na+ and Cl-) and the lowest lattice energy of the three — it melts at about 801°C. SiO2 is a covalent network solid with extensive Si-O bonding, melting around 1713°C. MgO has doubly charged ions (Mg2+, O2-), giving enormous lattice energy and the highest melting point (~2852°C)."
+    }
+  },
+  {
+    "id": 11,
+    "unit": "1",
+    "topic": "1.5",
+    "question": "The photoelectron spectrum (PES) of an element shows peaks at binding energies corresponding to 1s, 2s, and 2p subshells, with the 2p peak being the tallest. Which element is most likely being analyzed?",
+    "choices": {
+      "A": "Boron (Z=5)",
+      "B": "Carbon (Z=6)",
+      "C": "Oxygen (Z=8)",
+      "D": "Neon (Z=10)"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Boron has the configuration [He]2s2 2p1. Its 2p subshell holds only 1 electron, while 2s holds 2. In PES, peak height reflects the number of electrons — so the 2p peak for boron would be shorter than the 2s peak, not taller.",
+      "B": "Carbon is [He]2s2 2p2. With 2 electrons in 2p and 2 in 2s, these peaks would be equal in height. The question specifies the 2p peak is the TALLEST, so carbon does not fit.",
+      "C": "Oxygen's electron configuration is [He]2s2 2p4. The 2p subshell holds 4 electrons while the 2s subshell holds 2 and the 1s subshell holds 2. In PES, the 2p peak will be the tallest because it has the most electrons. This matches the description perfectly.",
+      "D": "Neon is [He]2s2 2p6. It has 6 electrons in 2p and 2 in each of 1s and 2s, so the 2p peak would indeed be tallest. However, oxygen with 4 in 2p is the cleaner and more commonly tested match for this type of PES question."
+    }
+  },
+  {
+    "id": 12,
+    "unit": "5",
+    "topic": "5.2",
+    "question": "A reaction has an activation energy of 80 kJ/mol. A catalyst is added that provides an alternative pathway with an activation energy of 50 kJ/mol. Which of the following is true?",
+    "choices": {
+      "A": "The reaction becomes more exothermic in the presence of the catalyst.",
+      "B": "The catalyst increases the rate by raising the energy of the products.",
+      "C": "The catalyst increases the rate without changing the overall deltaH of the reaction.",
+      "D": "The catalyst shifts the equilibrium position toward the products."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "A catalyst lowers activation energy but has absolutely no effect on the energy of reactants or products — so deltaH remains exactly the same. Whether a reaction is exothermic or endothermic is a property of the reaction itself, not of how quickly it occurs.",
+      "B": "Catalysts work by lowering activation energy, not by raising product energy. If product energy were raised, that would actually make the reverse reaction more favorable and could change deltaH — which catalysts never do.",
+      "C": "A catalyst provides an alternative reaction pathway with lower activation energy, allowing more molecules to reach the transition state at a given temperature. This increases the reaction rate. Crucially, the catalyst is regenerated and does not alter deltaH, deltaG, or the equilibrium constant K — only the rate.",
+      "D": "A catalyst speeds up BOTH the forward and reverse reactions equally, so the equilibrium position (and K) does not change. The system reaches equilibrium faster, but the same equilibrium concentrations are established."
+    }
+  },
+  {
+    "id": 13,
+    "unit": "6",
+    "topic": "6.3",
+    "question": "Which of the following processes results in an increase in entropy of the system?",
+    "choices": {
+      "A": "Freezing water at 0°C",
+      "B": "Dissolving a gas in a liquid",
+      "C": "Sublimation of dry ice (CO2) at room temperature",
+      "D": "Precipitation of silver chloride from solution"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Freezing converts liquid water (relatively disordered) into a highly ordered crystalline solid (ice). The system becomes more ordered, so entropy decreases (deltaS < 0). Solidification always decreases entropy.",
+      "B": "When a gas dissolves into a liquid, the highly mobile and disordered gas molecules become constrained by solvent interactions. The gas phase is the highest entropy state — dissolving a gas reduces its freedom significantly, decreasing the system's entropy.",
+      "C": "Sublimation converts CO2 directly from solid (highly ordered) to gas (highly disordered). Gases have far more possible microstates than solids — molecules move freely in three dimensions. This transition dramatically increases entropy (deltaS > 0).",
+      "D": "Precipitation removes dissolved ions from solution and forms an ordered solid. Ions go from a relatively free, mobile state in solution to a constrained, lattice arrangement. Entropy decreases when a precipitate forms."
+    }
+  },
+  {
+    "id": 14,
+    "unit": "2",
+    "topic": "2.5",
+    "question": "Why does fluorine (F) have a higher electronegativity than chlorine (Cl), even though they are in the same group?",
+    "choices": {
+      "A": "Fluorine has more valence electrons, allowing it to attract bonding electrons more strongly.",
+      "B": "Fluorine has a smaller atomic radius, so its nucleus exerts a stronger pull on shared electrons.",
+      "C": "Fluorine's electron affinity is lower, so it more readily accepts electrons.",
+      "D": "Chlorine has more protons, giving it a stronger nuclear charge."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Fluorine and chlorine both have 7 valence electrons — they are in the same group. Electronegativity differences within a group are not due to valence electron count, which is the same. This reasoning does not distinguish F from Cl.",
+      "B": "Fluorine is in period 2 and has a much smaller atomic radius than chlorine (period 3). Bonding electrons are held much closer to fluorine's nucleus, which exerts a stronger effective nuclear charge on shared electrons despite F having fewer total protons. Smaller size means greater attraction — fluorine is the most electronegative element.",
+      "C": "This is backwards. A higher electron affinity (more energy released upon gaining an electron) is associated with higher electronegativity, not lower. Fluorine actually has a high electron affinity, which supports its high electronegativity.",
+      "D": "Chlorine has 17 protons versus fluorine's 9 — so chlorine has more protons. However, chlorine also has more inner-shell electrons that shield the nucleus, reducing the effective nuclear charge felt by valence electrons. Nuclear charge alone does not determine electronegativity."
+    }
+  },
+  {
+    "id": 15,
+    "unit": "4",
+    "topic": "4.5",
+    "question": "For the reaction H2CO3(aq) ⇌ H+(aq) + HCO3-(aq), what happens to the percent dissociation of H2CO3 when the solution is diluted?",
+    "choices": {
+      "A": "Percent dissociation decreases because there are fewer solute molecules.",
+      "B": "Percent dissociation stays the same because Ka does not change with dilution.",
+      "C": "Percent dissociation increases because Q < Ka after dilution, shifting toward products.",
+      "D": "Percent dissociation increases because Ka increases with dilution."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "While there are indeed fewer solute molecules after dilution, the percentage that dissociates actually goes UP, not down. Dilution decreases the concentration of all species, which lowers Q below Ka, causing more dissociation to re-establish equilibrium.",
+      "B": "Ka does not change with dilution (it only changes with temperature) — that part is correct. However, the percent dissociation DOES change because the ratio of dissociated to undissociated molecules shifts. Constant Ka does not mean constant percent dissociation.",
+      "C": "When water is added, all concentrations decrease. This means the reaction quotient Q falls below Ka. The system responds by dissociating more H2CO3 to re-establish equilibrium. The percent dissociation increases. This is true for all weak acids upon dilution.",
+      "D": "Ka is a thermodynamic constant that depends only on temperature, not concentration or dilution. Ka cannot increase with dilution. This is a fundamental misconception about the nature of equilibrium constants."
+    }
+  },
+  {
+    "id": 16,
+    "unit": "9",
+    "topic": "9.2",
+    "question": "In an electrolytic cell, which of the following occurs at the anode?",
+    "choices": {
+      "A": "Reduction; the anode is connected to the positive terminal of the battery.",
+      "B": "Oxidation; the anode is connected to the positive terminal and attracts anions.",
+      "C": "Reduction; the anode attracts cations from solution.",
+      "D": "Oxidation; the anode is connected to the negative terminal of the battery."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "In an electrolytic cell, oxidation always occurs at the anode — not reduction. The anode IS connected to the positive terminal, but the half-reaction occurring there is still oxidation. Reduction always occurs at the cathode, regardless of cell type.",
+      "B": "In electrolytic cells, an external power source forces a non-spontaneous reaction. The anode is connected to the positive terminal of the battery, which pulls electrons away from the electrode — causing oxidation of species at the anode. Anions from solution migrate toward the positive anode. The mnemonic still holds: anode = oxidation in ALL electrochemical cells.",
+      "C": "Cations migrate toward the cathode (negative electrode) in electrolytic cells, not the anode. The anode is positive, so it repels cations and attracts anions. Also, reduction occurs at the cathode, not the anode.",
+      "D": "In an electrolytic cell, the anode is connected to the POSITIVE terminal (the battery pulls electrons out at the anode). This is opposite to a galvanic cell where the anode is negative. Oxidation at the anode is correct, but the terminal description is wrong."
+    }
+  },
+  {
+    "id": 17,
+    "unit": "7",
+    "topic": "7.5",
+    "question": "A student writes the equilibrium expression for CO(g) + 3H2(g) ⇌ CH4(g) + H2O(g) as Kc = [CH4][H2O] / [CO][H2]. What error has the student made?",
+    "choices": {
+      "A": "The student placed reactants in the numerator instead of the denominator.",
+      "B": "The student failed to raise [H2] to the third power in the denominator.",
+      "C": "The student should have included water as a liquid and omitted it from the expression.",
+      "D": "The student should have used Kp instead of Kc because all species are gases."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Products belong in the numerator and reactants in the denominator — the student did this correctly. The structure of the expression is right; the error lies specifically in the exponent for hydrogen, not the placement of reactants/products.",
+      "B": "The balanced equation shows a coefficient of 3 for H2. In an equilibrium expression, each concentration is raised to the power of its stoichiometric coefficient. The correct expression is Kc = [CH4][H2O] / ([CO][H2]3). The student forgot to cube the H2 concentration — a very common and consequential error.",
+      "C": "In this reaction, water is a gas (g), as explicitly stated in the equation. Only pure liquids and pure solids are omitted from equilibrium expressions. Gas-phase water must be included.",
+      "D": "Kc and Kp are both valid expressions for the same equilibrium — choosing between them depends on whether concentrations or partial pressures are given, not on whether the species are gases. The choice of Kc is not wrong; the error is the missing exponent."
+    }
+  },
+  {
+    "id": 18,
+    "unit": "8",
+    "topic": "8.1",
+    "question": "Which of the following aqueous solutions would have the highest pH?",
+    "choices": {
+      "A": "0.1 M HCl",
+      "B": "0.1 M CH3COOH",
+      "C": "0.1 M NaCl",
+      "D": "0.1 M NH3"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "HCl is a strong acid — it dissociates completely, producing 0.1 M H+. This gives a pH of 1, the lowest (most acidic) of the options. Strong acids always produce the lowest pH at equivalent concentrations.",
+      "B": "Acetic acid is a weak acid (Ka ≈ 1.8 × 10-5) — it partially dissociates, producing a pH somewhere between 1 and 7 (approximately 2.87 at 0.1 M). It is acidic, so pH < 7, but higher than HCl.",
+      "C": "NaCl is a salt of a strong acid (HCl) and a strong base (NaOH). Neither Na+ nor Cl- undergoes hydrolysis, so the solution is essentially neutral with pH ≈ 7.",
+      "D": "Ammonia (NH3) is a weak base that accepts protons from water: NH3 + H2O ⇌ NH4+ + OH-. This produces OH- ions, making the solution basic with pH > 7 (approximately 11.1 at 0.1 M). Of all four options, this is the only basic solution and therefore has the highest pH."
+    }
+  },
+  {
+    "id": 19,
+    "unit": "5",
+    "topic": "5.7",
+    "question": "The half-life of a first-order radioactive decay is 10 years. Starting with 80 g of the isotope, how much remains after 30 years?",
+    "choices": {
+      "A": "40 g",
+      "B": "20 g",
+      "C": "10 g",
+      "D": "5 g"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "40 g would remain after only ONE half-life (10 years), not three. The student may have calculated 80/2 = 40 and stopped, forgetting the question asks about 30 years, which represents three complete half-lives.",
+      "B": "20 g would remain after TWO half-lives (20 years): 80 → 40 → 20 g. The student stopped one half-life too early.",
+      "C": "30 years = 3 half-lives (30/10 = 3). Each half-life reduces the amount by half: 80 g → 40 g → 20 g → 10 g. After three halvings, exactly 10 g remains.",
+      "D": "5 g would remain after FOUR half-lives (40 years): 80 → 40 → 20 → 10 → 5 g. The student may have miscounted the number of half-lives. Always divide the total time by the half-life to find the number of halvings."
+    }
+  },
+  {
+    "id": 20,
+    "unit": "2",
+    "topic": "2.7",
+    "question": "Which of the following pairs of elements would be expected to form a compound with the most covalent character?",
+    "choices": {
+      "A": "NaF",
+      "B": "MgO",
+      "C": "AlCl3",
+      "D": "CCl4"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "NaF is formed between a highly electropositive metal (Na) and a highly electronegative nonmetal (F), with an electronegativity difference of about 3.1. This large difference means NaF is highly ionic — essentially the least covalent on this list.",
+      "B": "MgO involves Mg2+ and O2- ions. The high charges and relatively small ions create a compound with strong ionic character. The electronegativity difference is about 2.3, well above the threshold typically associated with ionic bonding.",
+      "C": "AlCl3 has some covalent character due to the high charge density of Al3+ (Fajans' rules), and is considered a polar covalent/borderline compound.",
+      "D": "Carbon and chlorine are both nonmetals with an electronegativity difference of about 0.5. Small electronegativity differences between nonmetals yield predominantly covalent bonds. CCl4 is a nonpolar covalent molecule (the four polar C-Cl bonds cancel in its tetrahedral geometry), making it the most covalent compound in this list."
+    }
+  },
+  {
+    "id": 21,
+    "unit": "1",
+    "topic": "1.4",
+    "question": "An element has two naturally occurring isotopes: isotope X with a mass of 10.013 amu (abundance 19.9%) and isotope Y with a mass of 11.009 amu (abundance 80.1%). Which of the following is closest to the average atomic mass of this element?",
+    "choices": {
+      "A": "10.5 amu",
+      "B": "10.8 amu",
+      "C": "11.0 amu",
+      "D": "10.013 amu"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "While 10.5 amu might seem like a simple average of 10 and 11, a simple arithmetic mean is only valid when abundances are equal (50/50). Because isotope Y (mass ~11) is far more abundant at 80.1%, the weighted average is pulled closer to 11, not centered at 10.5.",
+      "B": "The weighted average atomic mass = (10.013 × 0.199) + (11.009 × 0.801) = 1.993 + 8.818 = 10.811 amu ≈ 10.8 amu. Because isotope Y dominates at 80.1% abundance, the average is pulled toward its mass (11.009). This is the element boron.",
+      "C": "10.8 amu is the correct answer, not 11.0. While 11.0 is close to the mass of the dominant isotope, the 19.9% contribution of the lighter isotope pulls the average below 11.009. You must perform the full weighted calculation.",
+      "D": "10.013 amu is the mass of isotope X alone, not the average. Using a single isotope mass as the average atomic mass ignores the contribution of the other isotope entirely."
+    }
+  },
+  {
+    "id": 22,
+    "unit": "3",
+    "topic": "3.4",
+    "question": "Which of the following correctly describes the bond angles and geometry of a water molecule (H2O)?",
+    "choices": {
+      "A": "180°, linear geometry",
+      "B": "120°, trigonal planar geometry",
+      "C": "109.5°, tetrahedral geometry",
+      "D": "Approximately 104.5°, bent geometry"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "A 180° linear geometry requires no lone pairs and exactly two bonding groups — like CO2. Water has two lone pairs on oxygen that occupy electron domains and compress the H-O-H angle well below 180°.",
+      "B": "120° bond angles occur in trigonal planar electron geometry (e.g., BF3, SO3), where there are three bonding groups and no lone pairs. Water has four electron domains (two bonds, two lone pairs), not three.",
+      "C": "109.5° is the ideal tetrahedral bond angle, which applies when all four electron domains are bonding pairs (as in CH4). In water, two of the four domains are lone pairs. Lone pairs exert greater repulsion, compressing the H-O-H angle below the ideal 109.5°.",
+      "D": "Oxygen in H2O has four electron domains: two O-H bonding pairs and two lone pairs (VSEPR: AX2E2). The electron geometry is tetrahedral, but the molecular geometry is bent. Lone pair repulsions compress the angle to approximately 104.5°."
+    }
+  },
+  {
+    "id": 23,
+    "unit": "6",
+    "topic": "6.4",
+    "question": "The standard enthalpy of formation of liquid water is -286 kJ/mol. What does this value represent?",
+    "choices": {
+      "A": "The energy released when 1 mol of water vapor condenses to liquid.",
+      "B": "The enthalpy change when 1 mol of H2O(l) is formed from its elements in their standard states.",
+      "C": "The bond dissociation energy of the O-H bonds in water.",
+      "D": "The heat of combustion of hydrogen gas in excess oxygen."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Condensation enthalpy (H2O(g) → H2O(l)) is a separate thermodynamic quantity. The formation enthalpy specifically refers to synthesis from elemental forms in their standard states — H2(g) and O2(g) — not interconversion between physical states.",
+      "B": "The standard enthalpy of formation (deltaHf°) is defined as the enthalpy change for the reaction that produces exactly 1 mol of a compound from its constituent elements in their standard states at 1 atm. For water: H2(g) + 1/2 O2(g) → H2O(l), deltaH° = -286 kJ/mol.",
+      "C": "Bond dissociation energies refer to breaking individual bonds in the gas phase — a completely different thermodynamic concept from formation enthalpy. Breaking O-H bonds is endothermic; formation of water is exothermic.",
+      "D": "While the formation of water from H2 and O2 resembles a combustion reaction, deltaHf° is not called 'heat of combustion.' The heat of combustion is defined per mole of fuel burned and is a related but distinct quantity."
+    }
+  },
+  {
+    "id": 24,
+    "unit": "5",
+    "topic": "5.6",
+    "question": "A student plots ln[A] versus time for a reaction and obtains a straight line with a negative slope. What can the student conclude?",
+    "choices": {
+      "A": "The reaction is zero order in A, and the rate is independent of [A].",
+      "B": "The reaction is first order in A, and the slope equals -k.",
+      "C": "The reaction is second order in A, and the slope equals k.",
+      "D": "The reaction is first order in A, and the slope equals +k."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "A zero-order reaction produces a straight line when [A] itself (not ln[A]) is plotted against time. A straight line in ln[A] vs. time is the diagnostic signature of first-order kinetics.",
+      "B": "The integrated rate law for a first-order reaction is ln[A] = -kt + ln[A]0. This is in the form y = mx + b, where the slope m = -k. A linear plot of ln[A] vs. time with a negative slope is definitive evidence of first-order kinetics.",
+      "C": "A second-order reaction yields a straight line when 1/[A] is plotted versus time (slope = +k). A linear ln[A] vs. time plot rules out second order.",
+      "D": "The slope of the ln[A] vs. time plot for a first-order reaction is -k (negative k), not +k. The rate constant k is always a positive value, so the slope is negative."
+    }
+  },
+  {
+    "id": 25,
+    "unit": "7",
+    "topic": "7.6",
+    "question": "At 25°C, Kc = 1.8 × 10-5 for the weak acid equilibrium: HA(aq) ⇌ H+(aq) + A-(aq). Which statement best interprets this value?",
+    "choices": {
+      "A": "The reaction strongly favors products; HA is mostly dissociated.",
+      "B": "The reaction strongly favors reactants; HA is a weak acid with very little dissociation.",
+      "C": "The equilibrium constant is too small to determine acid strength.",
+      "D": "The value means exactly 1.8 × 10-5 moles of HA dissociate per liter."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "A Ka value much less than 1 (here, 1.8 × 10-5) indicates the equilibrium strongly favors the reactant side — HA remains mostly undissociated. The reaction does NOT strongly favor products.",
+      "B": "When Ka << 1, the numerator ([H+][A-]) is much smaller than the denominator ([HA]) at equilibrium. This means very little HA has dissociated, confirming it is a weak acid. The equilibrium lies far to the left.",
+      "C": "Ka is precisely what quantifies acid strength. Larger Ka values mean stronger acids; smaller Ka values mean weaker acids. Ka = 1.8 × 10-5 is a perfectly meaningful number — there is no threshold below which Ka becomes uninterpretable.",
+      "D": "Ka is a ratio of concentrations at equilibrium, not a direct statement of how many moles dissociate per liter. The actual amount dissociated depends on the initial concentration of HA."
+    }
+  },
+  {
+    "id": 26,
+    "unit": "2",
+    "topic": "2.3",
+    "question": "Which of the following elements would you expect to have the largest atomic radius?",
+    "choices": {
+      "A": "Na",
+      "B": "Mg",
+      "C": "Al",
+      "D": "Cl"
+    },
+    "correct_answer": "A",
+    "explanations": {
+      "A": "Sodium (Na) is in Period 3, Group 1. Moving across Period 3 from left to right, atomic radius decreases because nuclear charge increases while electrons are added to the same shell. Na, being the leftmost of these options (Group 1), has the smallest nuclear charge relative to its electron count in Period 3 — giving it the largest atomic radius of the four.",
+      "B": "Magnesium (Mg, Group 2) has a higher nuclear charge than sodium (Z=12 vs. Z=11) with electrons in the same principal energy level. The additional proton pulls electrons more tightly, making Mg smaller than Na.",
+      "C": "Aluminum (Al, Group 13, Z=13) has even greater nuclear charge than Mg and Na. Across Period 3, each added proton contracts the electron cloud further.",
+      "D": "Chlorine (Cl, Group 17, Z=17) has a much higher nuclear charge than Na — 17 protons pulling the same n=3 electrons very tightly. Cl has one of the smallest atomic radii in Period 3."
+    }
+  },
+  {
+    "id": 27,
+    "unit": "9",
+    "topic": "9.4",
+    "question": "For the oxidation-reduction reaction: MnO4- + Fe2+ → Mn2+ + Fe3+ (unbalanced, acidic solution), how many electrons are transferred per formula unit of MnO4- reduced?",
+    "choices": {
+      "A": "1",
+      "B": "2",
+      "C": "5",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Only 1 electron transferred would mean manganese changes oxidation state by 1 — from +7 to +6, which would produce MnO42- (manganate), not Mn2+.",
+      "B": "Two electrons would correspond to Mn going from +7 to +5, giving MnO3- — not the Mn2+ product stated. Always track oxidation states carefully.",
+      "C": "In MnO4-, manganese has an oxidation state of +7. In Mn2+, manganese is +2. The change is 7 - 2 = 5. Therefore, each MnO4- gains 5 electrons during reduction. The balanced half-reaction is: MnO4- + 8H+ + 5e- → Mn2+ + 4H2O.",
+      "D": "Seven electrons would imply Mn goes from +7 to 0 (elemental Mn), which is not the product in this reaction. Mn2+ is the product, not Mn(s). Always identify the oxidation states of the actual products given."
+    }
+  },
+  {
+    "id": 28,
+    "unit": "4",
+    "topic": "4.3",
+    "question": "Which of the following best explains why HF is a weak acid despite fluorine being the most electronegative element?",
+    "choices": {
+      "A": "The H-F bond is too long for effective proton transfer to occur.",
+      "B": "The H-F bond is extremely strong, making it difficult to break during ionization.",
+      "C": "Fluorine's high electronegativity stabilizes the H+ ion, preventing dissociation.",
+      "D": "HF has a high pKa because fluorine attracts electrons away from hydrogen, weakening the bond."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "In fact, H-F has one of the SHORTEST bond lengths of any hydrogen halide — fluorine is tiny and holds hydrogen very close. Short bonds are typically strong bonds.",
+      "B": "Fluorine is so electronegative and so small that the H-F bond has an extraordinarily high bond dissociation energy (~570 kJ/mol) compared to HCl (~432 kJ/mol). Despite fluorine's pull on electrons, the bond is so strong that it resists breaking — making HF a weak acid. Acid strength in the halides is determined by bond strength, not just electronegativity.",
+      "C": "This reasoning is backwards. Fluorine's electronegativity stabilizes the conjugate base F- (through tight electron holding), which would actually tend to favor dissociation by stabilizing the product. The issue is the strength of the H-F bond itself.",
+      "D": "Fluorine does attract electron density from hydrogen, but this polarizes the bond in a way that could facilitate proton donation — it does NOT weaken the bond. The H-F bond is stronger than other H-X bonds, not weaker."
+    }
+  },
+  {
+    "id": 29,
+    "unit": "8",
+    "topic": "8.6",
+    "question": "A titration requires 25.0 mL of 0.200 M NaOH to reach the equivalence point with 50.0 mL of an unknown weak acid solution. What is the concentration of the weak acid?",
+    "choices": {
+      "A": "0.100 M",
+      "B": "0.200 M",
+      "C": "0.400 M",
+      "D": "0.050 M"
+    },
+    "correct_answer": "A",
+    "explanations": {
+      "A": "Moles of NaOH = 0.0250 L × 0.200 mol/L = 0.00500 mol. At the equivalence point, moles of acid = moles of NaOH = 0.00500 mol (1:1 stoichiometry). Concentration of acid = 0.00500 mol / 0.0500 L = 0.100 M.",
+      "B": "0.200 M would be the answer if you mistakenly used the volume of NaOH (25.0 mL) instead of the volume of the acid (50.0 mL). This is the concentration of NaOH, not the unknown acid.",
+      "C": "0.400 M would result from dividing moles of NaOH by the volume of NaOH (0.025 L) rather than the volume of acid. This error uses the wrong volume entirely.",
+      "D": "0.050 M might result from dividing by 0.100 L (the combined total volume of both solutions), which is not the correct volume to use. The concentration of the acid must be calculated using only its original volume (50.0 mL)."
+    }
+  },
+  {
+    "id": 30,
+    "unit": "3",
+    "topic": "3.5",
+    "question": "Which of the following substances has the highest boiling point, and why?",
+    "choices": {
+      "A": "CH4, because it has the simplest molecular structure.",
+      "B": "HF, because hydrogen bonding between HF molecules requires significant energy to overcome.",
+      "C": "F2, because fluorine is the most electronegative element and forms strong intermolecular bonds.",
+      "D": "Ne, because noble gases are chemically inert and their atoms are tightly bound."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "CH4 has only weak London dispersion forces and a very low molar mass. It has a boiling point of -161°C — one of the lowest on this list. Simple structure does not equate to strong intermolecular forces.",
+      "B": "HF molecules engage in hydrogen bonding — one of the strongest types of intermolecular force — because fluorine is highly electronegative and the H is directly bonded to F. Breaking these hydrogen bonds during boiling requires substantial energy, giving HF a boiling point of about 19°C, far higher than F2 (-188°C), CH4 (-161°C), or Ne (-246°C).",
+      "C": "Electronegativity describes an atom's pull on bonding electrons within a bond — it is not the same as intermolecular attractive force. F2 is nonpolar (symmetric diatomic), so it has only weak London dispersion forces. Its boiling point is -188°C, much lower than HF.",
+      "D": "Noble gases like Ne have only London dispersion forces and extremely weak ones (very small, nonpolarizable electron clouds). Ne has the second-lowest boiling point of any element at -246°C. Chemical inertness refers to lack of reactivity, not strong intermolecular bonding."
+    }
+  },
+  {
+    "id": 31,
+    "unit": "1",
+    "topic": "1.7",
+    "question": "Which electron configuration represents an element in an excited state?",
+    "choices": {
+      "A": "1s2 2s2 2p6",
+      "B": "1s2 2s2 2p5 3s1",
+      "C": "1s2 2s2 2p6 3s2",
+      "D": "1s2 2s2 2p6 3s2 3p1"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This is the ground state configuration of neon (Z=10). All electrons are in the lowest available energy levels with no gaps or skipped orbitals — a perfectly valid ground state.",
+      "B": "This configuration shows a 2p electron promoted to the 3s subshell, creating a vacancy in the 2p (which would normally be full for Z=10) and placing an electron in a higher energy orbital. Ground state neon would be 1s2 2s2 2p6, but here an electron has been excited upward — this is an excited state.",
+      "C": "This is the ground state of magnesium (Z=12). Electrons fill 1s, 2s, 2p, and 3s in order following the Aufbau principle with no violations.",
+      "D": "This is the ground state of aluminum (Z=13). The 3p1 electron is the next expected electron after filling 3s2, following the Aufbau principle exactly."
+    }
+  },
+  {
+    "id": 32,
+    "unit": "5",
+    "topic": "5.3",
+    "question": "For the decomposition of N2O5: 2N2O5(g) → 4NO2(g) + O2(g), the rate of appearance of O2 is 3.0 × 10-4 M/s. What is the rate of disappearance of N2O5?",
+    "choices": {
+      "A": "3.0 × 10-4 M/s",
+      "B": "6.0 × 10-4 M/s",
+      "C": "1.5 × 10-4 M/s",
+      "D": "1.2 × 10-3 M/s"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This answer ignores the stoichiometric relationship between N2O5 and O2. Because 2 mol N2O5 are consumed for every 1 mol O2 produced, the rate of N2O5 disappearance must be twice the rate of O2 appearance — not equal to it.",
+      "B": "Using the stoichiometric ratios: -(1/2)delta[N2O5]/delta(t) = +(1/1)delta[O2]/delta(t). Solving: delta[N2O5]/delta(t) = 2 × (3.0 × 10-4) = 6.0 × 10-4 M/s. For every mole of O2 produced, 2 moles of N2O5 must be consumed.",
+      "C": "1.5 × 10-4 M/s would be half the O2 rate — the student has divided instead of multiplied by the stoichiometric coefficient. The relationship is: rate of N2O5 disappearance = (2/1) × rate of O2 appearance.",
+      "D": "1.2 × 10-3 M/s would result from multiplying by the NO2 coefficient (4) instead of the N2O5 coefficient (2). Always use the stoichiometric ratio between the specific species in question."
+    }
+  },
+  {
+    "id": 33,
+    "unit": "6",
+    "topic": "6.2",
+    "question": "Which of the following correctly uses Hess's Law to calculate deltaH for the reaction C(s) + 1/2 O2(g) → CO(g)?",
+    "choices": {
+      "A": "Add the enthalpy of combustion of carbon to the enthalpy of combustion of CO.",
+      "B": "Use deltaH = sum deltaHf(products) - sum deltaHf(reactants) directly with tabulated data.",
+      "C": "The enthalpy cannot be determined because CO formation cannot be measured directly.",
+      "D": "Subtract the reaction C(s) + O2(g) → CO2(g) from CO(g) + 1/2 O2(g) → CO2(g), reversing the second reaction."
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "Simply adding the two combustion enthalpies does not cancel the right species. You cannot get CO(g) as a product by adding combustion reactions without carefully manipulating them — addition as stated would give CO2 on both sides.",
+      "B": "While the standard enthalpy formula is correct in principle, this question asks specifically about using Hess's Law to construct deltaH from other reactions — not from a table lookup.",
+      "C": "It is true that burning carbon in limited oxygen to produce only CO is experimentally difficult — but Hess's Law exists precisely to calculate enthalpies for reactions that are hard to measure directly. This is a core application of Hess's Law.",
+      "D": "The trick for CO formation: (1) C(s) + O2(g) → CO2(g), deltaH1 = -393.5 kJ; (2) CO(g) + 1/2 O2(g) → CO2(g), deltaH2 = -283.0 kJ. Reverse reaction 2 and add to reaction 1: C(s) + 1/2 O2(g) → CO(g), deltaH = -110.5 kJ. This is the textbook Hess's Law approach."
+    }
+  },
+  {
+    "id": 34,
+    "unit": "7",
+    "topic": "7.8",
+    "question": "The reaction A(g) + B(g) ⇌ C(g) has Kp = 0.25 at 500 K. If the partial pressures are P_A = 1.0 atm, P_B = 2.0 atm, and P_C = 0.80 atm, in which direction will the reaction proceed?",
+    "choices": {
+      "A": "Toward products, because Qp < Kp.",
+      "B": "Toward reactants, because Qp > Kp.",
+      "C": "No shift; the system is at equilibrium.",
+      "D": "Toward products, because the total pressure is greater than 1 atm."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "The system will shift toward reactants, not products. First calculate Qp = P_C / (P_A × P_B) = 0.80 / (1.0 × 2.0) = 0.40. Since Qp (0.40) > Kp (0.25), the reaction must shift left — meaning C decomposes into A and B.",
+      "B": "Qp = P_C / (P_A × P_B) = 0.80 / (1.0 × 2.0) = 0.40. Kp = 0.25. Since Qp > Kp, there is too much product (C) relative to equilibrium. The reaction shifts toward reactants (left) to consume C and produce more A and B.",
+      "C": "If Qp equaled Kp, the system would be at equilibrium. But Qp = 0.40 ≠ Kp = 0.25, so the system is not at equilibrium and will shift.",
+      "D": "Total pressure has no direct role in determining equilibrium direction — the comparison between Q and K does. The direction of shift here is toward reactants (left), not products."
+    }
+  },
+  {
+    "id": 35,
+    "unit": "4",
+    "topic": "4.7",
+    "question": "What is the net ionic equation for the reaction between aqueous solutions of Na2SO4 and BaCl2?",
+    "choices": {
+      "A": "Na2SO4(aq) + BaCl2(aq) → BaSO4(s) + 2NaCl(aq)",
+      "B": "2Na+ + SO42- + Ba2+ + 2Cl- → BaSO4(s) + 2Na+ + 2Cl-",
+      "C": "Ba2+(aq) + SO42-(aq) → BaSO4(s)",
+      "D": "SO42-(aq) + 2Cl-(aq) → BaSO4(s)"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "This is the complete molecular equation — it shows full chemical formulas with states but has not been broken into ions. It is a correct and balanced equation, but it is NOT the net ionic equation.",
+      "B": "This is the complete ionic equation, which shows all soluble species as dissociated ions. It still includes Na+ and Cl- as spectator ions on both sides. Cancelling those spectators gives the net ionic equation.",
+      "C": "After writing the complete ionic equation and cancelling spectator ions (Na+ and Cl- appear identically on both sides), only the ions that actually participate in forming the precipitate remain: Ba2+(aq) + SO42-(aq) → BaSO4(s). This is the net ionic equation.",
+      "D": "Cl- is a spectator ion — it does not participate in the reaction and does not appear in the precipitate. Including Cl- in the net ionic equation is incorrect. The precipitate BaSO4 forms from Ba2+ and SO42- ions only."
+    }
+  },
+  {
+    "id": 36,
+    "unit": "9",
+    "topic": "9.6",
+    "question": "Which of the following statements correctly describes the relationship between deltaG° and the equilibrium constant K for a reaction?",
+    "choices": {
+      "A": "deltaG° = -RT ln K; when K > 1, deltaG° is negative and the reaction is spontaneous.",
+      "B": "deltaG° = RT ln K; when K > 1, deltaG° is positive and the reaction is non-spontaneous.",
+      "C": "deltaG° = -RT ln K; when K > 1, deltaG° is positive, indicating an endothermic reaction.",
+      "D": "deltaG° = -nFE°; this equation applies only to electrochemical reactions."
+    },
+    "correct_answer": "A",
+    "explanations": {
+      "A": "The fundamental thermodynamic relationship is deltaG° = -RT ln K. When K > 1, ln K > 0, so deltaG° < 0 — meaning the reaction is thermodynamically favorable (spontaneous) under standard conditions. A large K means the products are strongly favored at equilibrium.",
+      "B": "The correct equation has a negative sign: deltaG° = -RT ln K, not +RT ln K. With the correct sign, K > 1 gives a negative deltaG°, not positive. This answer reverses the sign and therefore reverses the meaning entirely.",
+      "C": "The equation deltaG° = -RT ln K is correct, but the sign interpretation is wrong. K > 1 gives ln K > 0, so -RT ln K < 0 (negative deltaG°). Negative deltaG° means the forward reaction is spontaneous — it does not indicate an endothermic reaction. deltaG° and deltaH° are different quantities.",
+      "D": "While deltaG° = -nFE° is valid for electrochemical cells, it is not exclusively limited to electrochemistry — and the question asks about the general deltaG°/K relationship. This answer avoids the primary equation being tested."
+    }
+  },
+  {
+    "id": 37,
+    "unit": "2",
+    "topic": "2.6",
+    "question": "Which of the following species is isoelectronic with the argon atom (Ar, Z=18)?",
+    "choices": {
+      "A": "K+ (Z=19)",
+      "B": "Ca (Z=20)",
+      "C": "Cl- (Z=17)",
+      "D": "Both A and C"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "K+ has lost one electron from potassium (19 electrons → 18 electrons). With 18 electrons, K+ has the same electron configuration as Ar: 1s2 2s2 2p6 3s2 3p6. K+ is isoelectronic with Ar. However, choice D includes Cl- as well — check all species before selecting.",
+      "B": "Calcium (Ca) is a neutral atom with 20 electrons — it is not isoelectronic with Ar (18 electrons). Ca2+ would be isoelectronic with Ar, but neutral Ca has two extra electrons.",
+      "C": "Cl- has gained one electron from chlorine (17 electrons → 18 electrons). With 18 electrons, Cl- also has the configuration 1s2 2s2 2p6 3s2 3p6 — identical to Ar. Cl- is isoelectronic with Ar. But A is also correct, so choose D.",
+      "D": "Both K+ (19 - 1 = 18 electrons) and Cl- (17 + 1 = 18 electrons) have exactly 18 electrons and the noble gas configuration of argon. They are both isoelectronic with Ar. Students often check only one species — always verify all choices before selecting."
+    }
+  },
+  {
+    "id": 38,
+    "unit": "3",
+    "topic": "3.1",
+    "question": "Which type of intermolecular force is primarily responsible for the solubility of ethanol (CH3CH2OH) in water?",
+    "choices": {
+      "A": "London dispersion forces between the ethyl group and water",
+      "B": "Ion-dipole interactions between water molecules and the OH group",
+      "C": "Hydrogen bonding between the hydroxyl group of ethanol and water molecules",
+      "D": "Covalent bonding between ethanol and water"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "London dispersion forces (LDFs) are present between all molecules, including the nonpolar ethyl group and water. However, LDFs are weak and are not primarily responsible for ethanol's miscibility with water.",
+      "B": "Ion-dipole interactions occur between ions (charged species) and polar molecules. Ethanol is a neutral molecule — not an ion — so ion-dipole forces do not apply.",
+      "C": "Ethanol's -OH group contains a highly electronegative oxygen bonded directly to a hydrogen, enabling it to form hydrogen bonds with water molecules (O-H...O). This strong dipole-dipole interaction is the primary reason ethanol is infinitely miscible with water.",
+      "D": "Covalent bonds are intramolecular forces that hold atoms together within a molecule — they are not broken or formed during dissolution (except in reactions). Dissolving ethanol in water is a physical process driven by intermolecular forces."
+    }
+  },
+  {
+    "id": 39,
+    "unit": "6",
+    "topic": "6.5",
+    "question": "A coffee-cup calorimeter experiment shows that mixing two aqueous solutions raises the temperature by 4.5°C. The combined mass of the solutions is 100 g and the specific heat capacity of water is 4.18 J/(g·°C). What is the magnitude of the heat of reaction (q)?",
+    "choices": {
+      "A": "418 J",
+      "B": "1881 J",
+      "C": "4.5 J",
+      "D": "45 J"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "418 J would result from using deltaT = 1°C instead of 4.5°C — the student may have used q = mcdeltatT = 100 × 4.18 × 1 = 418 J. Always substitute the correct temperature change.",
+      "B": "q = mc*deltaT = (100 g)(4.18 J/g·°C)(4.5°C) = 1881 J. This is the heat absorbed by the solution, which equals the heat released by the reaction in magnitude. The answer is 1881 J ≈ 1.88 kJ.",
+      "C": "4.5 J would result from ignoring both mass and specific heat — essentially treating the equation as q = deltaT alone. The calorimetry equation q = mc*deltaT requires all three quantities.",
+      "D": "45 J might result from a unit error or only multiplying by part of the equation. The specific heat capacity of 4.18 J/(g·°C) must always be included."
+    }
+  },
+  {
+    "id": 40,
+    "unit": "8",
+    "topic": "8.3",
+    "question": "Which of the following correctly identifies the conjugate acid-base pairs in the reaction: NH3 + H2O ⇌ NH4+ + OH-?",
+    "choices": {
+      "A": "NH3 and NH4+ are a conjugate pair; H2O and OH- are a conjugate pair.",
+      "B": "NH3 and OH- are a conjugate pair; H2O and NH4+ are a conjugate pair.",
+      "C": "NH4+ is the conjugate base of NH3; OH- is the conjugate acid of H2O.",
+      "D": "H2O is the conjugate base of OH-; NH3 is the conjugate acid of NH4+."
+    },
+    "correct_answer": "A",
+    "explanations": {
+      "A": "In Bronsted-Lowry theory, a conjugate acid-base pair differs by exactly one proton (H+). NH3 gains a proton to become NH4+ — they are a conjugate pair (NH3 is the base, NH4+ is its conjugate acid). H2O donates a proton to become OH- — they are a conjugate pair (H2O is the acid, OH- is its conjugate base).",
+      "B": "NH3 and OH- are not a conjugate pair — they are products of different species and are not related by a single proton transfer. Conjugate pairs must come from the same molecule gaining or losing one H+.",
+      "C": "This reverses the acid/base labels. NH4+ is the conjugate ACID of NH3 (NH3 gained a proton → NH4+), not the conjugate base. OH- is the conjugate BASE of H2O (H2O lost a proton → OH-), not the conjugate acid.",
+      "D": "This option reverses both pairs. H2O donates a proton to form OH-, so OH- is the conjugate base and H2O is the acid — not the other way around. NH4+ is the conjugate acid of NH3, so NH3 is the base — not the conjugate acid of NH4+."
+    }
+  },
+  {
+    "id": 41,
+    "unit": "1",
+    "topic": "1.6",
+    "question": "An element's emission spectrum shows bright lines at specific wavelengths. Which of the following best explains why only certain wavelengths of light are emitted?",
+    "choices": {
+      "A": "Electrons emit light continuously as they orbit the nucleus.",
+      "B": "Electrons transition between quantized energy levels, releasing photons of specific energies.",
+      "C": "The nucleus emits photons when protons collide with neutrons.",
+      "D": "Each element contains a unique number of photons stored in its electron cloud."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This describes the classical (Rutherford) model of the atom, which predicted continuous emission and was disproven by line spectra. Electrons do not radiate energy continuously in quantum mechanics — they occupy fixed energy levels and only emit when transitioning between them.",
+      "B": "When an electron falls from a higher energy level to a lower one, it releases a photon whose energy exactly equals the difference between the two levels: E = hf. Because energy levels are quantized, only certain photon energies — and therefore wavelengths — are emitted. This produces the discrete bright lines of an emission spectrum.",
+      "C": "Nuclear processes can release photons (gamma emission), but atomic emission spectra are caused by electron transitions, not nuclear collisions. The nucleus is not involved in visible or UV emission spectra.",
+      "D": "Photons are not stored inside atoms — they are created and released during electron transitions. This option fundamentally misunderstands the quantum mechanical model of the atom."
+    }
+  },
+  {
+    "id": 42,
+    "unit": "2",
+    "topic": "2.4",
+    "question": "Which of the following correctly explains why the second ionization energy of sodium (Na) is dramatically higher than its first?",
+    "choices": {
+      "A": "The second electron is removed from a higher principal energy level.",
+      "B": "Removing the second electron requires breaking a covalent bond.",
+      "C": "The second electron is removed from a filled inner shell (n=2), which is much closer to the nucleus and more tightly held.",
+      "D": "The second ionization produces Na2+, which is unstable and resists further electron loss."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "This is backwards. The second electron removed from Na comes from a LOWER principal energy level (n=2), not higher. Na's first electron (3s1) is in n=3; after removing it, the next electron comes from the n=2 shell, which is closer to the nucleus.",
+      "B": "Ionization energy refers to removing electrons from isolated gaseous atoms — no covalent bonds exist in this context. Ionization energies are measured for single atoms in the gas phase.",
+      "C": "Sodium's electron configuration is [Ne]3s1. The first ionization removes the lone 3s1 electron easily (low IE1 = 496 kJ/mol). The second ionization must break into the stable neon core (n=2 shell), removing an electron that is much closer to the nucleus and experiencing much greater nuclear attraction. IE2 jumps to ~4562 kJ/mol — nearly 10x higher.",
+      "D": "Stability arguments based on ion charge are not a valid explanation for ionization energy trends. The reason is purely about where the electron comes from — inner-shell electrons are held far more tightly than valence electrons."
+    }
+  },
+  {
+    "id": 43,
+    "unit": "3",
+    "topic": "3.6",
+    "question": "Which of the following molecules is polar?",
+    "choices": {
+      "A": "BF3",
+      "B": "CCl4",
+      "C": "SO2",
+      "D": "XeF4"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "BF3 has a trigonal planar geometry with three identical B-F bond dipoles arranged symmetrically at 120°. The dipoles cancel exactly, giving a net dipole moment of zero. BF3 is nonpolar despite having polar bonds.",
+      "B": "CCl4 has a tetrahedral geometry with four identical C-Cl bond dipoles. The perfect symmetry of the tetrahedron causes all four dipoles to cancel completely. CCl4 is nonpolar — a classic example of polar bonds in a nonpolar molecule.",
+      "C": "SO2 has a bent molecular geometry due to a lone pair on the central sulfur atom (AX2E1 in VSEPR). The two S=O bond dipoles point in different directions and do not cancel — they add to produce a net dipole moment. SO2 is polar, unlike CO2 which is linear and nonpolar.",
+      "D": "XeF4 is square planar (AX4E2). The two lone pairs are arranged opposite each other above and below the plane, and the four Xe-F bond dipoles cancel symmetrically. Despite having lone pairs and polar bonds, XeF4 is nonpolar due to its highly symmetric geometry."
+    }
+  },
+  {
+    "id": 44,
+    "unit": "4",
+    "topic": "4.2",
+    "question": "Which of the following would increase the rate of dissolving a solid solute in a liquid solvent?",
+    "choices": {
+      "A": "Increasing the particle size of the solute",
+      "B": "Decreasing the temperature of the solvent",
+      "C": "Stirring the solution",
+      "D": "Using a less polar solvent"
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Increasing particle size decreases surface area exposed to the solvent, which slows the rate of dissolving. Crushing or grinding a solid into smaller pieces increases surface area and speeds dissolution — the opposite of this choice.",
+      "B": "For most solid solutes, increasing temperature increases solubility and rate of dissolving. Decreasing temperature would slow the dissolving process, not increase it.",
+      "C": "Stirring increases the rate of dissolving by continuously moving fresh solvent into contact with the solute surface and carrying dissolved particles away. This prevents the formation of a saturated layer at the solid surface that would otherwise slow further dissolving.",
+      "D": "The principle 'like dissolves like' means polar solutes dissolve best in polar solvents. Using a less polar solvent for a typical ionic or polar solute would decrease solubility and rate of dissolving."
+    }
+  },
+  {
+    "id": 45,
+    "unit": "5",
+    "topic": "5.5",
+    "question": "The activation energy for a reaction is 75 kJ/mol. A catalyst reduces this to 45 kJ/mol. By approximately what factor does the rate constant increase at 300 K? (R = 8.314 J/mol·K)",
+    "choices": {
+      "A": "About 5×",
+      "B": "About 160,000×",
+      "C": "About 30×",
+      "D": "About 2×"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "A factor of ~5 is far too small. The Arrhenius equation shows that rate constants change exponentially with activation energy, not linearly. Even a modest reduction in Ea leads to dramatic rate increases at room temperature.",
+      "B": "Using the Arrhenius ratio: k2/k1 = exp[(Ea1 - Ea2)/RT] = exp[(30,000 J/mol) / (8.314 × 300)] = exp[12.02] ≈ 165,000. The rate constant increases by roughly 160,000-fold. This enormous factor illustrates why even moderate reductions in Ea by enzymes or catalysts produce spectacular rate increases.",
+      "C": "About 30x would correspond to a linear or near-linear relationship, but the Arrhenius equation is exponential. A 30 kJ/mol reduction in Ea at 300 K gives an exponential factor of e^12, not a small number like 30.",
+      "D": "A factor of ~2 would correspond to a tiny change in activation energy at this temperature. A 30 kJ/mol reduction in Ea is very large — it corresponds to exp(12), not exp(0.7). Never estimate Arrhenius effects linearly."
+    }
+  },
+  {
+    "id": 46,
+    "unit": "7",
+    "topic": "7.2",
+    "question": "For the equilibrium PCl5(g) ⇌ PCl3(g) + Cl2(g), which change would shift the equilibrium toward products WITHOUT changing the value of K?",
+    "choices": {
+      "A": "Increasing the temperature",
+      "B": "Adding a catalyst",
+      "C": "Decreasing the volume of the container",
+      "D": "Removing some PCl3 from the system"
+    },
+    "correct_answer": "D",
+    "explanations": {
+      "A": "Changing temperature changes the value of K — it is the only variable that does so. The question specifically asks for a shift that does NOT change K. Temperature changes always change K.",
+      "B": "A catalyst speeds up both forward and reverse reactions equally, allowing the system to reach equilibrium faster. It does NOT shift the equilibrium position and does NOT change K. Adding a catalyst does not shift equilibrium toward products.",
+      "C": "Decreasing volume increases pressure, which shifts equilibrium toward the side with fewer moles of gas. Here, the product side has more moles (1 → 2), so decreasing volume shifts toward REACTANTS, not products.",
+      "D": "Removing PCl3 decreases the concentration of a product, making Q < K. The system responds by producing more products (forward reaction) to restore equilibrium. K itself does not change — only concentrations shift. This is the only choice that shifts toward products without altering K."
+    }
+  },
+  {
+    "id": 47,
+    "unit": "6",
+    "topic": "6.6",
+    "question": "Which of the following reactions would have the most negative (most favorable) deltaG° at room temperature, assuming similar magnitudes of deltaH?",
+    "choices": {
+      "A": "A reaction with deltaH = -100 kJ and deltaS = -200 J/K",
+      "B": "A reaction with deltaH = -100 kJ and deltaS = +200 J/K",
+      "C": "A reaction with deltaH = +100 kJ and deltaS = +200 J/K",
+      "D": "A reaction with deltaH = +100 kJ and deltaS = -200 J/K"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "deltaG = deltaH - T*deltaS = -100,000 - (298)(-200) = -100,000 + 59,600 = -40,400 J = -40.4 kJ. Negative deltaS works against spontaneity. This reaction is spontaneous but less so than choice B.",
+      "B": "deltaG = deltaH - T*deltaS = -100,000 - (298)(+200) = -100,000 - 59,600 = -159,600 J = -159.6 kJ. Both a negative deltaH and a positive deltaS drive deltaG in the negative direction simultaneously. This gives the most negative deltaG° and is the most thermodynamically favorable option.",
+      "C": "deltaG = +100,000 - (298)(+200) = +100,000 - 59,600 = +40,400 J = +40.4 kJ. Even though deltaS is favorable, the large positive deltaH dominates at room temperature, giving a positive deltaG°. This reaction is not spontaneous at 298 K.",
+      "D": "deltaG = +100,000 - (298)(-200) = +100,000 + 59,600 = +159,600 J = +159.6 kJ. Both deltaH and deltaS oppose spontaneity — this is the most positive (least favorable) deltaG° of all four options."
+    }
+  },
+  {
+    "id": 48,
+    "unit": "8",
+    "topic": "8.5",
+    "question": "A student prepares a buffer using 0.50 mol of acetic acid and 0.50 mol of sodium acetate in 1.00 L of solution (pKa = 4.74). What is the pH of this buffer?",
+    "choices": {
+      "A": "4.24",
+      "B": "4.74",
+      "C": "5.24",
+      "D": "7.00"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "4.24 would result from calculating pH = pKa - 1, which would only be correct if [HA]/[A-] = 10:1. Here the ratio is 1:1, so log(1/1) = 0, and pH = pKa + 0 = pKa.",
+      "B": "The Henderson-Hasselbalch equation: pH = pKa + log([A-]/[HA]) = 4.74 + log(0.50/0.50) = 4.74 + log(1) = 4.74 + 0 = 4.74. When the concentrations of weak acid and conjugate base are equal, the log term is zero and pH equals pKa exactly.",
+      "C": "5.24 = pKa + 0.50. When [A-] = [HA], log([A-]/[HA]) = 0, not 0.5. The student may be adding 0.5 arbitrarily rather than applying Henderson-Hasselbalch correctly.",
+      "D": "pH 7.00 (neutral) only applies to pure water or a salt of a strong acid and strong base. A buffer made with a weak acid of pKa = 4.74 will have an acidic pH near 4.74. The buffer pH is anchored to the pKa of the weak acid."
+    }
+  },
+  {
+    "id": 49,
+    "unit": "9",
+    "topic": "9.3",
+    "question": "The standard cell potential for a galvanic cell is E°cell = +0.46 V. Which of the following is true?",
+    "choices": {
+      "A": "deltaG° is positive, so the reaction is non-spontaneous.",
+      "B": "deltaG° is negative, confirming the reaction is spontaneous.",
+      "C": "The reaction is at equilibrium because E°cell is small.",
+      "D": "K < 1, because the cell potential is less than 1 V."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This reverses the sign relationship. A positive E°cell corresponds to a negative deltaG° via the equation deltaG° = -nFE°cell. Since n and F are always positive, a positive E° gives negative deltaG° — meaning the reaction IS spontaneous.",
+      "B": "deltaG° = -nFE°cell. With E°cell = +0.46 V and n >= 1, deltaG° is negative — the reaction is thermodynamically spontaneous under standard conditions. Positive E°cell corresponds to negative deltaG° corresponds to K > 1.",
+      "C": "A small positive E°cell does not indicate equilibrium — equilibrium would mean E°cell = 0 V (which occurs when the cell is dead). The magnitude of E° relates to how far from equilibrium the standard state is.",
+      "D": "K is related to E° by: ln K = nFE°/RT. A positive E° always gives ln K > 0, meaning K > 1. Only E° = 0 gives K = 1, and negative E° gives K < 1. The value of E° being less than 1 V does not mean K < 1."
+    }
+  },
+  {
+    "id": 50,
+    "unit": "1",
+    "topic": "1.2",
+    "question": "Which of the following correctly describes the difference between an atom and an ion?",
+    "choices": {
+      "A": "Ions have a different number of protons than atoms of the same element.",
+      "B": "Atoms are neutral because they have equal numbers of protons and electrons; ions have unequal numbers.",
+      "C": "Ions have more neutrons than the corresponding neutral atom.",
+      "D": "Atoms are always smaller than their corresponding ions."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "The number of protons defines the element and NEVER changes in ordinary chemistry. Both atoms and ions of the same element have identical numbers of protons. The difference between an atom and an ion is in the electron count.",
+      "B": "A neutral atom has equal numbers of protons and electrons, giving it no net charge. When electrons are added or removed, the particle becomes an ion — a cation (fewer electrons, positive charge) or anion (more electrons, negative charge). The proton count is unchanged.",
+      "C": "Isotopes differ in neutron count, not ions. Forming an ion involves gaining or losing electrons — neutrons are unaffected. Confusing isotopes (different neutrons) with ions (different electrons) is a foundational misconception.",
+      "D": "This is not always true. Cations are smaller than neutral atoms because electron removal reduces repulsion. But anions are LARGER than neutral atoms — extra electrons increase repulsion and expand the electron cloud. The statement is only half-correct at best."
+    }
+  },
+  {
+    "id": 51,
+    "unit": "3",
+    "topic": "3.3",
+    "question": "Which of the following correctly ranks the lattice energies of LiF, NaF, and KF from highest to lowest?",
+    "choices": {
+      "A": "KF > NaF > LiF",
+      "B": "LiF > NaF > KF",
+      "C": "NaF > LiF > KF",
+      "D": "All three have equal lattice energies because they all contain F-."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This is exactly reversed. Lattice energy increases as ionic radius decreases because smaller ions can approach each other more closely, creating stronger electrostatic attraction. K+ is the largest cation of the three, giving KF the lowest (not highest) lattice energy.",
+      "B": "Lattice energy is proportional to (charge product)/(ionic radius sum). All three compounds have the same charges (+1 and -1) and the same anion (F-). The difference is cation size: Li+ < Na+ < K+. Smaller Li+ gets closest to F-, maximizing electrostatic attraction — so LiF has the highest lattice energy, followed by NaF, then KF.",
+      "C": "This order places NaF highest, but Li+ is smaller than Na+, so LiF has stronger ion-ion attraction than NaF. The correct ranking must start with LiF at the top.",
+      "D": "While all three contain F-, lattice energy depends critically on the size of BOTH ions. The cation changes across the series (Li+, Na+, K+), and this dramatically affects the interionic distance and therefore the lattice energy."
+    }
+  },
+  {
+    "id": 52,
+    "unit": "5",
+    "topic": "5.1",
+    "question": "Which of the following best describes what happens at the molecular level when a reaction reaches dynamic equilibrium?",
+    "choices": {
+      "A": "All molecular motion stops and concentrations are fixed permanently.",
+      "B": "The forward reaction stops, and only the reverse reaction continues at a slow rate.",
+      "C": "The forward and reverse reactions continue at equal rates, so concentrations remain constant.",
+      "D": "The activation energies of the forward and reverse reactions become equal."
+    },
+    "correct_answer": "C",
+    "explanations": {
+      "A": "Equilibrium is dynamic, not static — molecular collisions and reactions continue constantly. What becomes constant is the macroscopic concentrations, not the molecular activity. Saying all motion stops describes absolute zero temperature, not chemical equilibrium.",
+      "B": "At equilibrium, BOTH the forward and reverse reactions are occurring simultaneously. Neither reaction stops. The key insight is that they proceed at exactly equal rates, making the net change in concentration zero.",
+      "C": "Dynamic equilibrium is reached when the rate of the forward reaction exactly equals the rate of the reverse reaction. At this point, the concentrations of reactants and products no longer change over time — not because reactions stop, but because the rates of formation and consumption of each species are perfectly balanced.",
+      "D": "Activation energies are fixed properties of a reaction determined by the transition state — they do not change as a reaction progresses toward equilibrium. The forward and reverse activation energies are always different (related by deltaH). Equilibrium is about rates becoming equal, not activation energies."
+    }
+  },
+  {
+    "id": 53,
+    "unit": "4",
+    "topic": "4.6",
+    "question": "A student adds excess zinc metal to a solution of copper(II) sulfate. Which observation correctly identifies that a redox reaction has occurred?",
+    "choices": {
+      "A": "The solution becomes more acidic as H+ ions are produced.",
+      "B": "The blue color of the solution fades and a reddish solid appears on the zinc.",
+      "C": "Gas bubbles form, indicating that SO42- is reduced to SO2.",
+      "D": "The zinc dissolves completely because ZnSO4 is more soluble than CuSO4."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This reaction does not produce H+ ions — it is a single displacement redox reaction between Zn metal and Cu2+ ions, not an acid-base reaction. No hydrogen ions are generated.",
+      "B": "The reaction is Zn(s) + Cu2+(aq) → Zn2+(aq) + Cu(s). Cu2+ ions give the solution its characteristic blue color — as they are reduced to Cu(s), the blue fades. Simultaneously, solid copper deposits on the zinc surface as a reddish metallic layer. These two observations together confirm a redox reaction has occurred.",
+      "C": "Sulfate (SO42-) is a spectator ion in this reaction — it is not reduced to SO2. SO2 production would indicate a reaction with concentrated H2SO4 (hot), not dilute aqueous CuSO4.",
+      "D": "The reason zinc dissolves is because it is oxidized (Zn → Zn2+ + 2e-), not simply because ZnSO4 is more soluble. Solubility comparisons do not drive redox reactions — reduction potential differences do."
+    }
+  },
+  {
+    "id": 54,
+    "unit": "2",
+    "topic": "2.1",
+    "question": "An element has the ground state electron configuration [Ar]3d10 4s2 4p3. Which of the following correctly identifies this element and its group?",
+    "choices": {
+      "A": "Germanium, Group 14",
+      "B": "Arsenic, Group 15",
+      "C": "Selenium, Group 16",
+      "D": "Bromine, Group 17"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Germanium's configuration is [Ar]3d10 4s2 4p2, with only 2 electrons in the 4p subshell — placing it in Group 14. The configuration given has 4p3, which is one more electron than Ge.",
+      "B": "The configuration [Ar]3d10 4s2 4p3 has 2 + 3 = 5 valence electrons (4s2 and 4p3). Elements with 5 valence electrons are in Group 15 (the nitrogen family). Counting up from Ar (Z=18) with 10 d-electrons and then 2s + 3p electrons gives Z = 18 + 10 + 2 + 3 = 33, which is arsenic (As).",
+      "C": "Selenium has the configuration [Ar]3d10 4s2 4p4 — that is 4p4, not 4p3. Se is in Group 16 with 6 valence electrons.",
+      "D": "Bromine's configuration is [Ar]3d10 4s2 4p5 — 4p5 gives 7 valence electrons and Group 17. The given configuration has 4p3, two fewer p-electrons than Br."
+    }
+  },
+  {
+    "id": 55,
+    "unit": "9",
+    "topic": "9.5",
+    "question": "In a concentration cell, both half-cells contain the same electrode material and same electrolyte, but at different concentrations. Which half-cell acts as the anode?",
+    "choices": {
+      "A": "The half-cell with the higher ion concentration, because it has more ions to be reduced.",
+      "B": "The half-cell with the lower ion concentration, because oxidation produces ions to increase the concentration.",
+      "C": "Neither; concentration cells cannot generate a potential difference.",
+      "D": "The half-cell with the higher ion concentration, because reduction always occurs at higher concentrations."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "The higher-concentration half-cell is actually the cathode — reduction occurs there, consuming ions and lowering the concentration toward equilibrium. This choice confuses the direction of electron flow.",
+      "B": "In a concentration cell, the system spontaneously works toward equalizing concentrations. The lower-concentration half-cell is the anode — the metal electrode oxidizes (M → M2+ + 2e-), releasing ions into the dilute solution and increasing its concentration. The higher-concentration half-cell is the cathode — ions are reduced (M2+ + 2e- → M), decreasing its concentration.",
+      "C": "Concentration cells absolutely generate a potential difference. The cell potential is calculated using the Nernst equation: E = (RT/nF) ln([high]/[low]). As long as the two concentrations differ, Q ≠ 1 and E ≠ 0.",
+      "D": "Reduction occurs at the cathode, which is the higher-concentration half-cell — that part is correct. But calling it the anode is wrong — the anode is where oxidation occurs, which is the lower-concentration half-cell."
+    }
+  },
+  {
+    "id": 56,
+    "unit": "6",
+    "topic": "6.7",
+    "question": "Which of the following correctly explains why dissolving NH4NO3 in water feels cold (endothermic)?",
+    "choices": {
+      "A": "The ions of NH4NO3 release energy when they collide with water molecules.",
+      "B": "Breaking the ionic lattice of NH4NO3 requires more energy than is released by hydration of the ions.",
+      "C": "Water molecules break apart to provide energy for dissolving the salt.",
+      "D": "The negative entropy change during dissolving absorbs heat from the surroundings."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Ion-water collisions actually release energy (exothermic hydration). The hydration of ions is always exothermic. The issue is not that hydration releases too little energy in absolute terms — it is that the lattice energy required to break apart the crystal is even greater than what hydration provides.",
+      "B": "Dissolving involves two competing energy processes: (1) breaking the ionic lattice (endothermic, requires energy) and (2) hydrating the ions (exothermic, releases energy). For NH4NO3, the lattice energy that must be overcome is greater than the hydration energy released — so the net process is endothermic, drawing heat from the surroundings.",
+      "C": "Water molecules do not break apart during dissolving in any relevant sense. The O-H covalent bonds in water remain intact during ion hydration. Only intermolecular hydrogen bonds between water molecules are disrupted slightly to accommodate ions.",
+      "D": "Entropy changes are related to deltaG and spontaneity, not to heat absorption directly. NH4NO3 dissolving is actually accompanied by a positive deltaS (increased disorder), which helps make the process spontaneous despite positive deltaH. A negative entropy change would not cause endothermic behavior."
+    }
+  },
+  {
+    "id": 57,
+    "unit": "7",
+    "topic": "7.4",
+    "question": "For the equilibrium H2(g) + I2(g) ⇌ 2HI(g) at 450°C, Kc = 50. If 1.0 mol H2 and 1.0 mol I2 are placed in a 1.0 L container, which statement best describes the initial reaction direction and why?",
+    "choices": {
+      "A": "The reaction proceeds in reverse because Q = 0 and K = 50.",
+      "B": "The reaction proceeds forward because Q = 0 < K = 50.",
+      "C": "The reaction is at equilibrium because no HI is present yet.",
+      "D": "The reaction proceeds forward because the total pressure is low."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Q = 0 is calculated correctly ([HI]2 / [H2][I2] = 0 since [HI] = 0 initially). But the conclusion is wrong. When Q < K, the reaction proceeds FORWARD to produce more products. Reverse would occur if Q > K. This choice has the direction exactly reversed.",
+      "B": "Initially, [HI] = 0 mol/L, so Q = [HI]2/([H2][I2]) = 02/(1.0)(1.0) = 0. Since Q (0) < K (50), there are insufficient products relative to equilibrium. The system drives forward — producing HI — until Q increases to equal K = 50.",
+      "C": "The absence of HI does not mean the system is at equilibrium. Equilibrium requires Q = K. Here Q = 0 ≠ K = 50, so the system is far from equilibrium and the reaction will proceed strongly forward. Equilibrium is a quantitative condition, not simply the absence of one component.",
+      "D": "Total pressure is not a valid criterion for predicting reaction direction. The Qc vs. Kc comparison is the only correct method. Furthermore, in this reaction, moles of gas are equal on both sides (1 + 1 = 2), so pressure changes would not shift this equilibrium anyway."
+    }
+  },
+  {
+    "id": 58,
+    "unit": "8",
+    "topic": "8.2",
+    "question": "A 0.10 M solution of a weak base B has a pH of 11.0. What is the Kb of this base?",
+    "choices": {
+      "A": "1.0 × 10-3",
+      "B": "1.0 × 10-5",
+      "C": "1.0 × 10-7",
+      "D": "1.0 × 10-11"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "Kb = 1.0 × 10-3 would correspond to a much stronger base. Using Kb = [OH-]2/[B] = (10-3)2/(0.10) = 10-5, not 10-3. This overestimates Kb by 100-fold.",
+      "B": "pH = 11 → pOH = 3 → [OH-] = 1.0 × 10-3 M. For the equilibrium B + H2O ⇌ BH+ + OH-, at equilibrium [BH+] = [OH-] = 1.0 × 10-3 M and [B] ≈ 0.10 M. Kb = [BH+][OH-]/[B] = (1×10-3)2 / 0.10 = 1×10-6 / 0.10 = 1×10-5.",
+      "C": "Kb = 1.0 × 10-7 would give [OH-] = sqrt(10-7 × 0.10) = sqrt(10-8) = 10-4 M, which corresponds to pOH = 4 and pH = 10 — not pH 11. This answer underestimates the base strength.",
+      "D": "Kb = 1.0 × 10-11 describes an extremely weak base. Its [OH-] would be approximately sqrt(10-11 × 0.10) = sqrt(10-12) = 10-6 M, giving pOH = 6 and pH = 8 — far from the pH 11 stated in the problem."
+    }
+  },
+  {
+    "id": 59,
+    "unit": "9",
+    "topic": "9.1",
+    "question": "In the reaction 2Al(s) + Fe2O3(s) → Al2O3(s) + 2Fe(s), which species is oxidized and which is reduced?",
+    "choices": {
+      "A": "Al is reduced (gains electrons); Fe is oxidized (loses electrons).",
+      "B": "Al is oxidized (loses electrons); Fe3+ is reduced (gains electrons).",
+      "C": "O2- is oxidized; Al is reduced.",
+      "D": "Fe2O3 is oxidized; Al2O3 is reduced."
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "This has the roles exactly reversed. Aluminum starts as a neutral metal (oxidation state 0) and ends in Al2O3 where it is +3 — Al LOSES electrons (oxidation). Iron starts as Fe3+ in Fe2O3 and ends as Fe(s) at oxidation state 0 — Fe3+ GAINS electrons (reduction).",
+      "B": "Al goes from 0 (neutral metal) to +3 in Al2O3 — it loses 3 electrons per atom and is oxidized. Fe goes from +3 in Fe2O3 to 0 in Fe(s) — it gains 3 electrons per atom and is reduced. Al is the reducing agent, and Fe2O3 is the oxidizing agent. This is the thermite reaction.",
+      "C": "Oxygen maintains its -2 oxidation state in both Fe2O3 and Al2O3 — it is neither oxidized nor reduced in this reaction. The electron transfer is entirely between Al and Fe.",
+      "D": "Redox is about individual atoms or ions, not whole compounds. In Fe2O3, it is the Fe3+ ions that are reduced — not the compound as a whole. Assigning oxidation/reduction to entire formulas without tracking specific atoms is incorrect."
+    }
+  },
+  {
+    "id": 60,
+    "unit": "3",
+    "topic": "3.8",
+    "question": "Which of the following correctly ranks the bond lengths in N2, O2, and F2 from shortest to longest?",
+    "choices": {
+      "A": "F2 < O2 < N2",
+      "B": "N2 < O2 < F2",
+      "C": "O2 < N2 < F2",
+      "D": "F2 < N2 < O2"
+    },
+    "correct_answer": "B",
+    "explanations": {
+      "A": "F2 has a single bond (bond order 1) despite fluorine's small size — lone pair repulsion between the two F atoms weakens the bond and makes it longer than expected. N2 has a triple bond (bond order 3), giving it the shortest bond. This ranking is incorrect.",
+      "B": "N2 has a triple bond (bond order 3, shortest), O2 has a double bond (bond order 2, intermediate), and F2 has a single bond (bond order 1, longest). Higher bond order = more electron density between nuclei = shorter, stronger bond. Bond length increases as bond order decreases: N2 < O2 < F2.",
+      "C": "This order places O2 shortest, but N2 has a triple bond and is shorter than O2's double bond. O2 < N2 would require O2 to have a higher bond order than N2, which is not the case.",
+      "D": "This incorrectly places F2 shortest. F2 has only a single bond and is the longest of the three. The triple bond in N2 makes it by far the shortest. Never assume smaller atomic size means shorter bond without considering bond order."
+    }
+  }
+]

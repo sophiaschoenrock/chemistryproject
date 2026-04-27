@@ -625,6 +625,26 @@ h1 {
   color: var(--text);
 }
 
+.unit-select-wide {
+  min-width: min(22rem, 100%);
+  max-width: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .panel-error {
   background: #fff5f5;
   border: 1px solid #feb2b2;

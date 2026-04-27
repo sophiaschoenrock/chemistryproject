@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Rush · AP Chemistry</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap");
+
+    :root {
+      --bg1: #e0f2fe;
+      --bg2: #bae6fd;
+      --bg3: #cffafe;
+      --ink: #0c4a6e;
+      --ink2: #0369a1;
+      --brand1: #0ea5e9;
+      --brand2: #06b6d4;
+      --good: #16a34a;
+      --bad: #dc2626;
+      --card: rgba(255, 255, 255, 0.62);
+      --cardBorder: rgba(255, 255, 255, 0.9);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+      overflow: hidden;
+      user-select: none;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(186,230,253,0.60) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(165,243,252,0.50) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 50%, rgba(224,242,254,0.80) 0%, transparent 80%),
+        linear-gradient(160deg, var(--bg1) 0%, var(--bg2) 30%, var(--bg3) 60%, #e0f7fa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    @keyframes waterFlow {
+      0% { transform: translateX(-100%) skewX(-5deg); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 0.8; }
+      100% { transform: translateX(200%) skewX(-5deg); opacity: 0; }
+    }
+    @keyframes waterFlow2 {
+      0% { transform: translateX(-100%) skewX(-3deg); opacity: 0; }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.5; }
+      100% { transform: translateX(200%) skewX(-3deg); opacity: 0; }
+    }
+    @keyframes underwater {
+      0% { filter: none; }
+      30% { filter: saturate(0.3) brightness(0.85) hue-rotate(10deg); }
+      100% { filter: none; }
+    }
+    @keyframes rippleOut {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      100% { transform: scale(3.5); opacity: 0; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-12px) rotate(1deg); }
+    }
+    @keyframes particle {
+      0% { transform: translateY(100vh); opacity: 0.6; }
+      100% { transform: translateY(-10px) translateX(30px); opacity: 0; }
+    }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes slideOut {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-30px) scale(0.97); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+    @keyframes streakGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(125,211,252,0.4); }
+      50% { box-shadow: 0 0 40px rgba(56,189,248,0.7); }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .btn {
+      padding: 1rem 3rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      font-family: inherit;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 30px rgba(14,165,233,0.4);
+      letter-spacing: 1px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 10px 40px rgba(14,165,233,0.5); }
+    .btn:active { transform: scale(0.98); }
+
+    .panel {
+      width: min(900px, 100%);
+      display: none;
+    }
+    .panel.active { display: block; }
+
+    .intro {
+      text-align: center;
+      padding: 2rem;
+      max-width: 520px;
+    }
+    .title {
+      animation: float 4s ease-in-out infinite;
+      margin-bottom: 2rem;
+    }
+    .title h1 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2), #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin: 0;
+      filter: drop-shadow(0 0 30px rgba(14,165,233,0.35));
+    }
+    .title .sub {
+      font-size: 0.8rem;
+      color: rgba(14,116,144,0.85);
+      margin-top: 0.5rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .intro-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.8);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 40px rgba(14,165,233,0.12);
+      text-align: left;
+    }
+    .intro-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .intro-row:last-child { margin-bottom: 0; }
+
+    .game {
+      width: min(760px, 100%);
+      animation: slideIn 0.4s ease forwards;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 50px;
+      padding: 0.35rem 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 8.5rem;
+      justify-content: center;
+    }
+    .pill .k {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--brand1);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .pill .v {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .brand {
+      font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pill.streak-hot {
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.5);
+      animation: streakGlow 2s ease-in-out infinite;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .timerWrap { position: relative; width: 58px; height: 58px; }
+    .timerNum {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 900;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 1rem;
+    }
+    .dot {
+      height: 7px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background: rgba(186,230,253,0.6);
+      width: 7px;
+    }
+    .dot.done { background: var(--brand1); }
+    .dot.now { background: var(--brand2); width: 18px; }
+
+    .qcard {
+      background: var(--card);
+      backdrop-filter: blur(24px);
+      border-radius: 20px;
+      border: 1px solid var(--cardBorder);
+      box-shadow: 0 8px 40px rgba(14,165,233,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
+      padding: 1.5rem 1.75rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .qcard .blob {
+      position: absolute;
+      top: -20px;
+      left: -40px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(186,230,253,0.25);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .qtext {
+      font-size: clamp(0.9rem, 2.3vw, 1.15rem);
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.55;
+      position: relative;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 650px) {
+      .grid { grid-template-columns: 1fr; }
+      .pill { min-width: auto; flex: 1 1 auto; }
+    }
+
+    .choice {
+      background: rgba(255,255,255,0.58);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.85);
+      box-shadow: 0 4px 20px rgba(14,165,233,0.1);
+      padding: 1rem 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border 0.15s ease, color 0.15s ease;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.4;
+      min-height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1.15rem;
+    }
+    .choice:hover { transform: scale(1.03); box-shadow: 0 12px 40px rgba(14,165,233,0.3); background: rgba(255,255,255,0.85); }
+    .choice:active { transform: scale(0.98); }
+    .choice[aria-disabled="true"] { cursor: default; }
+    .choice[aria-disabled="true"]:hover { transform: none; box-shadow: 0 4px 20px rgba(14,165,233,0.1); background: rgba(255,255,255,0.58); }
+
+    .choice .lab {
+      position: absolute;
+      top: 6px;
+      left: 9px;
+      font-size: 0.6rem;
+      font-weight: 900;
+      color: rgba(14,165,233,0.5);
+      letter-spacing: 1px;
+    }
+
+    .choice.correct {
+      background: rgba(186,230,253,0.75);
+      border: 2px solid rgba(14,165,233,0.7);
+      box-shadow: 0 6px 30px rgba(14,165,233,0.3);
+    }
+    .choice.wrong {
+      background: rgba(253,186,186,0.6);
+      border: 2px solid rgba(220,38,38,0.4);
+      color: #7f1d1d;
+    }
+    .choice.dim {
+      background: rgba(255,255,255,0.28);
+      color: rgba(12,74,110,0.4);
+    }
+
+    .timeout {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: var(--ink2);
+      margin-top: 0.6rem;
+    }
+
+    .explanations {
+      margin-top: 0.9rem;
+      background: rgba(255,255,255,0.52);
+      backdrop-filter: blur(18px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.85);
+      padding: 1rem 1rem;
+      box-shadow: 0 8px 30px rgba(14,165,233,0.10);
+      display: none;
+    }
+    .explanations.visible { display: block; }
+    .explanations .head {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(14,116,144,0.85);
+      margin-bottom: 0.6rem;
+    }
+    .exp {
+      border-radius: 14px;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 0.55rem;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.55);
+      color: var(--ink);
+    }
+    .exp:last-child { margin-bottom: 0; }
+    .exp .expTitle { font-weight: 900; margin-bottom: 0.25rem; }
+    .exp.good { border-color: rgba(22,163,74,0.35); background: rgba(34,197,94,0.10); }
+    .exp.good .expTitle { color: var(--good); }
+    .exp.bad { border-color: rgba(220,38,38,0.35); background: rgba(239,68,68,0.10); }
+    .exp.bad .expTitle { color: var(--bad); }
+    .exp.neutral { opacity: 0.85; }
+
+    .filters {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.65rem;
+      flex-wrap: wrap;
+    }
+    select {
+      appearance: none;
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(255,255,255,0.85);
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-family: inherit;
+      font-weight: 800;
+      color: var(--ink);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(14,165,233,0.10);
+    }
+    select:focus { outline: 2px solid rgba(14,165,233,0.55); outline-offset: 2px; }
+
+    .tiny {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: rgba(14,116,144,0.85);
+    }
+
+    .status {
+      margin-top: 0.75rem;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: #7f1d1d;
+      background: rgba(253,186,186,0.55);
+      border: 1px solid rgba(220,38,38,0.25);
+      border-radius: 16px;
+      padding: 0.75rem 0.9rem;
+      box-shadow: 0 8px 30px rgba(220,38,38,0.10);
+    }
+
+    .fx {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .fx.wave { animation: waterFlow 0.9s ease-out forwards; background: linear-gradient(90deg, transparent, rgba(186,230,253,0.7) 30%, rgba(125,211,252,0.5) 50%, rgba(186,230,253,0.6) 70%, transparent); filter: blur(4px); z-index: 100; }
+    .fx.wave2 { animation: waterFlow2 1.1s ease-out 0.1s forwards; background: linear-gradient(90deg, transparent, rgba(224,242,254,0.5) 40%, rgba(240,249,255,0.4) 60%, transparent); filter: blur(8px); z-index: 99; }
+    .fx.under { animation: underwater 1.8s ease forwards; z-index: 98; }
+    .fx.ripple {
+      width: 200px; height: 200px;
+      left: 50%; top: 50%;
+      margin-left: -100px; margin-top: -100px;
+      border-radius: 50%;
+      border: 3px solid rgba(125,211,252,0.8);
+      animation: rippleOut 0.8s ease-out forwards;
+      z-index: 90;
+      opacity: 1;
+      position: fixed;
+    }
+
+    .particle {
+      position: fixed;
+      bottom: -20px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particle 7s ease-in infinite;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="fx wave" id="fx-wave"></div>
+  <div class="fx wave2" id="fx-wave2"></div>
+  <div class="fx under" id="fx-under"></div>
+  <div id="fx-ripple"></div>
+
+  <div class="panel intro active" id="panel-intro">
+    <div class="title">
+      <h1>Reaction<br />Rush</h1>
+      <div class="sub">AP Chemistry Edition</div>
+    </div>
+
+    <div class="filters" style="margin-top: -0.5rem; margin-bottom: 1rem;">
+      <label class="sr-only" for="unitSelect">Unit filter</label>
+      <select id="unitSelect" aria-label="Choose unit"></select>
+      <span class="sr-only" id="bankStat">Loading question bank…</span>
+    </div>
+    <div id="statusMsg" class="status" hidden></div>
+
+    <div style="margin-top: 1.25rem;">
+      <button class="btn" id="btn-start" type="button">DIVE IN</button>
+    </div>
+  </div>
+
+  <div class="panel game" id="panel-game">
+    <div class="topbar">
+      <div class="pill"><span class="k">Score</span><span class="v" id="score">0</span></div>
+      <div class="brand">Reaction Rush</div>
+      <div class="pill" id="streakPill"><span class="k">Streak</span><span class="v" id="streak">×0</span></div>
+    </div>
+
+    <div class="timer">
+      <div class="timerWrap" aria-label="Timer">
+        <svg width="58" height="58" style="transform: rotate(-90deg);">
+          <circle cx="29" cy="29" r="24" fill="none" stroke="rgba(186,230,253,0.5)" stroke-width="4.5"></circle>
+          <circle id="timerRing" cx="29" cy="29" r="24" fill="none" stroke="hsl(210, 70%, 70%)" stroke-width="4.5" stroke-linecap="round"></circle>
+        </svg>
+        <div class="timerNum" id="timerNum">9</div>
+      </div>
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+    <div class="qcard">
+      <div class="blob"></div>
+      <p class="qtext" id="questionText"></p>
+    </div>
+
+    <div class="grid" id="choiceGrid" role="group" aria-label="Answer choices"></div>
+
+    <div class="timeout" id="timeoutMsg" hidden>⏱ Time’s up! Correct answer is highlighted above.</div>
+
+    <div class="explanations" id="explanations">
+      <div class="head">Explanations</div>
+      <div id="expBody"></div>
+    </div>
+  </div>
+
+  <div class="panel intro" id="panel-result">
+    <div class="title" style="margin-bottom: 1.25rem;">
+      <h1 id="resultEmoji" style="-webkit-text-fill-color: unset; background: none; color: var(--ink); filter: none;">🏆</h1>
+      <div class="sub" id="resultSub">Final results</div>
+    </div>
+
+    <div class="intro-card" style="text-align: center;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div>
+          <div class="tiny">Final score</div>
+          <div style="font-size: 2rem; font-weight: 900; color: var(--ink);" id="finalScore">0</div>
+        </div>
+        <div>
+          <div class="tiny">Best streak</div>
+          <div style="font-size: 2rem; font-weight: 900; color: var(--ink);" id="bestStreak">×0</div>
+        </div>
+      </div>
+      <div style="margin-top: 0.85rem; color: var(--ink2); font-weight: 800;" id="resultMsg"></div>
+    </div>
+
+    <div class="filters">
+      <button class="btn" id="btn-again" type="button">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const TIMER_DURATION = 9; // seconds
+      const ROUND_SIZE = 10; // questions per round (like your React version)
+      const BANK_URL = "questions.json";
+
+      const $ = (id) => document.getElementById(id);
+
+      const panelIntro = $("panel-intro");
+      const panelGame = $("panel-game");
+      const panelResult = $("panel-result");
+
+      const unitSelect = $("unitSelect");
+      const bankStat = $("bankStat");
+      const statusMsg = $("statusMsg");
+      const btnStart = $("btn-start");
+      const btnAgain = $("btn-again");
+
+      const scoreEl = $("score");
+      const streakEl = $("streak");
+      const streakPill = $("streakPill");
+      const timerNum = $("timerNum");
+      const timerRing = $("timerRing");
+      const dots = $("dots");
+      const qText = $("questionText");
+      const grid = $("choiceGrid");
+      const timeoutMsg = $("timeoutMsg");
+      const explWrap = $("explanations");
+      const expBody = $("expBody");
+
+      const fxWave = $("fx-wave");
+      const fxWave2 = $("fx-wave2");
+      const fxUnder = $("fx-under");
+      const fxRippleHost = $("fx-ripple");
+
+      const resultEmoji = $("resultEmoji");
+      const resultSub = $("resultSub");
+      const finalScoreEl = $("finalScore");
+      const bestStreakEl = $("bestStreak");
+      const resultMsg = $("resultMsg");
+
+      // State
+      let bank = [];
+      let round = [];
+      let idx = 0;
+      let score = 0;
+      let streak = 0;
+      let bestStreak = 0;
+      let selected = null; // 0-3, or -1 for timeout
+      let tLeft = TIMER_DURATION;
+      let timerHandle = null;
+
+      function setStatus(msg) {
+        if (!statusMsg) return;
+        if (!msg) {
+          statusMsg.hidden = true;
+          statusMsg.textContent = "";
+          return;
+        }
+        statusMsg.textContent = msg;
+        statusMsg.hidden = false;
+      }
+
+      function show(panel) {
+        [panelIntro, panelGame, panelResult].forEach((p) => p.classList.remove("active"));
+        panel.classList.add("active");
+      }
+
+      function shuffle(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
+      function inferUnitFromSubsection(subsection) {
+        const m = String(subsection || "").match(/^(\d+)\./);
+        return m ? m[1] : "";
+      }
+
+      function toRushQuestion(q) {
+        // Supports this repo's canonical questions.json shape:
+        // { subsection, stimulus, stem, correct: "A", options: [{label,text,rationale}] }
+        if (!q || typeof q.stem !== "string" || !Array.isArray(q.options) || q.options.length < 4) return null;
+        const sorted = q.options.slice().sort((a, b) => String(a.label).localeCompare(String(b.label)));
+        const choiceText = sorted.map((o) => String(o.text || ""));
+        const choiceExpl = {};
+        sorted.forEach((o) => { choiceExpl[String(o.label).toUpperCase()] = String(o.rationale || ""); });
+        const correctLabel = String(q.correct || "").toUpperCase();
+        const correctIndex = sorted.findIndex((o) => String(o.label).toUpperCase() === correctLabel);
+        if (correctIndex < 0) return null;
+        return {
+          unit: inferUnitFromSubsection(q.subsection),
+          topic: (String(q.subsection || "").match(/^(\d+\.\d+)/) || [])[1] || "",
+          q: q.stem,
+          stimulus: String(q.stimulus || ""),
+          choices: choiceText,
+          explanations: {
+            A: choiceExpl.A || "",
+            B: choiceExpl.B || "",
+            C: choiceExpl.C || "",
+            D: choiceExpl.D || "",
+          },
+          answer: correctIndex,
+        };
+      }
+
+      function setTimerVisual() {
+        const pct = Math.max(0, Math.min(1, tLeft / TIMER_DURATION));
+        const circ = 2 * Math.PI * 24;
+        timerRing.setAttribute("stroke-dasharray", String(circ));
+        timerRing.setAttribute("stroke-dashoffset", String(circ * (1 - pct)));
+        const timerColor =
+          pct > 0.5
+            ? `hsl(${190 + pct * 20}, 70%, ${55 + pct * 15}%)`
+            : `hsl(${pct * 190}, 70%, 55%)`;
+        timerRing.setAttribute("stroke", timerColor);
+        timerNum.textContent = String(Math.ceil(tLeft));
+        timerNum.style.color = pct > 0.4 ? "#0369a1" : "#dc2626";
+      }
+
+      function stopTimer() {
+        if (timerHandle) clearInterval(timerHandle);
+        timerHandle = null;
+      }
+
+      function startTimer() {
+        stopTimer();
+        tLeft = TIMER_DURATION;
+        setTimerVisual();
+        timerHandle = setInterval(() => {
+          tLeft -= 0.05;
+          if (tLeft <= 0) {
+            tLeft = 0;
+            setTimerVisual();
+            stopTimer();
+            handleAnswer(-1);
+            return;
+          }
+          setTimerVisual();
+        }, 50);
+      }
+
+      function fxWrong() {
+        // Toggle animations by forcing reflow.
+        fxWave.style.animation = "none";
+        fxWave2.style.animation = "none";
+        fxUnder.style.animation = "none";
+        void fxWave.offsetWidth;
+        fxWave.style.animation = "";
+        fxWave2.style.animation = "";
+        fxUnder.style.animation = "";
+      }
+
+      function fxCorrect() {
+        const ripple = document.createElement("div");
+        ripple.className = "fx ripple";
+        fxRippleHost.innerHTML = "";
+        fxRippleHost.appendChild(ripple);
+        setTimeout(() => {
+          if (ripple.parentNode) ripple.parentNode.removeChild(ripple);
+        }, 900);
+      }
+
+      function updateHeader() {
+        scoreEl.textContent = String(score);
+        streakEl.textContent = "×" + String(streak);
+        streakPill.classList.toggle("streak-hot", streak >= 3);
+      }
+
+      function buildDots() {
+        dots.innerHTML = "";
+        for (let i = 0; i < round.length; i++) {
+          const d = document.createElement("div");
+          d.className = "dot";
+          if (i < idx) d.classList.add("done");
+          if (i === idx) d.classList.add("now");
+          dots.appendChild(d);
+        }
+      }
+
+      function renderQuestion() {
+        const q = round[idx];
+        selected = null;
+        timeoutMsg.hidden = true;
+        explWrap.classList.remove("visible");
+        expBody.innerHTML = "";
+
+        buildDots();
+        updateHeader();
+        qText.textContent = q.q;
+
+        grid.innerHTML = "";
+        const labels = ["A", "B", "C", "D"];
+        for (let i = 0; i < 4; i++) {
+          const btn = document.createElement("div");
+          btn.className = "choice";
+          btn.setAttribute("role", "button");
+          btn.setAttribute("tabindex", "0");
+          btn.dataset.index = String(i);
+          btn.setAttribute("aria-disabled", "false");
+
+          const lab = document.createElement("div");
+          lab.className = "lab";
+          lab.textContent = labels[i];
+          btn.appendChild(lab);
+          btn.appendChild(document.createTextNode(q.choices[i] || ""));
+
+          const onPick = () => handleAnswer(i);
+          btn.addEventListener("click", onPick);
+          btn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onPick();
+            }
+          });
+          grid.appendChild(btn);
+        }
+
+        startTimer();
+      }
+
+      function revealExplanations(q, pickedIndex) {
+        const labels = ["A", "B", "C", "D"];
+        expBody.innerHTML = "";
+        for (let i = 0; i < 4; i++) {
+          const label = labels[i];
+          const wrap = document.createElement("div");
+          wrap.className = "exp neutral";
+          if (i === q.answer) wrap.className = "exp good";
+          else if (i === pickedIndex && pickedIndex !== q.answer) wrap.className = "exp bad";
+          const t = document.createElement("div");
+          t.className = "expTitle";
+          t.textContent = `${label}. ${q.choices[i] || ""}`;
+          const b = document.createElement("div");
+          b.textContent = (q.explanations && q.explanations[label]) ? q.explanations[label] : "";
+          wrap.appendChild(t);
+          wrap.appendChild(b);
+          expBody.appendChild(wrap);
+        }
+        explWrap.classList.add("visible");
+      }
+
+      function lockChoices(q, pickedIndex) {
+        const nodes = grid.querySelectorAll(".choice");
+        nodes.forEach((n) => {
+          n.setAttribute("aria-disabled", "true");
+          const i = Number(n.dataset.index);
+          n.classList.remove("correct", "wrong", "dim");
+          if (i === q.answer) n.classList.add("correct");
+          else if (i === pickedIndex && pickedIndex !== q.answer) n.classList.add("wrong");
+          else n.classList.add("dim");
+        });
+      }
+
+      function handleAnswer(choiceIndex) {
+        if (selected !== null) return;
+        selected = choiceIndex;
+        stopTimer();
+
+        const q = round[idx];
+        const correctIndex = q.answer;
+        const isCorrect = choiceIndex === correctIndex;
+
+        if (isCorrect) {
+          const newStreak = streak + 1;
+          streak = newStreak;
+          bestStreak = Math.max(bestStreak, newStreak);
+          const bonus = Math.floor(newStreak / 3);
+          score += 10 + bonus * 5 + Math.round(tLeft * 2);
+          fxCorrect();
+        } else {
+          streak = 0;
+          fxWrong();
+        }
+
+        updateHeader();
+        lockChoices(q, choiceIndex);
+        revealExplanations(q, choiceIndex);
+
+        if (choiceIndex === -1) timeoutMsg.hidden = false;
+
+        setTimeout(nextQuestion, 1800);
+      }
+
+      function nextQuestion() {
+        idx += 1;
+        if (idx >= round.length) {
+          finish();
+          return;
+        }
+        renderQuestion();
+      }
+
+      function finish() {
+        show(panelResult);
+        finalScoreEl.textContent = String(score);
+        bestStreakEl.textContent = "×" + String(bestStreak);
+        const emoji = score >= 100 ? "🏆" : score >= 60 ? "🌊" : "💧";
+        resultEmoji.textContent = emoji;
+        const headline = score >= 100 ? "AP Ready!" : score >= 60 ? "Great Rush!" : "Keep Studying!";
+        resultSub.textContent = headline;
+        resultMsg.textContent =
+          score >= 100
+            ? "You carved through chemistry like a rapid."
+            : score >= 60
+              ? "You rode the current well."
+              : "Practice makes the stream stronger.";
+      }
+
+      function startGame() {
+        // Build a round from the unit-filtered bank
+        const unit = unitSelect.value; // "" means all
+        const candidates = unit ? bank.filter((q) => q.unit === unit) : bank.slice();
+        if (!candidates.length) {
+          setStatus("No questions found for that unit.");
+          return;
+        }
+
+        round = shuffle(candidates).slice(0, Math.min(ROUND_SIZE, candidates.length));
+        idx = 0;
+        score = 0;
+        streak = 0;
+        bestStreak = 0;
+        selected = null;
+
+        setStatus("");
+        show(panelGame);
+        renderQuestion();
+      }
+
+      function buildUnitSelect() {
+        unitSelect.innerHTML = "";
+        const all = document.createElement("option");
+        all.value = "";
+        all.textContent = "All units";
+        unitSelect.appendChild(all);
+        for (let u = 1; u <= 9; u++) {
+          const opt = document.createElement("option");
+          opt.value = String(u);
+          opt.textContent = "Unit " + String(u);
+          unitSelect.appendChild(opt);
+        }
+      }
+
+      function mountParticles() {
+        // simple decorative background; keep it small (8 particles like your React version)
+        const colors = ["125,211,252", "186,230,253"];
+        for (let i = 0; i < 8; i++) {
+          const p = document.createElement("div");
+          const size = i % 2 === 0 ? 6 : 4;
+          p.className = "particle";
+          p.style.left = `${10 + i * 12}%`;
+          p.style.width = `${size}px`;
+          p.style.height = `${size}px`;
+          p.style.background = `rgba(${colors[i % 2]},0.7)`;
+          p.style.animationDuration = `${4 + i * 1.3}s`;
+          p.style.animationDelay = `${i * 0.7}s`;
+          document.body.appendChild(p);
+        }
+      }
+
+      async function loadBank() {
+        try {
+          const r = await fetch(BANK_URL);
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          const data = await r.json();
+          if (!Array.isArray(data)) throw new Error("questions.json must be an array");
+          const parsed = [];
+          for (const raw of data) {
+            const q = toRushQuestion(raw);
+            if (q) parsed.push(q);
+          }
+          bank = parsed;
+          const unitsPresent = new Set(bank.map((q) => q.unit).filter(Boolean));
+          bankStat.textContent = `Loaded ${bank.length} questions.`;
+          setStatus("");
+        } catch (e) {
+          bankStat.textContent = "Could not load questions.json. Run a local server (python3 -m http.server).";
+          btnStart.disabled = true;
+          setStatus("Could not load questions. Make sure you opened this via http:// (not file://).");
+        }
+      }
+
+      // Wire up
+      buildUnitSelect();
+      mountParticles();
+      loadBank();
+
+      btnStart.addEventListener("click", startGame);
+      btnAgain.addEventListener("click", () => {
+        show(panelIntro);
+      });
+    })();
+  </script>
+</body>
+</html>
+

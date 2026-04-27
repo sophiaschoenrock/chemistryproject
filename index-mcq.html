@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP Chemistry · MCQ Practice</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface-hover: #243047;
+      --border: #2d3a52;
+      --text: #e8edf4;
+      --muted: #8b9cb3;
+      --accent: #5b9fd4;
+      --accent-dim: #3d7ab0;
+      --correct: #3d9a6d;
+      --correct-bg: rgba(61, 154, 109, 0.15);
+      --wrong: #d94a5a;
+      --wrong-bg: rgba(217, 74, 90, 0.15);
+      --neutral: #6b7c94;
+      --neutral-bg: rgba(107, 124, 148, 0.12);
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 20% -10%, #1a2840 0%, var(--bg) 55%);
+    }
+
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header.page-head {
+      margin-bottom: 1.5rem;
+    }
+
+    header.page-head h1 {
+      font-size: 1.35rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+    }
+
+    header.page-head p.tag {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    label.filter-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    select#unit-filter {
+      appearance: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.55rem 2rem 0.55rem 0.85rem;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b9cb3' d='M3 4.5L6 8l3-3.5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.65rem center;
+    }
+
+    select#unit-filter:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .stats {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    .stats span {
+      color: var(--muted);
+    }
+
+    .stats strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    #error-banner {
+      display: none;
+      background: var(--wrong-bg);
+      border: 1px solid var(--wrong);
+      color: #f0b4bc;
+      padding: 1rem 1.1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    #error-banner.visible {
+      display: block;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 1.35rem 1.4rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .progress-line {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .stimulus {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 0.85rem 1rem;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--accent-dim);
+      margin-bottom: 1rem;
+    }
+
+    .stimulus:empty {
+      display: none;
+    }
+
+    .stem {
+      font-size: 1.08rem;
+      font-weight: 500;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .choice-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      line-height: 1.45;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .choice-btn:hover:not(:disabled) {
+      background: var(--surface-hover);
+      border-color: var(--accent-dim);
+    }
+
+    .choice-btn:disabled {
+      cursor: default;
+    }
+
+    .choice-btn .letter {
+      flex-shrink: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .choice-btn.revealed-correct {
+      border-color: var(--correct);
+      background: var(--correct-bg);
+    }
+
+    .choice-btn.revealed-correct .letter {
+      background: var(--correct);
+      border-color: var(--correct);
+      color: #fff;
+    }
+
+    .choice-btn.revealed-wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+    }
+
+    .choice-btn.revealed-wrong .letter {
+      background: var(--wrong);
+      border-color: var(--wrong);
+      color: #fff;
+    }
+
+    .choice-btn.revealed-neutral {
+      opacity: 0.72;
+      border-color: var(--border);
+      background: var(--neutral-bg);
+    }
+
+    .choice-btn.revealed-neutral .letter {
+      color: var(--neutral);
+    }
+
+    .explanations {
+      margin-top: 1.35rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .explanations h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 0.85rem;
+    }
+
+    .expl-block {
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.65rem;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .expl-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .expl-block.correct {
+      background: var(--correct-bg);
+      border-color: rgba(61, 154, 109, 0.45);
+      color: #b8e8ce;
+    }
+
+    .expl-block.wrong {
+      background: var(--wrong-bg);
+      border-color: rgba(217, 74, 90, 0.45);
+      color: #f5c4ca;
+    }
+
+    .expl-block.neutral {
+      background: var(--neutral-bg);
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .expl-head {
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      font-size: 0.88rem;
+    }
+
+    .expl-block.correct .expl-head {
+      color: var(--correct);
+    }
+
+    .expl-block.wrong .expl-head {
+      color: var(--wrong);
+    }
+
+    .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.35rem;
+    }
+
+    .nav-row button {
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .nav-row button:hover:not(:disabled) {
+      background: var(--surface-hover);
+      border-color: var(--accent-dim);
+    }
+
+    .nav-row button:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .nav-row button.primary {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .nav-row button.primary:hover:not(:disabled) {
+      background: var(--accent);
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--muted);
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Multiple choice practice</h1>
+      <p class="tag">Select an answer to see explanations. Use the unit filter to focus on Units 1–9.</p>
+    </header>
+
+    <div id="error-banner" role="alert"></div>
+
+    <div class="toolbar">
+      <label class="filter-label" for="unit-filter">Unit</label>
+      <select id="unit-filter" aria-label="Filter by unit"></select>
+      <div class="stats">
+        <span>Progress: <strong id="stat-progress">—</strong></span>
+        <span>Score: <strong id="stat-score">—</strong></span>
+      </div>
+    </div>
+
+    <main class="card" id="quiz-card" hidden>
+      <p class="progress-line" id="progress-text">Question 1 of 1</p>
+      <div class="stimulus" id="stimulus"></div>
+      <p class="stem" id="stem"></p>
+      <div class="choices" id="choices"></div>
+      <div class="explanations" id="explanations" hidden>
+        <h2>Explanations</h2>
+        <div id="explanations-body"></div>
+      </div>
+      <div class="nav-row">
+        <button type="button" id="btn-prev">Previous</button>
+        <button type="button" id="btn-next" class="primary">Next</button>
+      </div>
+    </main>
+
+    <div class="card empty-state" id="empty-state" hidden>
+      No questions for this filter.
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const UNIT_MAX = 9;
+      const JSON_URL = "questions.json";
+
+      const elError = document.getElementById("error-banner");
+      const elFilter = document.getElementById("unit-filter");
+      const elCard = document.getElementById("quiz-card");
+      const elEmpty = document.getElementById("empty-state");
+      const elProgress = document.getElementById("progress-text");
+      const elStatProgress = document.getElementById("stat-progress");
+      const elStatScore = document.getElementById("stat-score");
+      const elStimulus = document.getElementById("stimulus");
+      const elStem = document.getElementById("stem");
+      const elChoices = document.getElementById("choices");
+      const elExplWrap = document.getElementById("explanations");
+      const elExplBody = document.getElementById("explanations-body");
+      const btnPrev = document.getElementById("btn-prev");
+      const btnNext = document.getElementById("btn-next");
+
+      /** @type {Array<object>} */
+      let allQuestions = [];
+      /** @type {Array<object>} */
+      let filtered = [];
+      let index = 0;
+      /** @type {Map<number, string>} index -> selected label */
+      const answers = new Map();
+
+      function showError(msg) {
+        elError.textContent = msg;
+        elError.classList.add("visible");
+        elCard.hidden = true;
+        elEmpty.hidden = true;
+      }
+
+      function questionUnit(q) {
+        const s = q.subsection || "";
+        const m = String(s).match(/^(\d+)/);
+        return m ? m[1] : "";
+      }
+
+      function toCanonical(q) {
+        if (!q) return null;
+        if (typeof q.stem === "string" && Array.isArray(q.options) && q.options.length >= 4) {
+          var stim = typeof q.stimulus === "string" ? q.stimulus : "";
+          return {
+            subsection: q.subsection || "",
+            stimulus: stim,
+            stem: q.stem,
+            correct: String(q.correct || "").toUpperCase().slice(0, 1),
+            options: q.options.map(function (o) {
+              return {
+                label: String(o.label || "").toUpperCase().slice(0, 1),
+                text: String(o.text || ""),
+                rationale: String(o.rationale || ""),
+              };
+            }),
+          };
+        }
+        if (typeof q.question === "string" && q.choices && q.explanations) {
+          var topic = q.topic != null ? String(q.topic).trim() : "";
+          var sub = topic;
+          if (!sub && q.unit != null) sub = String(q.unit).trim() + ".0";
+          if (!sub) sub = "0";
+          var corr = String(q.correct_answer || "").toUpperCase().slice(0, 1);
+          var opts = ["A", "B", "C", "D"].map(function (lab) {
+            return {
+              label: lab,
+              text: String((q.choices && q.choices[lab]) || ""),
+              rationale: String((q.explanations && q.explanations[lab]) || ""),
+            };
+          });
+          return { subsection: sub, stimulus: "", stem: q.question, correct: corr, options: opts };
+        }
+        return null;
+      }
+
+      function normalizeQuestions(raw) {
+        if (!Array.isArray(raw)) return [];
+        var out = [];
+        for (var i = 0; i < raw.length; i++) {
+          var c = toCanonical(raw[i]);
+          if (c && c.correct && /^[ABCD]$/.test(c.correct)) out.push(c);
+        }
+        return out;
+      }
+
+      function buildFilterOptions() {
+        elFilter.innerHTML = "";
+        const all = document.createElement("option");
+        all.value = "";
+        all.textContent = "All units";
+        elFilter.appendChild(all);
+        for (let u = 1; u <= UNIT_MAX; u++) {
+          const o = document.createElement("option");
+          o.value = String(u);
+          o.textContent = "Unit " + u;
+          elFilter.appendChild(o);
+        }
+      }
+
+      function applyFilter() {
+        const u = elFilter.value;
+        if (!u) {
+          filtered = allQuestions.slice();
+        } else {
+          const prefix = u + ".";
+          filtered = allQuestions.filter(function (q) {
+            const sub = q.subsection || "";
+            return sub.startsWith(prefix) || questionUnit(q) === u;
+          });
+        }
+        answers.clear();
+        index = 0;
+        render();
+      }
+
+      function scoreStats() {
+        let attempted = 0;
+        let correct = 0;
+        for (let i = 0; i < filtered.length; i++) {
+          if (!answers.has(i)) continue;
+          attempted++;
+          const q = filtered[i];
+          if (answers.get(i) === q.correct) correct++;
+        }
+        return { correct, attempted };
+      }
+
+      function updateStats() {
+        const n = filtered.length;
+        const { correct, attempted } = scoreStats();
+        elStatProgress.textContent = n ? index + 1 + " / " + n : "0 / 0";
+        elStatScore.textContent = attempted ? correct + " / " + attempted : "—";
+      }
+
+      function render() {
+        elError.classList.remove("visible");
+        if (!filtered.length) {
+          elCard.hidden = true;
+          elEmpty.hidden = false;
+          elStatProgress.textContent = "0 / 0";
+          elStatScore.textContent = "—";
+          return;
+        }
+        elEmpty.hidden = true;
+        elCard.hidden = false;
+
+        const q = filtered[index];
+        const picked = answers.get(index);
+        const revealed = picked !== undefined;
+
+        elProgress.textContent = "Question " + (index + 1) + " of " + filtered.length;
+        elStimulus.textContent = (q.stimulus && q.stimulus.trim()) || "";
+        elStem.textContent = q.stem;
+
+        elChoices.innerHTML = "";
+        const sorted = q.options.slice().sort(function (a, b) {
+          return a.label.localeCompare(b.label);
+        });
+
+        sorted.forEach(function (opt) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "choice-btn";
+          btn.disabled = revealed;
+          const letter = document.createElement("span");
+          letter.className = "letter";
+          letter.textContent = opt.label;
+          const text = document.createElement("span");
+          text.textContent = opt.text;
+          btn.appendChild(letter);
+          btn.appendChild(text);
+
+          if (revealed) {
+            if (opt.label === q.correct) {
+              btn.classList.add("revealed-correct");
+            } else if (opt.label === picked && picked !== q.correct) {
+              btn.classList.add("revealed-wrong");
+            } else {
+              btn.classList.add("revealed-neutral");
+            }
+          }
+
+          if (!revealed) {
+            btn.addEventListener("click", function () {
+              answers.set(index, opt.label);
+              render();
+            });
+          }
+          elChoices.appendChild(btn);
+        });
+
+        elExplBody.innerHTML = "";
+        if (revealed) {
+          elExplWrap.hidden = false;
+          sorted.forEach(function (opt) {
+            const div = document.createElement("div");
+            div.className = "expl-block";
+            const head = document.createElement("div");
+            head.className = "expl-head";
+            head.textContent = opt.label + ". " + opt.text;
+            const body = document.createElement("div");
+            body.textContent = opt.rationale || "";
+            div.appendChild(head);
+            div.appendChild(body);
+
+            if (opt.label === q.correct) {
+              div.classList.add("correct");
+            } else if (opt.label === picked && picked !== q.correct) {
+              div.classList.add("wrong");
+            } else {
+              div.classList.add("neutral");
+            }
+            elExplBody.appendChild(div);
+          });
+        } else {
+          elExplWrap.hidden = true;
+        }
+
+        btnPrev.disabled = index <= 0;
+        btnNext.disabled = index >= filtered.length - 1;
+        updateStats();
+      }
+
+      btnPrev.addEventListener("click", function () {
+        if (index > 0) {
+          index--;
+          render();
+        }
+      });
+
+      btnNext.addEventListener("click", function () {
+        if (index < filtered.length - 1) {
+          index++;
+          render();
+        }
+      });
+
+      elFilter.addEventListener("change", applyFilter);
+
+      buildFilterOptions();
+
+      fetch(JSON_URL)
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          allQuestions = normalizeQuestions(data);
+          if (!allQuestions.length) {
+            showError("No valid questions found in questions.json.");
+            return;
+          }
+          applyFilter();
+        })
+        .catch(function () {
+          showError(
+            "Could not load questions.json. Serve this folder over HTTP (for example: python3 -m http.server) and open this page from http://localhost:8080/index-mcq.html — not as a file:// URL."
+          );
+        });
+    })();
+  </script>
+</body>
+</html>

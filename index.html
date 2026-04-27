@@ -1,184 +1,258 @@
 <!DOCTYPE html>
-<!-- Line 1: HTML5 doctype tells the browser to use the modern HTML standard. -->
-<!--
-  Lines 2–5: Developer-facing comment explaining this file at a high level.
-  - index.html is the public landing page for AP Chemistry Unit 1.
-  - The hero introduces the unit and links to the quiz.
-  - The topic grid links to filtered quizzes (quiz.html?section=1.x).
-  - index.js enhances the grid by loading questions.json and filling the
-    small \"N questions\" subtitles under each topic.
--->
 <html lang="en">
-  <!-- Line 6: Root element; lang=\"en\" communicates that the document is English for accessibility and search. -->
 <head>
-  <!-- Line 8: charset=utf-8 so special characters (×, ·, em-dash) render correctly. -->
   <meta charset="UTF-8" />
-  <!-- Line 9: viewport meta for responsive layout on phones and tablets. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Line 10: Short description used by search engines and when linking the page. -->
-  <meta name="description" content="AP Chemistry Unit 1 practice — Atomic Structure and Properties. Multiple choice with explanations." />
-  <!-- Line 11: Browser tab title. Shows in history, bookmarks, and search results. -->
-  <title>AP Chemistry Unit 1 | Atomic Structure &amp; Properties</title>
-  <!-- Line 12: Link in the compiled CSS that controls layout and typography for the whole site. -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Line 13: Favicon for browser tab and bookmarks; SVG icon that matches the site's visual identity. -->
+  <meta
+    name="description"
+    content="AP Chemistry practice hub — multiple-choice quizzes, explanations, and timed review for Units 1–9."
+  />
+  <title>AP Chemistry Practice Hub</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :focus-visible {
+      outline: 3px solid #0ea5e9;
+      outline-offset: 2px;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 9999;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background: #fff;
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+    }
+  </style>
 </head>
-<body>
-  <!-- Line 16: \"Skip to content\" link lets keyboard/screen-reader users jump over repeated nav to the main content. -->
-  <a class="skip-link" href="#main">Skip to content</a>
-  <!-- Lines 17–28: Site-wide header, reused on notes.html and quiz.html. Contains the logo and global navigation. -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Line 19: Logo that doubles as a home link; clicking returns to this page. -->
-      <a class="logo" href="index.html">AP Chem · Unit 1</a>
-      <!-- Line 20: nav landmark with aria-label so assistive tech knows this is the main navigation. -->
-      <nav aria-label="Main">
-        <!-- Line 21: Unordered list of navigation items laid out horizontally by styles.css. -->
-               <ul class="nav-list">
-          <!-- Line 22: Jump to the topic grid on this page (same labels on both unit landings). -->
-          <li><a href="index.html#outline">Curriculum</a></li>
-          <li><a href="index.html" aria-current="page">Unit 1</a></li>
-          <li><a href="index-unit2.html">Unit 2</a></li>
-          <!-- Line 25: Unit-specific notes (parallel to index-unit2 → notes-unit2.html). -->
-          <li><a href="notes.html">Notes</a></li>
-          <!-- Line 26: Quiz with unit filter so the topic dropdown matches this unit. -->
-          <li><a href="quiz.html?unit=1">Practice Quiz</a></li>
-        </ul>
+<body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
+      <a href="#" class="text-lg font-bold tracking-tight text-slate-900">
+        AP Chem <span class="text-sky-600">Practice</span>
+      </a>
+      <nav aria-label="Page sections" class="flex flex-wrap gap-1 text-sm font-semibold text-slate-600">
+        <a class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900" href="#about">About</a>
+        <a class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900" href="#features">Features</a>
+        <a class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900" href="#demo">Demo</a>
+        <a class="rounded-md px-3 py-2 hover:bg-slate-100 hover:text-slate-900" href="#start">Get started</a>
       </nav>
     </div>
   </header>
 
-  <!-- Lines 30–120: Main content of the landing page. id=\"main\" matches the skip-link target. -->
   <main id="main">
-    <!-- Lines 31–48: Hero section introducing the unit and primary calls to action. -->
-    <section class="hero">
-      <!-- hero-inner constrains width and applies hero-specific spacing from styles.css. -->
-      <div class="container hero-inner">
-        <!-- Line 33: Small uppercase label showing this is Unit 1 of the CED. -->
-        <p class="eyebrow">Course and Exam Description · Unit 1</p>
-        <!-- Line 34: Main page heading; describes the topical focus of this practice site. -->
-        <h1>Atomic Structure and Properties</h1>
-        <!-- Lines 35–38: Lead paragraph that explains how the quiz experience works. -->
-        <p class="lede">
-          Work through AP-style four-option multiple choice with a stimulus when given, then review
-          a full rationale for every answer choice—similar to the feedback loop you use in AP Classroom.
+    <!-- Hero -->
+    <section
+      class="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-cyan-50"
+      aria-labelledby="hero-heading"
+    >
+      <div
+        class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-200/35 blur-3xl"
+        aria-hidden="true"
+      ></div>
+      <div class="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
+        <p class="text-sm font-semibold uppercase tracking-wider text-sky-700">Open source · static site</p>
+        <h1 id="hero-heading" class="mt-3 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+          AP Chemistry practice, explanations, and quick review — in the browser.
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
+          A lightweight quiz hub for AP Chemistry students: topic filters, rationales for every choice, and an optional
+          timed “rush” mode — no install required on GitHub Pages.
         </p>
-        <!-- Lines 39–42: Primary and secondary actions for the hero. -->
-        <div class="hero-actions">
-          <!-- Line 40: Primary button to jump directly into the quiz covering all topics. -->
-          <a class="btn btn-primary" href="quiz.html?unit=1">Start practice quiz</a>
-          <!-- Line 41: Secondary button to scroll to the outline section below. -->
-          <a class="btn btn-ghost" href="index.html#outline">Browse topics</a>
-        </div>
-        <!-- Lines 43–46: Fine-print paragraph clarifying question origin and mentioning the Java version. -->
-        <p class="fine-print">
-          Items are original practice written for this site; they are not copied from secure College Board exams.
-          Also available: <code>mvn exec:java</code> in this repo for the Java version.
-        </p>
-      </div>
-    </section>
-
-    <!-- Lines 50–99: Outline section listing each Unit 1 topic as a card that links to filtered practice. -->
-    <section id="outline" class="section">
-      <div class="container">
-        <!-- Line 52: Section heading for the Unit 1 outline. -->
-        <h2>Unit 1 outline</h2>
-        <!-- Lines 53–55: Intro text explaining what the topic cards do. -->
-        <p class="section-intro">
-          Each topic below links to the quiz filtered to that subsection. The full bank is also available as a shuffled set.
-        </p>
-        <!-- Lines 56–97: Card grid containing one card per AP Chemistry Unit 1 subsection (1.1–1.8). -->
-        <div class="topic-grid">
-          <!--
-            Each topic-card anchor has:
-            - href=\"quiz.html?section=1.x\" so quiz.html can read the ?section= param and filter questions.
-            - data-section=\"1.x\" so index.js can count questions per subsection and write \"N questions\".
-            - Inside: topic-id (numerical code), topic-title (text label), topic-meta (count placeholder).
-          -->
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.1" data-section="1.1">
-            <span class="topic-id">1.1</span>
-            <span class="topic-title">Moles and Molar Mass</span>
-            <!-- topic-meta starts empty; index.js fills it with \"N questions\" from questions.json. -->
-            <span class="topic-meta" aria-label="Question count"></span>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href="https://github.com/sophiaschoenrock/chemistryproject"
+            class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-sky-600/25 transition hover:bg-sky-700"
+          >
+            View on GitHub
           </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.2" data-section="1.2">
-            <span class="topic-id">1.2</span>
-            <span class="topic-title">Mass Spectra of Elements</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.3" data-section="1.3">
-            <span class="topic-id">1.3</span>
-            <span class="topic-title">Elemental Composition of Pure Substances</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.4" data-section="1.4">
-            <span class="topic-id">1.4</span>
-            <span class="topic-title">Composition of Mixtures</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.5" data-section="1.5">
-            <span class="topic-id">1.5</span>
-            <span class="topic-title">Atomic Structure and Electron Configuration</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.6" data-section="1.6">
-            <span class="topic-id">1.6</span>
-            <span class="topic-title">Photoelectron Spectroscopy</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.7" data-section="1.7">
-            <span class="topic-id">1.7</span>
-            <span class="topic-title">Periodic Trends</span>
-            <span class="topic-meta" aria-label="Question count"></span>
-          </a>
-          <a class="topic-card" href="quiz.html?unit=1&amp;section=1.8" data-section="1.8">
-            <span class="topic-id">1.8</span>
-            <span class="topic-title">Valence Electrons and Ionic Compounds</span>
-            <span class="topic-meta" aria-label="Question count"></span>
+          <a
+            href="quiz.html"
+            class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-800 shadow-sm transition hover:border-sky-200 hover:bg-sky-50"
+          >
+            Open practice quiz
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Lines 101–120: Explanation section describing how the quiz behaves and how to preview locally. -->
-    <section class="section section-muted">
-      <div class="container split">
-        <!-- Lines 103–109: Text column giving a high-level overview of quiz flow. -->
-        <div>
-          <h2>How the quiz works</h2>
-          <ol class="steps">
-            <li>Choose a topic filter or practice the full unit (shuffled).</li>
-            <li>Select A–D, then check your answer.</li>
-            <li>Read rationales for all four choices to reinforce the reasoning AP rewards.</li>
-          </ol>
-        </div>
-        <!-- Lines 111–118: Aside describing how to run a simple local web server. -->
-        <aside class="callout">
-          <h3>Local preview</h3>
-          <p>
-            To view this site from disk with JSON loading, run a tiny server in the project folder, for example:
-          </p>
-          <!-- Line 116: Command students can type to serve the current folder over HTTP on port 8080. -->
-          <code class="code-block">python3 -m http.server 8080</code>
-          <!-- Line 117: Explains that GitHub Pages serves the same files so behavior is consistent. -->
-          <p class="fine-print">Then open <code>http://localhost:8080</code>. GitHub Pages serves the same files without extra setup.</p>
-        </aside>
+    <!-- About -->
+    <section id="about" class="mx-auto max-w-5xl px-4 py-16 sm:px-6" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="text-2xl font-bold text-slate-900">About</h2>
+      <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
+        This project is a collection of static HTML/CSS/JS pages that load a shared <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-medium text-slate-800">questions.json</code>
+        bank. Students can practice by unit and subsection, see why each option is right or wrong, and use a fast-paced
+        review mode when they want a challenge.
+      </p>
+      <p class="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">
+        It is built for anyone preparing for AP Chemistry coursework or exams and for teachers who want a simple,
+        hostable practice site without a backend.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section
+      id="features"
+      class="border-y border-slate-200 bg-white py-16"
+      aria-labelledby="features-heading"
+    >
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 id="features-heading" class="text-2xl font-bold text-slate-900">Features</h2>
+        <p class="mt-2 max-w-2xl text-slate-600">
+          Everything runs in the browser; deploy to GitHub Pages and share one URL.
+        </p>
+        <ul
+          class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          role="list"
+        >
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Units 1–9 filtering</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Pick a unit or drill a subsection; the quiz filters questions by CED-style topic prefixes.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Rationales for A–D</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              After you answer, read explanations for every choice — not just the correct letter.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Reaction Rush mode</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Timed rounds with score and streak; optional unit focus before you dive in.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Static &amp; portable</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              No build step for the web pages — drop the folder on any static host.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Curriculum landings</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Unit overview pages link into filtered quizzes (e.g. Unit 1 topic grid).
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm">
+            <h3 class="font-bold text-slate-900">Import pipeline</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+              Python script merges external MCQ JSON into the shared bank with deduplication.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section id="demo" class="mx-auto max-w-5xl px-4 py-16 sm:px-6" aria-labelledby="demo-heading">
+      <h2 id="demo-heading" class="text-2xl font-bold text-slate-900">Demo</h2>
+      <p class="mt-2 max-w-2xl text-slate-600">
+        Placeholder preview — replace with your own screenshot or screen recording when you publish.
+      </p>
+      <figure class="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+        <img
+          src="https://placehold.co/1200x640/0c4a6e/f0f9ff?text=Screenshot%3A+quiz+or+Reaction+Rush"
+          width="1200"
+          height="640"
+          alt="Placeholder image for a future screenshot of the AP Chemistry quiz or Reaction Rush interface"
+          class="h-auto w-full object-cover"
+          loading="lazy"
+        />
+        <figcaption class="border-t border-slate-100 px-4 py-3 text-sm text-slate-600">
+          Tip: capture <strong class="text-slate-800">quiz.html</strong> or <strong class="text-slate-800">reaction-rush.html</strong> and swap this image for a real asset in your repo (e.g. <code class="rounded bg-slate-100 px-1 py-0.5 text-xs">docs/demo.png</code>).
+        </figcaption>
+      </figure>
+      <p class="mt-6 text-sm font-semibold text-slate-700">
+        Try it live in this repo:
+        <a href="quiz.html" class="text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">quiz.html</a>
+        ·
+        <a href="reaction-rush.html" class="text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">reaction-rush.html</a>
+        ·
+        <a href="unit1-landing.html" class="text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900">Unit 1 curriculum</a>
+      </p>
+    </section>
+
+    <!-- Getting started -->
+    <section id="start" class="border-t border-slate-200 bg-slate-100/80 py-16" aria-labelledby="start-heading">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <h2 id="start-heading" class="text-2xl font-bold text-slate-900">Getting started</h2>
+        <p class="mt-2 max-w-2xl text-slate-600">
+          Clone the repository, serve the folder over HTTP (browsers block <code class="rounded bg-white px-1 py-0.5 text-sm">fetch()</code> to JSON from <code class="rounded bg-white px-1 py-0.5 text-sm">file://</code>), and open the pages locally.
+        </p>
+        <pre
+          class="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-900 p-5 text-sm leading-relaxed text-slate-100 shadow-inner"
+          tabindex="0"
+          role="region"
+          aria-label="Shell commands to run the project locally"
+        ><code>git clone https://github.com/sophiaschoenrock/chemistryproject.git
+cd chemistryproject
+python3 -m http.server 8080
+# Visit http://localhost:8080/</code></pre>
+        <p class="mt-4 text-sm text-slate-600">
+          On <strong class="text-slate-800">GitHub Pages</strong>, the site root serves <code class="rounded bg-white px-1 py-0.5 text-sm">index.html</code> automatically once Pages is enabled (see instructions below).
+        </p>
       </div>
     </section>
   </main>
 
-  <!-- Lines 123–128: Footer repeated at the bottom of each page. -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <!-- Line 125: Simple text identifying the site. -->
-      <p>AP Chemistry Unit 1 practice site</p>
-      <!-- Line 126: Convenience links back to Notes and the quiz page. -->
-      <p><a href="notes.html">Notes</a> · <a href="quiz.html?unit=1">Practice quiz</a></p>
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p class="text-sm text-slate-600">
+        <span class="font-semibold text-slate-900">Sophia Schoenrock</span>
+        · AP Chemistry Practice Hub
+      </p>
+      <p class="text-sm">
+        <a
+          href="https://github.com/sophiaschoenrock/chemistryproject"
+          class="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900"
+        >
+          GitHub repository
+        </a>
+      </p>
     </div>
   </footer>
-
-  <!-- Line 130: Explanation that index.js is deferred until after HTML parsing, and that it handles question counts. -->
-  <script src="index.js" defer></script>
 </body>
 </html>

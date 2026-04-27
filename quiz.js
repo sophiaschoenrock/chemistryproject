@@ -3,10 +3,10 @@
 // Runs in the browser only. No bundler; modern ES (const/let, fetch) is fine for target browsers.
 //
 // Execution flow (high level):
-//   init() → resolve ?unit= (1 or 2) → build topic dropdown → sync ?section= → loadQuestions()
+//   init() → resolve ?unit= (1–9) or infer from ?section= → build unit + topic dropdowns → loadQuestions()
 //   fetches questions.json → startSession() filters by unit + subsection → renderQuestion() …
-// URL: quiz.html, quiz.html?unit=2&section=2.3, etc. Missing unit defaults to 1.
-// Data: subsection strings must start with "1." or "2." (etc.) to match the selected unit.
+// URL: quiz.html, quiz.html?unit=5&section=5.4, etc. Missing unit: inferred from section prefix or 1.
+// Data: subsection strings must start with "n." to match the selected unit.
 // =============================================================================
 
 (function () {
@@ -34,7 +34,8 @@
     error: document.getElementById("quiz-error"), // Red error banner when JSON fails to load
     app: document.getElementById("quiz-app"), // Main quiz UI wrapper (hidden until data loads)
     scope: document.getElementById("quiz-scope"), // Subtitle: current filter / topic description
-    sectionSelect: document.getElementById("section-select"), // Dropdown: rebuilt per unit (1.x or 2.x)
+    sectionSelect: document.getElementById("section-select"), // Dropdown: rebuilt per unit (n.x)
+    unitSelect: document.getElementById("unit-select"), // Dropdown: CED units 1–9
     progress: document.getElementById("quiz-progress"), // "Question i of n" text
     score: document.getElementById("quiz-score"), // Running count of correct answers
     stimulusWrap: document.getElementById("stimulus-wrap"), // Container for optional passage (hidden if empty)
@@ -65,7 +66,7 @@
   /** @type {string} Active CED unit number as string key, e.g. "1" or "2". */
   let currentUnit = "1";
 
-  /** Subsection dropdown labels per unit (must match `subsection` prefixes in questions.json). */
+  /** Subsection dropdown labels per unit (must match `subsection` prefixes in questions.json / importer). */
   const UNIT_SECTIONS = {
     "1": {
       scopeAll: "Unit 1 · Atomic Structure and Properties",
@@ -92,18 +93,129 @@
         { value: "2.7", label: "2.7 VSEPR and Hybridization" },
       ],
     },
+    "3": {
+      scopeAll: "Unit 3 · Intermolecular Forces and Properties",
+      sections: [
+        { value: "3.1", label: "3.1 Intermolecular Forces" },
+        { value: "3.2", label: "3.2 Properties of Solids" },
+        { value: "3.3", label: "3.3 Solids, Liquids, and Gases" },
+        { value: "3.4", label: "3.4 Ideal Gas Law" },
+        { value: "3.5", label: "3.5 Kinetic Molecular Theory" },
+        { value: "3.6", label: "3.6 Deviation from Ideal Gas Law" },
+        { value: "3.7", label: "3.7 Solutions and Mixtures" },
+        { value: "3.8", label: "3.8 Representations of Solutions" },
+      ],
+    },
+    "4": {
+      scopeAll: "Unit 4 · Chemical Reactions",
+      sections: [
+        { value: "4.1", label: "4.1 Introduction for Reactions" },
+        { value: "4.2", label: "4.2 Net Ionic Equations" },
+        { value: "4.3", label: "4.3 Representations of Reactions" },
+        { value: "4.4", label: "4.4 Physical and Chemical Changes" },
+        { value: "4.5", label: "4.5 Stoichiometry" },
+        { value: "4.6", label: "4.6 Introduction to Titration" },
+        { value: "4.7", label: "4.7 Types of Chemical Reactions" },
+        { value: "4.8", label: "4.8 Acid-Base Reactions" },
+        { value: "4.9", label: "4.9 Oxidation-Reduction Reactions" },
+      ],
+    },
+    "5": {
+      scopeAll: "Unit 5 · Kinetics",
+      sections: [
+        { value: "5.1", label: "5.1 Reaction Rates" },
+        { value: "5.2", label: "5.2 Introduction to Rate Law" },
+        { value: "5.3", label: "5.3 Concentration Changes Over Time" },
+        { value: "5.4", label: "5.4 Elementary Reactions" },
+        { value: "5.5", label: "5.5 Collision Model" },
+        { value: "5.6", label: "5.6 Reaction Energy Profile" },
+        { value: "5.7", label: "5.7 Introduction to Mechanisms" },
+        { value: "5.8", label: "5.8 Multistep Reaction Energy Profile" },
+        { value: "5.9", label: "5.9 Pre-Equilibrium Approximation" },
+        { value: "5.10", label: "5.10 Mode of Energy Transfer" },
+        { value: "5.11", label: "5.11 Kinetics of Spectroscopy" },
+      ],
+    },
+    "6": {
+      scopeAll: "Unit 6 · Thermodynamics",
+      sections: [
+        { value: "6.1", label: "6.1 Endothermic and Exothermic Processes" },
+        { value: "6.2", label: "6.2 Heat Capacity and Phase Changes" },
+        { value: "6.3", label: "6.3 Energy of Phase Changes" },
+        { value: "6.4", label: "6.4 Energy of Formation" },
+        { value: "6.5", label: "6.5 Hess's Law" },
+        { value: "6.6", label: "6.6 Bond Enthalpies" },
+        { value: "6.7", label: "6.7 Spontaneity" },
+      ],
+    },
+    "7": {
+      scopeAll: "Unit 7 · Equilibrium",
+      sections: [
+        { value: "7.1", label: "7.1 Introduction to Equilibrium" },
+        { value: "7.2", label: "7.2 Direction of Reversible Reactions" },
+        { value: "7.3", label: "7.3 Reaction Quotient and Equilibrium Constant" },
+        { value: "7.4", label: "7.4 Calculating the Equilibrium Constant" },
+        { value: "7.5", label: "7.5 Properties of the Equilibrium Constant" },
+        { value: "7.6", label: "7.6 Le Châtelier's Principle" },
+        { value: "7.7", label: "7.7 Introduction to Solubility Equilibria" },
+        { value: "7.8", label: "7.8 pH and Solubility" },
+        { value: "7.9", label: "7.9 Free Energy and Equilibrium" },
+      ],
+    },
+    "8": {
+      scopeAll: "Unit 8 · Acids and Bases",
+      sections: [
+        { value: "8.1", label: "8.1 Introduction to Acids and Bases" },
+        { value: "8.2", label: "8.2 pH and pOH of Strong and Weak Acids and Bases" },
+        { value: "8.3", label: "8.3 Acid-Base Titrations" },
+        { value: "8.4", label: "8.4 Buffers" },
+        { value: "8.5", label: "8.5 Acid-Base Titration Curves" },
+        { value: "8.6", label: "8.6 Molecular Structure of Acids and Bases" },
+        { value: "8.7", label: "8.7 pH and pKa" },
+        { value: "8.8", label: "8.8 Properties of Buffers" },
+        { value: "8.9", label: "8.9 Buffer Capacity" },
+        { value: "8.10", label: "8.10 pH and Solubility" },
+      ],
+    },
+    "9": {
+      scopeAll: "Unit 9 · Applications of Thermodynamics",
+      sections: [
+        { value: "9.1", label: "9.1 Introduction to Entropy" },
+        { value: "9.2", label: "9.2 Gibbs Free Energy and Thermodynamic Favorability" },
+        { value: "9.3", label: "9.3 Thermodynamics and Kinetics" },
+        { value: "9.4", label: "9.4 Free Energy of Formation" },
+        { value: "9.5", label: "9.5 Free Energy Under Nonstandard Conditions" },
+        { value: "9.6", label: "9.6 Electrochemistry and Gibbs Free Energy" },
+        { value: "9.7", label: "9.7 Cell Potential Under Nonstandard Conditions" },
+      ],
+    },
   };
 
   function resolveUnit() {
+    const sec = getParam("section");
     let u = getParam("unit");
-    if (!u) {
-      const sec = getParam("section");
-      if (sec && sec.startsWith("2.")) u = "2";
-      else u = "1";
+    if (sec && /^\d+\./.test(sec)) {
+      u = sec.split(".")[0];
+    } else if (!u) {
+      u = "1";
     }
     if (!UNIT_SECTIONS[u]) u = "1";
     currentUnit = u;
     return u;
+  }
+
+  function buildUnitSelect() {
+    if (!els.unitSelect) return;
+    const sel = els.unitSelect;
+    sel.innerHTML = "";
+    const keys = Object.keys(UNIT_SECTIONS).sort((a, b) => Number(a) - Number(b));
+    for (const k of keys) {
+      const o = document.createElement("option");
+      o.value = k;
+      o.textContent = UNIT_SECTIONS[k].scopeAll;
+      sel.appendChild(o);
+    }
+    sel.value = currentUnit;
   }
 
   function buildSectionSelect(unit) {
@@ -386,14 +498,8 @@
     window.history.replaceState({}, "", u);
   }
 
-  /** Highlight Unit 1 / Unit 2 toggle to match `currentUnit`. */
-  function updateUnitSwitcher() {
-    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
-      const u = btn.getAttribute("data-quiz-unit");
-      const on = u === currentUnit;
-      btn.classList.toggle("is-active", on);
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-    });
+  function syncUnitSelectValue() {
+    if (els.unitSelect) els.unitSelect.value = currentUnit;
   }
 
   /** Switch unit: reset topic to “all”, update URL, restart session if bank is loaded. */
@@ -406,15 +512,13 @@
     url.searchParams.set("unit", currentUnit);
     url.searchParams.delete("section");
     window.history.replaceState({}, "", url);
-    updateUnitSwitcher();
+    syncUnitSelectValue();
     resetQuizCard();
     if (allQuestions.length) startSession();
   }
 
   function setUnitSwitchDisabled(disabled) {
-    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
-      btn.disabled = disabled;
-    });
+    if (els.unitSelect) els.unitSelect.disabled = disabled;
   }
 
   function init() {
@@ -422,6 +526,7 @@
     if (
       !els.app ||
       !els.sectionSelect ||
+      !els.unitSelect ||
       !els.btnCheck ||
       !els.btnNext ||
       !els.btnRestart ||
@@ -431,16 +536,15 @@
     }
 
     resolveUnit();
+    buildUnitSelect();
     buildSectionSelect(currentUnit);
     syncSelectFromUrl(); // Honor ?section= when landing from topic cards
     syncUnitInUrl(); // Keep ?unit= in the address bar for sharing / reload
-    updateUnitSwitcher();
+    syncUnitSelectValue();
 
     setUnitSwitchDisabled(true);
-    document.querySelectorAll("[data-quiz-unit]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        switchQuizUnit(btn.getAttribute("data-quiz-unit"));
-      });
+    els.unitSelect.addEventListener("change", () => {
+      switchQuizUnit(els.unitSelect.value);
     });
 
     loadQuestions() // Async fetch
