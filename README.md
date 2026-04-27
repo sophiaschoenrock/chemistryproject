@@ -1,19 +1,22 @@
-# AP Chemistry · Unit 1-9 Practice
+# AP Chemistry · Units 1–9 Practice (Reaction Rush)
 
-Static website and optional Java CLI for **AP Chemistry Unit 1** (Atomic Structure and Properties, CED topics **1.1–1.8**). Practice is **original** multiple-choice with four options and a **rationale for every choice**—similar in spirit to AP Classroom feedback.
+Static website for **AP Chemistry Units 1–9** built around a single multiple-choice question bank. The main experience is **Reaction Rush**: a timed, game-style MCQ mode with streaks, scoring, and **explanations for every choice (A–D)**.
 
 ## What’s in this repo
 
 | Part | Description |
 |------|-------------|
-| **Unit 1 home** (`index.html` + `index.js`) | Unit1 overview and topic cards; `index.js` loads `questions.json` and shows how many questions exist per subsection (any `1.x` / `2.x` prefix on the page’s cards). |
-| **Unit 2 home** (`index-unit2.html` + `index.js`) | Same pattern for CED **2.1–2.7**; links use `quiz.html?unit=2&section=2.x`. |
-| **Quiz** (`quiz.html` + `quiz.js`) | `?unit=1` or `?unit=2` selects the topic list; filter by subsection or all topics in that unit (shuffled); check answers and read all rationales. |
-| **Notes** (`notes.html`, `notes-unit2.html`) | Static notes for Unit 1 and Unit 2 subsections. |
-| **Data** (`questions.json`) | Single source of truth for the web quiz (array of items with `subsection`, `stem`, `stimulus`, `correct`, `options`). |
-| **Java** (`src/main/java/...`) | Optional command-line practice using the same bank via `src/main/resources/questions.json`. |
+| **Reaction Rush (homepage)** (`index.html`) | Timed “game” mode that loads `questions.json`, filters by Unit 1–9, and reveals explanations for all choices after each answer. |
+| **Reaction Rush (direct)** (`reaction-rush.html`) | Same game page as the homepage (kept as a direct link too). |
+| **Landing page (optional)** (`landing.html`) | The earlier GitHub Pages one‑pager (kept as a separate page). |
+| **Quiz (classic mode)** (`quiz.html` + `quiz.js`) | Practice mode with unit/topic dropdowns (Units 1–9), full rationales, and non-timed navigation. |
+| **Unit 1 curriculum landing (optional)** (`unit1-landing.html`) | Original Unit 1 topic grid and links into quizzes. |
+| **Unit 2 curriculum landing (optional)** (`index-unit2.html`) | Original Unit 2 topic grid and links into quizzes. |
+| **Notes (optional)** (`notes.html`, `notes-unit2.html`) | Notes pages for Unit 1 and Unit 2. |
+| **Data** (`questions.json`) | Single source of truth (array of items with `subsection`, `stem`, `stimulus`, `correct`, `options`). |
+| **Import script** (`scripts/import_external_mcqs.py`) | Converts an external MCQ JSON array into this repo’s `questions.json` format and merges with dedupe. |
 
-Styling is in `styles.css`; the site uses a formal, document-style look (Times New Roman).
+Most pages use `styles.css` (formal, document-style look). Reaction Rush is self-contained in the page.
 
 ## Run the website locally
 
@@ -24,28 +27,32 @@ cd /path/to/chemistryproject
 python3 -m http.server 8080
 ```
 
-Then open **http://localhost:8080/** (homepage), **http://localhost:8080/quiz.html**, and **http://localhost:8080/notes.html**.
+Then open:
+
+- **Reaction Rush (homepage):** `http://localhost:8080/`
+- **Reaction Rush (direct):** `http://localhost:8080/reaction-rush.html`
+- **Classic quiz:** `http://localhost:8080/quiz.html`
 
 ## GitHub Pages
 
 If Pages is enabled for this repository, the same files are served over HTTPS—no extra build step. After you push, allow a minute for the site to refresh.
 
-## Java CLI (optional)
-
-Requires **JDK 17** and **Maven**.
-
-```bash
-mvn -q compile exec:java
-```
-
-The app loads questions from the classpath copy at `src/main/resources/questions.json`. When you change the bank at the repo root, copy or regenerate into `src/main/resources/` so Java and the website stay aligned (see `scripts/expand_question_bank.py` if you use it).
+- **Homepage:** Reaction Rush loads at `.../chemistryproject/`
+- **Direct link:** `.../chemistryproject/reaction-rush.html`
 
 ## Question bank
 
 - **Web:** `questions.json` at the repository root (same folder as `index.html`).
-- **Java:** `src/main/resources/questions.json` should mirror the web data when you care about parity.
 
 Items are written for practice; they are **not** copied from secure College Board exams.
+
+## Importing more questions
+
+If you have questions in the external format (`unit`, `topic`, `question`, `choices`, `correct_answer`, `explanations`), you can merge them into the bank:
+
+```bash
+python3 scripts/import_external_mcqs.py data/imported_mcqs.json
+```
 
 ## License
 
