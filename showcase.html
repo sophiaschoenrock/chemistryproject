@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemistryProject — Sophia Schoenrock</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0f1a;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --accent3: #ffb74d;
+    --text: #e8edf5;
+    --muted: #8896a8;
+    --border: rgba(79,195,247,0.15);
+    --glow: rgba(79,195,247,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  section, header, footer { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+    background: rgba(11,15,26,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  header {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 2.5rem 4rem;
+    overflow: hidden;
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 8vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+    margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent);
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted);
+    max-width: 55ch;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
+  }
+  .hero-ctas {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 500;
+  }
+  .btn-primary:hover { background: #fff; transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+  .btn-outline:hover { background: var(--glow); transform: translateY(-2px); }
+
+  /* floating molecules bg */
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .molecule {
+    position: absolute;
+    font-size: 6rem;
+    opacity: 0.04;
+    animation: drift linear infinite;
+  }
+  @keyframes drift {
+    from { transform: translateY(110vh) rotate(0deg); }
+    to   { transform: translateY(-10vh) rotate(360deg); }
+  }
+
+  /* hero stats strip */
+  .hero-stats {
+    position: absolute; bottom: 3rem; left: 2.5rem; right: 2.5rem;
+    display: flex; gap: 3rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.7s 0.7s forwards;
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION SHARED ── */
+  .section {
+    padding: 6rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .section-body {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 65ch;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 2.5rem;
+  }
+
+  /* ── FEATURES LIST ── */
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .feature-card {
+    background: var(--surface);
+    padding: 2.5rem 3rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+  .feature-card:last-child { border-bottom: none; }
+  .feature-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--glow), transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .feature-card:hover { background: var(--surface2); }
+  .feature-card:hover::after { opacity: 1; }
+  .feature-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .feature-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+  }
+  .feature-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; max-width: 80ch; }
+  .feature-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    border: 1px solid rgba(129,199,132,0.3);
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* ── TECH STACK ── */
+  .tech-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .tech-section .section { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+  .tech-pills {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    margin-top: 3rem;
+  }
+  .pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    border: 1px solid;
+    transition: all 0.2s;
+  }
+  .pill:hover { transform: translateY(-2px); }
+  .pill-blue  { color: var(--accent);  border-color: rgba(79,195,247,0.35);  background: rgba(79,195,247,0.06); }
+  .pill-green { color: var(--accent2); border-color: rgba(129,199,132,0.35); background: rgba(129,199,132,0.06); }
+  .pill-amber { color: var(--accent3); border-color: rgba(255,183,77,0.35);  background: rgba(255,183,77,0.06); }
+
+  /* ── UNITS TIMELINE ── */
+  .timeline { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+  }
+  .timeline-item:hover { background: var(--surface2); padding-left: 1rem; }
+  .timeline-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    padding-top: 0.15rem;
+  }
+  .timeline-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .timeline-desc { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+
+  /* ── DEMO SECTION ── */
+  .demo-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .demo-container {
+    margin-top: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(79,195,247,0.08);
+  }
+  .demo-bar {
+    background: var(--surface2);
+    padding: 0.85rem 1.25rem;
+    display: flex; align-items: center; gap: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .demo-dots { display: flex; gap: 6px; }
+  .demo-dots span {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .demo-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.75rem;
+    flex: 1; max-width: 420px;
+  }
+  .demo-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    display: block;
+    background: var(--bg);
+  }
+
+  /* ── ARCHITECTURE ── */
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .arch-card {
+    background: var(--surface);
+    padding: 2rem;
+  }
+  .arch-layer {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .arch-files {
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .arch-file {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 0.4rem 0.6rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .arch-file:hover {
+    color: var(--text);
+    border-left-color: var(--accent);
+    background: rgba(79,195,247,0.05);
+  }
+  .arch-file .file-ext { color: var(--accent3); }
+
+  /* ── PRESENTATION SECTION ── */
+  .pres-section { background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%); border-top: 1px solid var(--border); }
+  .speech-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3rem;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .speech-card::before {
+    content: '\201C';
+    position: absolute; top: -1rem; left: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem;
+    color: rgba(79,195,247,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .speech-para {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text);
+    max-width: 80ch;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .speech-para:last-child { margin-bottom: 0; }
+  .speech-para strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .speech-timer {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .timer-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent2);
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .footer-left strong { color: var(--text); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .section { padding: 4rem 1.5rem; }
+    header { padding: 7rem 1.5rem 3rem; }
+    .hero-stats { left: 1.5rem; right: 1.5rem; gap: 1.5rem; }
+    .tech-section .section { grid-template-columns: 1fr; gap: 2rem; }
+    .arch-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; }
+    .demo-frame { height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Chem // Project</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#units">Units</a></li>
+    <li><a href="#architecture">Stack</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header id="about">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="molecule" style="left:5%;animation-duration:25s;animation-delay:-5s">⚗️</span>
+    <span class="molecule" style="left:20%;font-size:4rem;animation-duration:32s;animation-delay:-12s">🔬</span>
+    <span class="molecule" style="left:42%;font-size:8rem;animation-duration:28s;animation-delay:-3s">⚛️</span>
+    <span class="molecule" style="left:65%;font-size:5rem;animation-duration:20s;animation-delay:-18s">🧪</span>
+    <span class="molecule" style="left:82%;font-size:7rem;animation-duration:35s;animation-delay:-8s">🧬</span>
+  </div>
+
+  <p class="hero-label">AP Chemistry · Units 1 – 9 · Open Source</p>
+  <h1 class="hero-title">The AP Chem<em>istry</em> Study System</h1>
+  <p class="hero-sub">
+    A full-stack, self-directed study platform spanning all nine AP Chemistry units —
+    282+ original practice questions, interactive quiz engine, structured notes, and
+    an arcade-style game. Built from scratch in HTML, CSS, JavaScript, and Java.
+  </p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="https://sophiaschoenrock.github.io/chemistryproject/" target="_blank">↗ Open Live Site</a>
+    <a class="btn btn-outline" href="https://github.com/sophiaschoenrock/chemistryproject" target="_blank">⬡ View Repository</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">282+</span>
+      <span class="stat-label">Practice Questions</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">9</span>
+      <span class="stat-label">AP Units Covered</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-label">Distinct Tools</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100+</span>
+      <span class="stat-label">Commits &amp; Iterations</span>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURES -->
+<hr class="divider">
+<section class="section" id="features">
+  <div class="reveal">
+    <p class="section-label">What it does</p>
+    <h2 class="section-title">Four tools.<br>One subject.</h2>
+    <p class="section-body">
+      Each component targets a distinct mode of learning — from high-intensity rapid recall
+      to deep, annotated conceptual review. Together they form a coherent study loop.
+    </p>
+  </div>
+
+  <div class="features-list reveal">
+    <div class="feature-card">
+      <span class="feature-num">01 — Primary Interface</span>
+      <div class="feature-name">Reaction Rush</div>
+      <p class="feature-desc">
+        Reaction Rush is a timed, score-driven study mode designed to build exam fluency through 
+        retrieval practice under pressure. Each session presents multiple-choice questions drawn from 
+        a filterable unit-specific subset of the JSON question bank, rendered dynamically via the DOM 
+        manipulation API. A countdown timer enforces pacing, a streak counter rewards consecutive 
+        correct responses, and a post-session results screen surfaces per-question explanations — 
+        making the review phase as instructive as the attempt itself. The interface is intentionally 
+        minimal: no authentication, no installation, one URL.
+      </p>
+      <span class="feature-tag">Timed Practice Mode</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-num">02 — Structured Review</span>
+      <div class="feature-name">Unit Quiz Engine</div>
+      <p class="feature-desc">
+        The quiz engine renders questions from <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">questions.json</code> 
+        using a client-side JavaScript filter that isolates entries by unit identifier and subsection tag. 
+        Every question carries four answer choices, a correct-key field, and an individual rationale for 
+        each distractor, not only the correct response. That design decision is deliberate: AP 
+        multiple-choice distractors are engineered to surface specific misconceptions, and a student 
+        who understands why a wrong answer is wrong has engaged more deeply with the concept than one 
+        who only confirmed the right one. Progress is tracked within the session and presented as a 
+        final score summary.
+      </p>
+      <span class="feature-tag">Subsection-Filtered Review</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-num">03 — Reference Material</span>
+      <div class="feature-name">Annotated Notes</div>
+      <p class="feature-desc">
+        Each AP unit has a dedicated notes page authored in semantic HTML, structured to mirror 
+        the College Board subsection hierarchy. Content covers conceptual definitions, key equations 
+        rendered as formatted inline HTML (no external rendering libraries required), 
+        and worked vocabulary. The notes pages are statically served, load instantly, and are 
+        linked directly from the unit landing pages. Units 1 and 2 carry full original content, 
+        with the remaining units carrying their complete structural skeleton.
+      </p>
+      <span class="feature-tag">Static Reference Pages</span>
+    </div>
+    <div class="feature-card">
+      <span class="feature-num">04 — Backend Implementation</span>
+      <div class="feature-name">Java Command-Line Interface</div>
+      <p class="feature-desc">
+        A standalone Maven project implements the same question-bank domain model in Java 17. 
+        The object model defines <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">McqQuestion</code>, 
+        <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">McqOption</code>, and 
+        <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">Subsection</code> 
+        as discrete typed classes, demonstrating that the data architecture designed for the 
+        JavaScript frontend translates directly into a statically typed, compiled environment. 
+        The interactive terminal runner is compiled and executed via the Maven build lifecycle 
+        using <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">mvn compile</code> 
+        and <code style="font-family:'DM Mono',monospace;font-size:0.85em;color:var(--accent3)">mvn exec:java</code>, 
+        with no external Java dependencies beyond the standard library.
+      </p>
+      <span class="feature-tag">Maven, Java 17</span>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<div class="tech-section">
+  <div class="section" id="architecture">
+    <div class="reveal">
+      <p class="section-label">Technology</p>
+      <h2 class="section-title">Libraries,<br>languages &amp; tools</h2>
+      <p class="section-body">
+        The project is intentionally dependency-light on the frontend —
+        prioritising portability and load speed — while leaning on
+        battle-tested tooling for the Java backend.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="tech-pills">
+        <span class="pill pill-blue">HTML5</span>
+        <span class="pill pill-blue">CSS3 / Flexbox / Grid</span>
+        <span class="pill pill-blue">Vanilla JavaScript (ES6+)</span>
+        <span class="pill pill-green">Java 17</span>
+        <span class="pill pill-green">Maven 3</span>
+        <span class="pill pill-amber">GitHub Pages (CI/CD)</span>
+        <span class="pill pill-amber">Git</span>
+        <span class="pill pill-blue">JSON Question Bank</span>
+        <span class="pill pill-green">Python 3 (build scripts)</span>
+        <span class="pill pill-amber">Google Fonts</span>
+      </div>
+
+      <div class="arch-grid" style="margin-top:2rem">
+        <div class="arch-card">
+          <div class="arch-layer">Presentation Layer</div>
+          <div class="arch-files">
+            <div class="arch-file">index<span class="file-ext">.html</span></div>
+            <div class="arch-file">quiz<span class="file-ext">.html</span></div>
+            <div class="arch-file">notes<span class="file-ext">.html</span></div>
+            <div class="arch-file">notes-unit2–9<span class="file-ext">.html</span></div>
+            <div class="arch-file">reaction-rush<span class="file-ext">.html</span></div>
+            <div class="arch-file">styles<span class="file-ext">.css</span></div>
+          </div>
+        </div>
+        <div class="arch-card">
+          <div class="arch-layer">Logic Layer</div>
+          <div class="arch-files">
+            <div class="arch-file">quiz<span class="file-ext">.js</span></div>
+            <div class="arch-file">index<span class="file-ext">.js</span></div>
+            <div class="arch-file">questions<span class="file-ext">.json</span></div>
+            <div class="arch-file">expand_question_bank<span class="file-ext">.py</span></div>
+            <div class="arch-file">import_external_mcqs<span class="file-ext">.py</span></div>
+          </div>
+        </div>
+        <div class="arch-card">
+          <div class="arch-layer">Java CLI Layer</div>
+          <div class="arch-files">
+            <div class="arch-file">McqQuestion<span class="file-ext">.java</span></div>
+            <div class="arch-file">McqOption<span class="file-ext">.java</span></div>
+            <div class="arch-file">Subsection<span class="file-ext">.java</span></div>
+            <div class="arch-file">QuizRunner<span class="file-ext">.java</span></div>
+            <div class="arch-file">pom<span class="file-ext">.xml</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UNITS TIMELINE -->
+<section class="section" id="units">
+  <div class="reveal">
+    <p class="section-label">Content Coverage</p>
+    <h2 class="section-title">Nine units,<br>one platform.</h2>
+    <p class="section-body">
+      Questions are tagged by unit and subsection, enabling targeted review 
+      of exactly the topics that need attention.
+    </p>
+  </div>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <span class="timeline-num">U1</span>
+      <div>
+        <div class="timeline-title">Atomic Structure and Properties</div>
+        <div class="timeline-desc">Covers moles and molar mass, mass spectrometry, electron configurations, photoelectron spectroscopy, periodic trends in atomic radius, ionization energy, and electronegativity. Subsections 1.1 through 1.8 are fully represented in the question bank with over 100 items and complete annotated notes.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U2</span>
+      <div>
+        <div class="timeline-title">Molecular and Ionic Compound Structure and Properties</div>
+        <div class="timeline-desc">Covers ionic and covalent bonding, Lewis dot structures, formal charge, resonance, VSEPR geometry, molecular polarity, and intermolecular forces. Subsections 2.1 through 2.7 are fully represented with a complete question bank, per-choice rationales, and annotated notes.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U3</span>
+      <div>
+        <div class="timeline-title">Intermolecular Forces and Properties</div>
+        <div class="timeline-desc">Covers London dispersion forces, dipole-dipole interactions, hydrogen bonding, properties of solids and liquids, solutions, solubility, and photoelectric effect. Notes structure and question entries are in place across subsections 3.1 through 3.10.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U4</span>
+      <div>
+        <div class="timeline-title">Chemical Reactions</div>
+        <div class="timeline-desc">Covers synthesis, decomposition, single and double replacement reactions, oxidation states, net ionic equations, and stoichiometric calculations. Notes structure and question entries are in place across subsections 4.1 through 4.10.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U5</span>
+      <div>
+        <div class="timeline-title">Kinetics</div>
+        <div class="timeline-desc">Covers reaction rate, rate laws, the method of initial rates, integrated rate laws for zeroth, first, and second order reactions, the Arrhenius equation, activation energy, reaction mechanisms, and catalysis. Notes structure and question entries are in place across subsections 5.1 through 5.7.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U6</span>
+      <div>
+        <div class="timeline-title">Thermodynamics</div>
+        <div class="timeline-desc">Covers endothermic and exothermic processes, enthalpy of reaction, calorimetry, Hess's law, bond enthalpies, entropy, Gibbs free energy, and thermodynamic spontaneity. Notes structure and question entries are in place across subsections 6.1 through 6.7.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U7</span>
+      <div>
+        <div class="timeline-title">Equilibrium</div>
+        <div class="timeline-desc">Covers dynamic equilibrium, the equilibrium constant expression K, reaction quotient Q, ICE tables, the relationship between K and Gibbs free energy, and Le Chatelier's principle. Notes structure and question entries are in place across subsections 7.1 through 7.9.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U8</span>
+      <div>
+        <div class="timeline-title">Acids and Bases</div>
+        <div class="timeline-desc">Covers Bronsted-Lowry acid-base theory, Ka and Kb, percent dissociation, pH and pOH calculations, buffer solutions, the Henderson-Hasselbalch equation, and acid-base titration curves. Notes structure and question entries are in place across subsections 8.1 through 8.8.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <span class="timeline-num">U9</span>
+      <div>
+        <div class="timeline-title">Electrochemistry</div>
+        <div class="timeline-desc">Covers oxidation and reduction half-reactions, galvanic and electrolytic cell construction, standard reduction potentials, cell potential calculations using the Nernst equation, and Faraday's laws of electrolysis. Notes structure and question entries are in place across subsections 9.1 through 9.7.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<div class="demo-section">
+  <div class="section" id="demo">
+    <div class="reveal">
+      <p class="section-label">Live Demo</p>
+      <h2 class="section-title">Try it<br>right here.</h2>
+      <p class="section-body">
+        Reaction Rush is embedded below directly from the live GitHub Pages deployment.
+        Select a unit, press Dive In, and work through the question set.
+        The iframe renders the fully deployed application, including all filtering, scoring, and explanation logic.
+      </p>
+    </div>
+    <div class="demo-container reveal">
+      <div class="demo-bar">
+        <div class="demo-dots"><span></span><span></span><span></span></div>
+        <div class="demo-url">sophiaschoenrock.github.io/chemistryproject/</div>
+      </div>
+      <iframe
+        class="demo-frame"
+        src="https://sophiaschoenrock.github.io/chemistryproject/"
+        title="Reaction Rush — AP Chemistry Game"
+        loading="lazy"
+        sandbox="allow-scripts allow-same-origin allow-forms">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Sophia Schoenrock</strong> — AP Chemistry Project · 2026
+  </div>
+  <div class="footer-links">
+    <a href="https://sophiaschoenrock.github.io/chemistryproject/" target="_blank">Live Site</a>
+    <a href="https://github.com/sophiaschoenrock/chemistryproject" target="_blank">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
