@@ -10,9 +10,9 @@ Static website for **AP Chemistry Units 1–9** built around a single multiple-c
 | **Reaction Rush (direct)** (`reaction-rush.html`) | Same game page as the homepage (kept as a direct link too). |
 | **Landing page (optional)** (`landing.html`) | The earlier GitHub Pages one‑pager (kept as a separate page). |
 | **Quiz (classic mode)** (`quiz.html` + `quiz.js`) | Practice mode with unit/topic dropdowns (Units 1–9), full rationales, and non-timed navigation. |
-| **Unit 1 curriculum landing (optional)** (`unit1-landing.html`) | Original Unit 1 topic grid and links into quizzes. |
-| **Unit 2 curriculum landing (optional)** (`index-unit2.html`) | Original Unit 2 topic grid and links into quizzes. |
-| **Notes (optional)** (`notes.html`, `notes-unit2.html`) | Notes pages for Unit 1 and Unit 2. |
+| **Unit 1 curriculum landing (optional)** (`unit1-landing.html`) | Unit 1 topic grid and links into quizzes. |
+| **Unit 2 curriculum landing (optional)** (`index-unit2.html`) | Unit 2 topic grid and links into quizzes. |
+| **Notes (optional)** (`notes.html`, `notes-unit2.html`, `notes-unit3.html` … `notes-unit9.html`) | Notes pages for Units 1–9 (Unit 3–9 pages are scaffolded to match the Unit 1–2 format). |
 | **Data** (`questions.json`) | Single source of truth (array of items with `subsection`, `stem`, `stimulus`, `correct`, `options`). |
 | **Import script** (`scripts/import_external_mcqs.py`) | Converts an external MCQ JSON array into this repo’s `questions.json` format and merges with dedupe. |
 
